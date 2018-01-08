@@ -31,9 +31,9 @@
   {
     "@id": "http://purl.org/cerif/frapo/hasInvoiceDate",
     "@type": [
+      "http://www.w3.org/2002/07/owl#FunctionalProperty",
       "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#AnnotationProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -64,6 +64,35 @@
     ]
   },
   {
+    "@id": "http://purl.org/cerif/frapo/hasOutput",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "Domain and range constraints have been removed from this object property to permit it to be used in unforeseen ways."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An object property linking an activity such as a project or endeavour to something that is created or produced as a result of that activity.  Examples include a building created as a result of a building project, and a journal article published to describe the results of a research investigation.  "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has output"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/isOutputOf"
+      }
+    ]
+  },
+  {
     "@id": "http://purl.org/cerif/frapo/Company",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -87,36 +116,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/isSupportedBy",
+    "@id": "http://purl.org/cerif/frapo/MaterialOutput",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "This property is not intended for use to describe mechanical or physical support, as in 'The statue is supported by the plinth'. "
-      }
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property linking something to an agent that provides funding or other support for it."
+        "@value": "A material or physical output created or produced as a result of a project or an endeavour such as a research investigation. Examples include a building constructed as a result of a building project, and research outputs such as a cell line, a mouse mutant or a new form of microscope."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is supported by"
+        "@value": "material output"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:N9b4260c90e5941b190179aa01bc05321"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/supports"
+        "@id": "http://purl.org/cerif/frapo/Output"
       }
     ]
   },
@@ -163,6 +181,24 @@
     "@id": "http://purl.org/dc/elements/1.1/title",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/hasExchangeRate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A data property specifying the currency exchange rate between two specified currencies."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has exchange rate"
+      }
     ]
   },
   {
@@ -218,25 +254,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/NotForProfitOrganization",
+    "@id": "http://purl.org/cerif/frapo/isFundedBy",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An organization that does not primarily exist to make profit, for example a charity or charitable foundation, a learned society, or a standards body such as the World Wide Web Consortium."
+        "@value": "An object property linking something to the funding that funds it (i.e. that finances or pays for it), or to the funding agency providing that funding.  This flexibility is given because of alternative usages of the English word 'funds'.  [See also frapo:isAwardedBy and frapo:hasFundingAgency and frapo:isSupportedBy.]"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "not-for-profit organization"
+        "@value": "is funded by"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://xmlns.com/foaf/0.1/Organization"
+        "@id": "http://purl.org/cerif/frapo/isSupportedBy"
       }
     ]
   },
@@ -270,26 +306,37 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasAwardDate",
+    "@id": "http://purl.org/cerif/frapo/hasDecisionDate",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+      "http://www.w3.org/2002/07/owl#FunctionalProperty",
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "This same data property appears in FaBiO, the FRBR-aligned Bibliographic Ontology (http://purl.org/spar/fabio/)."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The date on which notification is given or received that something, for example a scholarship or a grant, has been awarded.  [See also frapo:hasDecisionDate.]"
+        "@value": "The date on which a particular action is or will be decided upon, or when an application, such as a grant application, is or will be approved or rejected. [See also frapo:hasAwardDate.]"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has award date"
+        "@value": "has decision date"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "http://purl.org/spar/fabio/hasDecisionDate"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -318,25 +365,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/AnnualTurnover",
+    "@id": "http://purl.org/cerif/frapo/RegistrationAgency",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The anual financial turnover of an organization (in a specified currency)."
+        "@value": "An institution or organization officially appointed by a Registration Authority that acts to register things. For example, CrossRef is a registration agency for DOIs relating to documents, while DataCite is a registration agency for DOIs relating to datasets, acting for the Registration Authority for DOIs, namely the International DOI Foundation (IDF)."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "annual turnover"
+        "@value": "registration agency"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/FinancialEntity"
+        "@id": "http://xmlns.com/foaf/0.1/Organization"
       }
     ]
   },
@@ -373,17 +420,34 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/hasPersonalInformation"
+        "@id": "http://purl.org/dc/terms/identifier"
       },
       {
-        "@id": "http://purl.org/dc/terms/identifier"
+        "@id": "http://purl.org/cerif/frapo/hasPersonalInformation"
       }
     ]
   },
   {
-    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "@id": "http://purl.org/cerif/frapo/initial",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A data property permitting specification of the initial(s) of a person's name."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "initials"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/hasPersonalInformation"
+      }
     ]
   },
   {
@@ -435,8 +499,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/hasProjectIdentifier",
     "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty",
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -462,25 +526,31 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/RegistrationAuthority",
+    "@id": "http://purl.org/cerif/frapo/specifiesExpediture",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "Range constraints have been removed from this object property to permit it to be used in unforeseen ways."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An agent with responsibility for registering and maintaining international standards, internet domain names, patents, controlled vocabularies and other similar entities required for reliable international cooperatative activities. For example, the International DOI Foundation (IDF) is the Registration Authority for DOIs."
+        "@value": "An object property relating an agent or a budget to the expenditure specified by that agent or budget."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:Ne4973620333b40d2840a19d24e83db02"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "registration authority"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Organization"
+        "@value": "specifies expenditure"
       }
     ]
   },
@@ -573,7 +643,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "FRAPO, the Funding, Research Administration and Projects Ontology, is a CERIF-compliant ontology  written in OWL 2 DL for describing research project administrative information.  This ontology is available at http://purl.org/cerif/frapo, and uses the namespace prefix 'frapo'."
+        "@value": "The Funding, Research Administration and Projects Ontology (FRAPO) is an ontology for describing the administrative information of research projects, e.g., grant applications, funding bodies, project partners, etc.\n\n**URL:** http://purl.org/cerif/frapo\n\n**Creators**: [David Shotton](http://orcid.org/0000-0001-5506-523X)\n\n**Contributors**: [Silvio Peroni](http://orcid.org/0000-0003-0530-4305)\n\n**License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n**Website:** http://www.sparontologies.net/ontologies/frapo"
       }
     ],
     "http://www.w3.org/2002/07/owl#imports": [
@@ -600,8 +670,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/consultancy-costs",
     "@type": [
-      "http://purl.org/cerif/frapo/BudgetCategory",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/cerif/frapo/BudgetCategory"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -653,11 +723,11 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "sme"
+        "@value": "small to medium enterprise"
       },
       {
         "@language": "en",
-        "@value": "small to medium enterprise"
+        "@value": "sme"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -780,53 +850,31 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/ConferenceFee",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A fee paid to attend a conference."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "conference fee"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/Fee"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/cerif/frapo/isSubmittedBy",
+    "@id": "http://purl.org/cerif/frapo/isDonatedBy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "Domain constraints have been removed from this object property to permit it to be used in unforeseen ways."
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property linking an entity that is submitted (to some third party) to the agent who submits it."
+        "@value": "An object property linking a gift to the benefactor who provided it."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is submitted by"
+        "@value": "is donated by"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "http://xmlns.com/foaf/0.1/Agent"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/submits"
       }
     ]
   },
@@ -879,8 +927,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/service-costs",
     "@type": [
-      "http://purl.org/cerif/frapo/BudgetCategory",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/cerif/frapo/BudgetCategory"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -921,8 +969,8 @@
   {
     "@id": "http://xmlns.com/foaf/0.1/title",
     "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty",
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
@@ -956,8 +1004,8 @@
   {
     "@id": "http://xmlns.com/foaf/0.1/family_name",
     "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty",
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
@@ -968,8 +1016,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/facilities-costs",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/cerif/frapo/BudgetCategory"
+      "http://purl.org/cerif/frapo/BudgetCategory",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -1171,8 +1219,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/contributions-in-kind",
     "@type": [
-      "http://purl.org/cerif/frapo/BudgetCategory",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/cerif/frapo/BudgetCategory"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -1188,25 +1236,44 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/isFundedBy",
+    "@id": "http://purl.org/cerif/frapo/ResearchInstitute",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property linking something to the funding that funds it (i.e. that finances or pays for it), or to the funding agency providing that funding.  This flexibility is given because of alternative usages of the English word 'funds'.  [See also frapo:isAwardedBy and frapo:hasFundingAgency and frapo:isSupportedBy.]"
+        "@value": "An organization primarily dedicated to undertaking research, that might be part of a university or of a commercial company, or might be independently funded by a research funding agency.  "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is funded by"
+        "@value": "research institute"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/isSupportedBy"
+        "@id": "http://xmlns.com/foaf/0.1/Organization"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/overhead-costs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/cerif/frapo/BudgetCategory"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A budget category to cover all the non-directly incurred costs of a project, including estates costs and indirect costs, that enable an institution to host an externally-funded project. "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "overhead costs"
       }
     ]
   },
@@ -1245,21 +1312,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/indirect-costs",
+    "@id": "http://purl.org/cerif/frapo/hasBatchNumber",
     "@type": [
-      "http://purl.org/cerif/frapo/BudgetCategory",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A budget category to cover the indirect costs of running a project, for example heating and lighting, and the employment of non-project staff including administrators, accountants and cleaners."
+        "@value": "A data property linking something, for example a chemical or drug, to its manufacturing batch number."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "indirect costs"
+        "@value": "has batch number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/dc/terms/identifier"
       }
     ]
   },
@@ -1288,33 +1359,52 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/Equipment"
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
       },
       {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
+        "@id": "http://purl.org/cerif/frapo/Equipment"
       }
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasBatchNumber",
+    "@id": "http://purl.org/cerif/frapo/hasAgentInformation",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A data property linking something, for example a chemical or drug, to its manufacturing batch number."
+        "@value": "A data property linking an agent to information about that agent."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has batch number"
+        "@value": "has information"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/indirect-costs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/cerif/frapo/BudgetCategory"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A budget category to cover the indirect costs of running a project, for example heating and lighting, and the employment of non-project staff including administrators, accountants and cleaners."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "http://purl.org/dc/terms/identifier"
+        "@language": "en",
+        "@value": "indirect costs"
       }
     ]
   },
@@ -1371,21 +1461,30 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/overhead-costs",
+    "@id": "http://purl.org/cerif/frapo/isSubmittedBy",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/cerif/frapo/BudgetCategory"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A budget category to cover all the non-directly incurred costs of a project, including estates costs and indirect costs, that enable an institution to host an externally-funded project. "
+        "@value": "An object property linking an entity that is submitted (to some third party) to the agent who submits it."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "overhead costs"
+        "@value": "is submitted by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/submits"
       }
     ]
   },
@@ -1416,8 +1515,8 @@
     "@id": "http://purl.org/cerif/frapo/hasApplicationDeadline",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#AnnotationProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+      "http://www.w3.org/2002/07/owl#FunctionalProperty",
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ],
     "http://purl.org/dc/elements/1.1/description": [
       {
@@ -1477,6 +1576,29 @@
     ]
   },
   {
+    "@id": "http://purl.org/cerif/frapo/AccountStatement",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A statement of income and expenditure for an account, typically presented as dated income receipts and outgoings against categories in a budget for that account."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "account statement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/FinancialEntity"
+      }
+    ]
+  },
+  {
     "@id": "http://purl.org/cerif/frapo/Grant",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -1502,8 +1624,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/rejected",
     "@type": [
-      "http://purl.org/cerif/frapo/Status",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/cerif/frapo/Status"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -1519,25 +1641,31 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/ScholarshipApplication",
+    "@id": "http://purl.org/cerif/frapo/InfrastructureEntity",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "owl:equivalentClass cerif:InfrastructureEntity ."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The activity of applying for an educational scholarship."
+        "@value": "An entity that facilitates work."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "scholarship application"
+        "@value": "infrastructure entity"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/Application"
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
       }
     ]
   },
@@ -1650,43 +1778,20 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasHeadcount",
+    "@id": "_:Ne4973620333b40d2840a19d24e83db02",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2002/07/owl#unionOf": [
       {
-        "@language": "en",
-        "@value": "A data property specifying the number of people employed by an organization."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has headcount"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/hasOrganizationalInformation"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/cerif/frapo/hasExchangeRate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A data property specifying the currency exchange rate between two specified currencies."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has exchange rate"
+        "@list": [
+          {
+            "@id": "http://purl.org/cerif/frapo/Budget"
+          },
+          {
+            "@id": "http://xmlns.com/foaf/0.1/Agent"
+          }
+        ]
       }
     ]
   },
@@ -1747,25 +1852,30 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/Bursary",
+    "@id": "http://purl.org/cerif/frapo/hasDeliveryDate",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An amount of money given to a person by an organization, for example by a university to a university student in need to enable that student to continue his/her studies."
+        "@value": "The date on which something is delivered, or is due to be delivered."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "bursary"
+        "@value": "has delivery date"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://purl.org/cerif/frapo/Funding"
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/dc/terms/date"
       }
     ]
   },
@@ -1867,67 +1977,15 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/FundingProgramme",
+    "@id": "http://purl.org/dc/elements/1.1/creator",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A programme of related funded activities or projects, typically established by a funding agency.  Often associated with publication of a call for applications (fabio:CallForApplications)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "funding programme"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
-      }
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "_:N2db1cf1f9eec44c7bb6e159681465607",
+    "@id": "http://xmlns.com/foaf/0.1/Agent",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://purl.org/cerif/frapo/Funding"
-          },
-          {
-            "@id": "http://xmlns.com/foaf/0.1/Agent"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/cerif/frapo/Endeavour",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "In FRAPO, an endeavour is an activity such as a research investigation that is enabled by a project.  An endeavour relate to the academic and practical aspects of undertaking that endeavour - thus for a research investigation the research itself, including the hypotheses being investigated, the experiments being undertaken, the data being gathered and analysed, the interpretations being drawn from the data, and the results obtained.  In contrast, the project relates to the administrative aspects of undertaking an endeavour, including the funding obtained, the people employed, and the management of the project in terms of deadlines and deliverables."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "endeavour"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
-      }
     ]
   },
   {
@@ -1937,33 +1995,28 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/ServiceContract",
+    "@id": "http://purl.org/cerif/frapo/hasCost",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A contract for the provision of a service such as a cleaning service, or for the regular servicing, maintenance and repair of some item of equipment or infrastructure."
+        "@value": "A data property enabling the cost of something that can be paid for to be defined."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "service contract"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/Contract"
+        "@value": "has cost"
       }
     ]
   },
   {
     "@id": "http://purl.org/cerif/frapo/software-costs",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/cerif/frapo/BudgetCategory"
+      "http://purl.org/cerif/frapo/BudgetCategory",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -2013,25 +2066,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/RegistrationAgency",
+    "@id": "http://purl.org/cerif/frapo/AnnualTurnover",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An institution or organization officially appointed by a Registration Authority that acts to register things. For example, CrossRef is a registration agency for DOIs relating to documents, while DataCite is a registration agency for DOIs relating to datasets, acting for the Registration Authority for DOIs, namely the International DOI Foundation (IDF)."
+        "@value": "The anual financial turnover of an organization (in a specified currency)."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "registration agency"
+        "@value": "annual turnover"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://xmlns.com/foaf/0.1/Organization"
+        "@id": "http://purl.org/cerif/frapo/FinancialEntity"
       }
     ]
   },
@@ -2082,44 +2135,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/isOutputOf",
+    "@id": "http://purl.org/cerif/frapo/hasFaxNumber",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "Domain and range constraints have been removed from this object property to permit it to be used in unforeseen ways."
-      }
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property linking something that is created or produced to the activity that created or produced it."
+        "@value": "A data property identifying a Fax number for an agent."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is output of"
+        "@value": "has fax number"
       }
-    ]
-  },
-  {
-    "@id": "_:N9b4260c90e5941b190179aa01bc05321",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
     ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@list": [
-          {
-            "@id": "http://purl.org/cerif/frapo/Funding"
-          },
-          {
-            "@id": "http://xmlns.com/foaf/0.1/Agent"
-          }
-        ]
+        "@id": "http://purl.org/cerif/frapo/hasAgentInformation"
       }
     ]
   },
@@ -2193,25 +2227,30 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasAgentInformation",
+    "@id": "http://purl.org/cerif/frapo/hasQuotationDate",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A data property linking an agent to information about that agent."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Agent"
+        "@value": "A data property linking a quotation to its date."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has information"
+        "@value": "has quotation date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/dc/terms/date"
       }
     ]
   },
@@ -2222,26 +2261,9 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/initial",
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A data property permitting specification of the initial(s) of a person's name."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "initials"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/hasPersonalInformation"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
     ]
   },
   {
@@ -2268,65 +2290,31 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasDecisionDate",
+    "@id": "http://purl.org/cerif/frapo/hasAwardDate",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "http://www.w3.org/2002/07/owl#FunctionalProperty"
     ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "This same data property appears in FaBiO, the FRBR-aligned Bibliographic Ontology (http://purl.org/spar/fabio/)."
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The date on which a particular action is or will be decided upon, or when an application, such as a grant application, is or will be approved or rejected. [See also frapo:hasAwardDate.]"
+        "@value": "The date on which notification is given or received that something, for example a scholarship or a grant, has been awarded.  [See also frapo:hasDecisionDate.]"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has decision date"
+        "@value": "has award date"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "http://purl.org/spar/fabio/hasDecisionDate"
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "http://purl.org/dc/terms/date"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/cerif/frapo/hasDegreeSuffix",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The letters that should be displayed after a person's name to indicate an academic degree, e.g. BA, BVSc, PhD, DSc."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has degrees"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/hasNameSuffix"
       }
     ]
   },
@@ -2356,35 +2344,6 @@
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "http://purl.org/cerif/frapo/Service"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/cerif/frapo/isDonatedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "Domain constraints have been removed from this object property to permit it to be used in unforeseen ways."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An object property linking a gift to the benefactor who provided it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is donated by"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Agent"
       }
     ]
   },
@@ -2458,70 +2417,7 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasDeliveryDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The date on which something is delivered, or is due to be delivered."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has delivery date"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://purl.org/dc/terms/date"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/elements/1.1/date",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/cerif/frapo/InfrastructureEntity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "owl:equivalentClass cerif:InfrastructureEntity ."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An entity that facilitates work."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "infrastructure entity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/cerif/frapo/specifiesExpediture",
+    "@id": "http://purl.org/cerif/frapo/donates",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -2534,50 +2430,129 @@
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property relating an agent or a budget to the expenditure specified by that agent or budget."
+        "@value": "An object property linking a benefactor to a gift."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:Nacd6cfd4dd2742eebd2697182b6a91cf"
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "specifies expenditure"
+        "@value": "donates"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/isDonatedBy"
       }
     ]
   },
   {
-    "@id": "http://purl.org/dc/elements/1.1/creator",
+    "@id": "http://purl.org/dc/elements/1.1/date",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasCost",
+    "@id": "http://purl.org/cerif/frapo/ScholarshipApplication",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A data property enabling the cost of something that can be paid for to be defined."
+        "@value": "The activity of applying for an educational scholarship."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has cost"
+        "@value": "scholarship application"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/Application"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/RegistrationAuthority",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An agent with responsibility for registering and maintaining international standards, internet domain names, patents, controlled vocabularies and other similar entities required for reliable international cooperatative activities. For example, the International DOI Foundation (IDF) is the Registration Authority for DOIs."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "registration authority"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Organization"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/FundingProgramme",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A programme of related funded activities or projects, typically established by a funding agency.  Often associated with publication of a call for applications (fabio:CallForApplications)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "funding programme"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/ServiceContract",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A contract for the provision of a service such as a cleaning service, or for the regular servicing, maintenance and repair of some item of equipment or infrastructure."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "service contract"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/Contract"
       }
     ]
   },
   {
     "@id": "http://purl.org/cerif/frapo/entrepreneur",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://xmlns.com/foaf/0.1/Person"
+      "http://xmlns.com/foaf/0.1/Person",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -2612,34 +2587,6 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasQuotationDate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A data property linking a quotation to its date."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has quotation date"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://purl.org/dc/terms/date"
-      }
-    ]
-  },
-  {
     "@id": "http://purl.org/cerif/frapo/hasApplicationOutcome",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -2663,31 +2610,20 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/FundingApplication",
+    "@id": "http://purl.org/cerif/frapo/hasDeliverable",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "For the documents supporting a funding application, use fabio:GrantApplicationDocument and fabio:CaseForSupportDocument."
-      }
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The activity of applying for funding."
+        "@value": "A data property that permits one to define a deliverable of a project."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "funding application"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/Application"
+        "@value": "has deliverable"
       }
     ]
   },
@@ -2825,33 +2761,43 @@
     ]
   },
   {
-    "@id": "_:Nacd6cfd4dd2742eebd2697182b6a91cf",
+    "@id": "http://purl.org/cerif/frapo/Studentship",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://purl.org/cerif/frapo/Budget"
-          },
-          {
-            "@id": "http://xmlns.com/foaf/0.1/Agent"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/cerif/frapo/collaboratesWith",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#SymmetricProperty",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property linking agents, for example different organizations, or people typically from different groups or organizations, that work together on a common task, project or endeavour, or towards a common goal."
+        "@value": "A financial grant to a student to enable him/her to undertake advanced academic study."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "studentship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/Stipend"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/purchasesFrom",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "Domain and range constraints on this object property have been relaxed to permit it to be used in unforeseen ways."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An object property relating a purchaser to a supplier from whom the purchase is made."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -2862,12 +2808,17 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "collaborates with"
+        "@value": "purchases from"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "http://xmlns.com/foaf/0.1/Agent"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/sellsTo"
       }
     ]
   },
@@ -2936,26 +2887,9 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/Funding",
+    "@id": "http://xmlns.com/foaf/0.1/Group",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An amount of money available to finance some project or activity. "
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "funding"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/FinancialEntity"
-      }
     ]
   },
   {
@@ -2994,21 +2928,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/other-costs",
+    "@id": "http://purl.org/cerif/frapo/hasSerialNumber",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/cerif/frapo/BudgetCategory"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A budget category to cover costs not covered in other budget categories."
+        "@value": "A data property linking something, for example a piece of equipment, to its serial number."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "other costs"
+        "@value": "has serial number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/dc/terms/identifier"
       }
     ]
   },
@@ -3021,6 +2959,24 @@
       {
         "@language": "en",
         "@value": "owl:equivalentClass cerf:OrganizationalUnit ."
+      }
+    ]
+  },
+  {
+    "@id": "_:N99e3542457c14a54a1e972cc3ff2214e",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://purl.org/cerif/frapo/Funding"
+          },
+          {
+            "@id": "http://xmlns.com/foaf/0.1/Agent"
+          }
+        ]
       }
     ]
   },
@@ -3189,12 +3145,6 @@
     ]
   },
   {
-    "@id": "http://xmlns.com/foaf/0.1/Group",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
     "@id": "http://purl.org/cerif/frapo/Subscription",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -3270,30 +3220,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/ownsIRPOf",
+    "@id": "http://purl.org/cerif/frapo/Endowment",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property linking an agent who owns IPR arising from or relating to an entity to that entity."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Agent"
+        "@value": "A transfer, generally as a gift, of money or property to an institution to provide a permanent fund, the income from which is to be used for a particular purpose.  (Abbreviated from http://legal-dictionary.thefreedictionary.com/endowment)."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "owns IPR of"
+        "@value": "endowment"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/owns"
+        "@id": "http://purl.org/cerif/frapo/Gift"
       }
     ]
   },
@@ -3321,31 +3266,48 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasOutput",
+    "@id": "http://purl.org/cerif/frapo/Bursary",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "Domain and range constraints have been removed from this object property to permit it to be used in unforeseen ways."
-      }
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property linking an activity such as a project or endeavour to something that is created or produced as a result of that activity.  Examples include a building created as a result of a building project, and a journal article published to describe the results of a research investigation.  "
+        "@value": "An amount of money given to a person by an organization, for example by a university to a university student in need to enable that student to continue his/her studies."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has output"
+        "@value": "bursary"
       }
     ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/isOutputOf"
+        "@id": "http://purl.org/cerif/frapo/Funding"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/NotForProfitOrganization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An organization that does not primarily exist to make profit, for example a charity or charitable foundation, a learned society, or a standards body such as the World Wide Web Consortium."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "not-for-profit organization"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Organization"
       }
     ]
   },
@@ -3718,33 +3680,10 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/Studentship",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A financial grant to a student to enable him/her to undertake advanced academic study."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "studentship"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/Stipend"
-      }
-    ]
-  },
-  {
     "@id": "http://purl.org/cerif/frapo/hasCompletionDate",
     "@type": [
-      "http://www.w3.org/2002/07/owl#FunctionalProperty",
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -3885,21 +3824,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/funded",
+    "@id": "http://purl.org/cerif/frapo/ConferenceFee",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/cerif/frapo/Status"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The status of something such as an investigation or a project as being funded."
+        "@value": "A fee paid to attend a conference."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "funded"
+        "@value": "conference fee"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/Fee"
       }
     ]
   },
@@ -3934,25 +3877,21 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/familyNameInitial",
+    "@id": "http://purl.org/cerif/frapo/funded",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://purl.org/cerif/frapo/Status",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A data property permitting specification of the initial(s) of a person's family name."
+        "@value": "The status of something such as an investigation or a project as being funded."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "family name initial"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/initial"
+        "@value": "funded"
       }
     ]
   },
@@ -4047,8 +3986,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/hasExpiryDate",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+      "http://www.w3.org/2002/07/owl#FunctionalProperty",
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -4121,41 +4060,20 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/purchasesFrom",
+    "@id": "_:Nff19fa71b7a7473fad8767eb2df05ea3",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
-    "http://purl.org/dc/elements/1.1/description": [
+    "http://www.w3.org/2002/07/owl#unionOf": [
       {
-        "@language": "en",
-        "@value": "Domain and range constraints on this object property have been relaxed to permit it to be used in unforeseen ways."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An object property relating a purchaser to a supplier from whom the purchase is made."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Agent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "purchases from"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Agent"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/sellsTo"
+        "@list": [
+          {
+            "@id": "http://purl.org/cerif/frapo/Funding"
+          },
+          {
+            "@id": "http://xmlns.com/foaf/0.1/Agent"
+          }
+        ]
       }
     ]
   },
@@ -4276,6 +4194,29 @@
     ]
   },
   {
+    "@id": "http://purl.org/cerif/frapo/Funding",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An amount of money available to finance some project or activity. "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "funding"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/FinancialEntity"
+      }
+    ]
+  },
+  {
     "@id": "http://purl.org/cerif/frapo/directly-allocated-costs",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -4295,25 +4236,36 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/MaterialOutput",
+    "@id": "http://purl.org/cerif/frapo/isSupportedBy",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "This property is not intended for use to describe mechanical or physical support, as in 'The statue is supported by the plinth'. "
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A material or physical output created or produced as a result of a project or an endeavour such as a research investigation. Examples include a building constructed as a result of a building project, and research outputs such as a cell line, a mouse mutant or a new form of microscope."
+        "@value": "An object property linking something to an agent that provides funding or other support for it."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "material output"
+        "@value": "is supported by"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://purl.org/cerif/frapo/Output"
+        "@id": "_:Nff19fa71b7a7473fad8767eb2df05ea3"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/supports"
       }
     ]
   },
@@ -4365,6 +4317,29 @@
     ]
   },
   {
+    "@id": "http://purl.org/cerif/frapo/Endeavour",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "In FRAPO, an endeavour is an activity such as a research investigation that is enabled by a project.  An endeavour relate to the academic and practical aspects of undertaking that endeavour - thus for a research investigation the research itself, including the hypotheses being investigated, the experiments being undertaken, the data being gathered and analysed, the interpretations being drawn from the data, and the results obtained.  In contrast, the project relates to the administrative aspects of undertaking an endeavour, including the funding obtained, the people employed, and the management of the project in terms of deadlines and deliverables."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "endeavour"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  {
     "@id": "http://purl.org/cerif/frapo/hasDomainName",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -4403,8 +4378,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/estates-costs",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/cerif/frapo/BudgetCategory"
+      "http://purl.org/cerif/frapo/BudgetCategory",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -4420,32 +4395,74 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasSerialNumber",
+    "@id": "http://purl.org/cerif/frapo/other-costs",
+    "@type": [
+      "http://purl.org/cerif/frapo/BudgetCategory",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A budget category to cover costs not covered in other budget categories."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "other costs"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/supports",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "This property is not intended for use to describe mechanical or physical support, as in 'The plinth supports the statue'. "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An object property linking an agent to something that the agent supports by financial or other means."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:N99e3542457c14a54a1e972cc3ff2214e"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "supports"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/familyNameInitial",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A data property linking something, for example a piece of equipment, to its serial number."
+        "@value": "A data property permitting specification of the initial(s) of a person's family name."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has serial number"
+        "@value": "family name initial"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://purl.org/dc/terms/identifier"
+        "@id": "http://purl.org/cerif/frapo/initial"
       }
-    ]
-  },
-  {
-    "@id": "http://xmlns.com/foaf/0.1/Agent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
@@ -4564,21 +4581,30 @@
     ]
   },
   {
-    "@id": "http://www.w3.org/2006/timezone#TimeZone",
+    "@id": "http://purl.org/cerif/frapo/hasGrantNumber",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A data property that permits the time zone relating to an entity to be specified."
+        "@value": "A data property specifying the grant number of a grant provided by a funding agency."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/cerif/frapo/Grant"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has time zone"
+        "@value": "has grant number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/dc/terms/identifier"
       }
     ]
   },
@@ -4771,25 +4797,6 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/non-staff-costs",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/cerif/frapo/BudgetCategory"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A budget category to cover all the costs associated with a project that do not involve the employment of staff by the institution, thus, for example, including consumables purchase, travel costs and consultancy fees, but excluding the salary, estates and indirect costs associated with the allocation of the PI's time to the project and the direct employment of a project manager."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "non-staff costs"
-      }
-    ]
-  },
-  {
     "@id": "http://purl.org/cerif/frapo/purchases",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -4848,36 +4855,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/donates",
+    "@id": "http://purl.org/cerif/frapo/AvailableFunds",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "Range constraints have been removed from this object property to permit it to be used in unforeseen ways."
-      }
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property linking a benefactor to a gift."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Agent"
+        "@value": "The amount available to spend in a budget category, equalling the income minus the expenditure to date plus future expenditure commitments. "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "donates"
+        "@value": "available funds"
       }
     ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/isDonatedBy"
+        "@id": "http://purl.org/cerif/frapo/BudgetInformation"
       }
     ]
   },
@@ -5026,48 +5022,49 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasFaxNumber",
+    "@id": "http://purl.org/cerif/frapo/isOutputOf",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "Domain and range constraints have been removed from this object property to permit it to be used in unforeseen ways."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A data property identifying a Fax number for an agent."
+        "@value": "An object property linking something that is created or produced to the activity that created or produced it."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has fax number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/hasAgentInformation"
+        "@value": "is output of"
       }
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/University",
+    "@id": "http://purl.org/cerif/frapo/submits",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A university at which higher education and research is conducted."
+        "@value": "An object property linking an agent to an entity that is submitted to some third party, for example a grant application submitted to a funding agency, a manuscript submitted to a publisher, a quotation submitted by a vendor, or a dataset submitted by a researcher to a data repository."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "university"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Organization"
+        "@value": "submits"
       }
     ]
   },
@@ -5171,8 +5168,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/unfunded",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/cerif/frapo/Status"
+      "http://purl.org/cerif/frapo/Status",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -5190,8 +5187,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/hasPurchaseDate",
     "@type": [
-      "http://www.w3.org/2002/07/owl#FunctionalProperty",
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -5240,25 +5237,31 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/AccountStatement",
+    "@id": "http://purl.org/cerif/frapo/collaboratesWith",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#SymmetricProperty",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A statement of income and expenditure for an account, typically presented as dated income receipts and outgoings against categories in a budget for that account."
+        "@value": "An object property linking agents, for example different organizations, or people typically from different groups or organizations, that work together on a common task, project or endeavour, or towards a common goal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "account statement"
+        "@value": "collaborates with"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://purl.org/cerif/frapo/FinancialEntity"
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
       }
     ]
   },
@@ -5291,6 +5294,34 @@
     ]
   },
   {
+    "@id": "http://purl.org/cerif/frapo/isManufacturedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An object property relating a manufactured entity to its manufacturer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is manufactured by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/cerif/frapo/Manufacturer"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/manufactures"
+      }
+    ]
+  },
+  {
     "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
@@ -5299,8 +5330,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/benefactor",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://xmlns.com/foaf/0.1/Person"
+      "http://xmlns.com/foaf/0.1/Person",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -5368,20 +5399,31 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasDeliverable",
+    "@id": "http://purl.org/cerif/frapo/FundingApplication",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "For the documents supporting a funding application, use fabio:GrantApplicationDocument and fabio:CaseForSupportDocument."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A data property that permits one to define a deliverable of a project."
+        "@value": "The activity of applying for funding."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has deliverable"
+        "@value": "funding application"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/Application"
       }
     ]
   },
@@ -5509,33 +5551,33 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/AvailableFunds",
+    "@id": "http://purl.org/cerif/frapo/hasHeadcount",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The amount available to spend in a budget category, equalling the income minus the expenditure to date plus future expenditure commitments. "
+        "@value": "A data property specifying the number of people employed by an organization."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "available funds"
+        "@value": "has headcount"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/BudgetInformation"
+        "@id": "http://purl.org/cerif/frapo/hasOrganizationalInformation"
       }
     ]
   },
   {
     "@id": "http://xmlns.com/foaf/0.1/name",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+      "http://www.w3.org/2002/07/owl#AnnotationProperty",
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
@@ -5598,8 +5640,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/consumables-costs",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/cerif/frapo/BudgetCategory"
+      "http://purl.org/cerif/frapo/BudgetCategory",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
@@ -5615,33 +5657,38 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/Endowment",
+    "@id": "http://purl.org/cerif/frapo/ownsIRPOf",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A transfer, generally as a gift, of money or property to an institution to provide a permanent fund, the income from which is to be used for a particular purpose.  (Abbreviated from http://legal-dictionary.thefreedictionary.com/endowment)."
+        "@value": "An object property linking an agent who owns IPR arising from or relating to an entity to that entity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "endowment"
+        "@value": "owns IPR of"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/Gift"
+        "@id": "http://purl.org/cerif/frapo/owns"
       }
     ]
   },
   {
     "@id": "http://xmlns.com/foaf/0.1/givenname",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+      "http://www.w3.org/2002/07/owl#AnnotationProperty",
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
@@ -5675,76 +5722,63 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/hasGrantNumber",
+    "@id": "http://www.w3.org/2006/timezone#TimeZone",
     "@type": [
+      "http://www.w3.org/2002/07/owl#FunctionalProperty",
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A data property specifying the grant number of a grant provided by a funding agency."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://purl.org/cerif/frapo/Grant"
+        "@value": "A data property that permits the time zone relating to an entity to be specified."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has grant number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://purl.org/dc/terms/identifier"
+        "@value": "has time zone"
       }
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/submits",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An object property linking an agent to an entity that is submitted to some third party, for example a grant application submitted to a funding agency, a manuscript submitted to a publisher, a quotation submitted by a vendor, or a dataset submitted by a researcher to a data repository."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://xmlns.com/foaf/0.1/Agent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "submits"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/cerif/frapo/ResearchInstitute",
+    "@id": "http://purl.org/cerif/frapo/University",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An organization primarily dedicated to undertaking research, that might be part of a university or of a commercial company, or might be independently funded by a research funding agency.  "
+        "@value": "A university at which higher education and research is conducted."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "research institute"
+        "@value": "university"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "http://xmlns.com/foaf/0.1/Organization"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/non-staff-costs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/cerif/frapo/BudgetCategory"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A budget category to cover all the costs associated with a project that do not involve the employment of staff by the institution, thus, for example, including consumables purchase, travel costs and consultancy fees, but excluding the salary, estates and indirect costs associated with the allocation of the PI's time to the project and the direct employment of a project manager."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "non-staff costs"
       }
     ]
   },
@@ -5834,35 +5868,6 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/supports",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "This property is not intended for use to describe mechanical or physical support, as in 'The plinth supports the statue'. "
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "An object property linking an agent to something that the agent supports by financial or other means."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:N2db1cf1f9eec44c7bb6e159681465607"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "supports"
-      }
-    ]
-  },
-  {
     "@id": "http://www.w3.org/2000/01/rdf-schema#label",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
@@ -5915,30 +5920,25 @@
     ]
   },
   {
-    "@id": "http://purl.org/cerif/frapo/isManufacturedBy",
+    "@id": "http://purl.org/cerif/frapo/hasDegreeSuffix",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An object property relating a manufactured entity to its manufacturer."
+        "@value": "The letters that should be displayed after a person's name to indicate an academic degree, e.g. BA, BVSc, PhD, DSc."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is manufactured by"
+        "@value": "has degrees"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://purl.org/cerif/frapo/Manufacturer"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://purl.org/cerif/frapo/manufactures"
+        "@id": "http://purl.org/cerif/frapo/hasNameSuffix"
       }
     ]
   },
