@@ -377,7 +377,7 @@ _:N99e3542457c14a54a1e972cc3ff2214e <http://www.w3.org/1999/02/22-rdf-syntax-ns#
 <http://purl.org/cerif/frapo/hasQualification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://purl.org/cerif/frapo/hasInvoiceDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://purl.org/cerif/frapo/Purchase> <http://www.w3.org/2000/01/rdf-schema#label> "purchase"@en .
-<http://purl.org/cerif/frapo> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/swan/2.0/foaf-essential/> .
+<http://purl.org/cerif/frapo> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/spar/foaf> .
 <http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://purl.org/cerif/frapo/hasCustomerNumber> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/identifier> .
 <http://purl.org/cerif/frapo/service-costs> <http://www.w3.org/2000/01/rdf-schema#comment> "A budget category to cover the costs of services used by a project, for example a DNA sequencing service, or an equipment maintenance service."@en .

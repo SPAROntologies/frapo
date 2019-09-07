@@ -42,7 +42,7 @@ FRAPO is not intended to describe the details of research investigations enabled
 **License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 **Website:** http://www.sparontologies.net/ontologies/frapo"""^^xsd:string ;
-    owl:imports <http://purl.org/swan/2.0/foaf-essential/> ;
+    owl:imports <https://w3id.org/spar/foaf> ;
     owl:priorVersion <http://svn.code.sf.net/p/cerif/code/trunk/FRAPO/2014-01-31-FRAPO-1_1.owl> ;
     owl:versionIRI <http://purl.org/cerif/frapo/2017-09-04> ;
     owl:versionInfo "1.1.1"^^xsd:string .

@@ -648,7 +648,7 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "http://purl.org/swan/2.0/foaf-essential/"
+        "@id": "https://w3id.org/spar/foaf"
       }
     ],
     "http://www.w3.org/2002/07/owl#priorVersion": [
