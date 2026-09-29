@@ -1,0 +1,10 @@
+<http://purl.org/cerif/frapo/hasJobTitle> <http://www.w3.org/2004/02/skos/core#note> "\nThis job title properly refers to the **role** held by that person (e.g. \"Head of Department\"), which can be separately defined using SCoRO, the Scholarly Contributions and Roles Ontology (http://purl.org/spar/scoro/).\n    "@en .
+<http://purl.org/cerif/frapo/hasJobTitle> <http://www.w3.org/2000/01/rdf-schema#label> "has job title"@en .
+<http://purl.org/cerif/frapo/hasJobTitle> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasJobTitle> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/cerif/frapo/hasPersonalInformation> .
+<http://purl.org/cerif/frapo/hasJobTitle> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasJobTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasJobTitle> <http://purl.org/vocab/vann/example> "\n    :my-person a foaf:Person ;\n        frapo:hasJobTitle \"Associate Professor\" .\n    " .
+<http://purl.org/cerif/frapo/hasJobTitle> <http://www.w3.org/2000/01/rdf-schema#comment> "The job title held by a person, such as might appear next to the name in a directory or on a conference name badge. For example, the person's specific job title might be \"Linacre Professor of Zoology\" or \"Regius Professor of Moral Philosophy\". \n"@en .
+<http://purl.org/cerif/frapo/hasJobTitle> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/spar/scoro/withJobTitle> .
+<http://purl.org/cerif/frapo/hasJobTitle> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .

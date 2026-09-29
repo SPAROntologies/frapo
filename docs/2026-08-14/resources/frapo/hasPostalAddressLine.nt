@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/hasPostalAddressLine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasPostalAddressLine> <http://www.w3.org/2000/01/rdf-schema#label> "has postal address line"@en .
+<http://purl.org/cerif/frapo/hasPostalAddressLine> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasPostalAddressLine> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/cerif/frapo/PostalAddress> .
+<http://purl.org/cerif/frapo/hasPostalAddressLine> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/cerif/frapo/hasAgentInformation> .
+<http://purl.org/cerif/frapo/hasPostalAddressLine> <http://purl.org/vocab/vann/example> "\n    :my-postal-address a frapo:PostalAddress ;\n        frapo:hasPostalAddressLine \"Via Zamboni 33\" .\n    " .
+<http://purl.org/cerif/frapo/hasPostalAddressLine> <http://www.w3.org/2000/01/rdf-schema#comment> "A single line of a postal address."@en .
+<http://purl.org/cerif/frapo/hasPostalAddressLine> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .

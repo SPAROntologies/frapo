@@ -1,0 +1,23 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:full-economic-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "full economic costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:full-economic-costs .
+    """ ;
+    rdfs:comment "A budget category to cover all the direct and indirect costs of a project. "@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable ;
+    skos:note "Frequently abbreviated \"FEC\"."@en .
+

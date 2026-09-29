@@ -1,0 +1,5 @@
+<http://purl.org/spar/scoro/hasORCID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/scoro/hasORCID> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/scoro/hasORCID> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between an individual and their Open Researcher and Contributor ID (ORCID), an alphanumeric identifier for individual scholars."@en .
+<http://purl.org/spar/scoro/hasORCID> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://purl.org/spar/scoro/hasORCID> <http://www.w3.org/2000/01/rdf-schema#label> "has ORCID"@en .

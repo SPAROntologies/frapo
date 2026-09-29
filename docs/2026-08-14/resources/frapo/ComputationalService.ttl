@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:ComputationalService a owl:Class ;
+    rdfs:label "computational service"@en ;
+    vann:example """
+    :my-computational-service a frapo:ComputationalService ;
+        foaf:name "Quipu Virtual Machine" .
+    """ ;
+    rdfs:comment "A service provided by a computer system."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Service ;
+    vs:term_status reg:statusStable .
+

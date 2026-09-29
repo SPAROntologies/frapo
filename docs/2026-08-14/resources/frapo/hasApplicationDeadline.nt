@@ -1,0 +1,10 @@
+<http://purl.org/cerif/frapo/hasApplicationDeadline> <http://purl.org/vocab/vann/example> "\n    :my-application a frapo:Application ;\n        frapo:hasApplicationDeadline \"2026-10-31T23:59:59\"^^xsd:dateTime .\n    " .
+<http://purl.org/cerif/frapo/hasApplicationDeadline> <http://www.w3.org/2000/01/rdf-schema#label> "has application deadline"@en .
+<http://purl.org/cerif/frapo/hasApplicationDeadline> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasApplicationDeadline> <http://www.w3.org/2000/01/rdf-schema#comment> "The date by which an application, for example a job application, a fellowship application or a grant application, has to be submitted if it is to be considered for acceptance or funding."@en .
+<http://purl.org/cerif/frapo/hasApplicationDeadline> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/date> .
+<http://purl.org/cerif/frapo/hasApplicationDeadline> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.org/cerif/frapo/hasApplicationDeadline> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasApplicationDeadline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasApplicationDeadline> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/cerif/frapo/Application> .
+<http://purl.org/cerif/frapo/hasApplicationDeadline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .

@@ -1,0 +1,9 @@
+<http://purl.org/cerif/frapo/Output> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/Equipment> .
+<http://purl.org/cerif/frapo/Output> <http://www.w3.org/2000/01/rdf-schema#comment> "Something that is created or produced as a result of a project or an endeavour. Examples include a building resulting from a building project, educated students graduating from an educational programme, and a journal article published as a result of a research project. Research outputs can also include reports, datasets, experimental protocols, workflows and mathematical models, and material outputs such as a cell line, a mouse mutant or a new form of microscope."@en .
+<http://purl.org/cerif/frapo/Output> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Output> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://purl.org/cerif/frapo/Output> <http://www.w3.org/2004/02/skos/core#note> "Ontology terms and definitions for most publishable project outputs are given as \"Expression\" classes in FaBiO, the FRBR-aligned Bibliographic Ontology, e.g. `fabio:JournalArticle`, `fabio:DataSet`. For \"deliverables\", use `frapo:Deliverable`. For material outputs, use `frapo:MaterialOutput`."@en .
+<http://purl.org/cerif/frapo/Output> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Output> <http://purl.org/vocab/vann/example> "\n    :my-output a frapo:Output ;\n        dcterms:title \"Bibliographic References Dataset\"@en .\n    " .
+<http://purl.org/cerif/frapo/Output> <http://www.w3.org/2000/01/rdf-schema#label> "output"@en .
+<http://purl.org/cerif/frapo/Output> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Laboratory a owl:Class ;
+    rdfs:label "laboratory"@en ;
+    vann:example """
+    :my-laboratory a frapo:Laboratory ;
+        foaf:name "Research Centre for Open Scholarly Metadata" ; 
+        frapo:hasPostalAddress "Via Zamboni 32, Bologna (BO), Italy" .
+    """ ;
+    rdfs:comment "A facility in which research can be conducted."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Facility ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/hasFunderIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasFunderIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasFunderIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "has funder identifer"@en .
+<http://purl.org/cerif/frapo/hasFunderIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/cerif/frapo/FundingAgency> .
+<http://purl.org/cerif/frapo/hasFunderIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "An identifier for a funding agency."@en .
+<http://purl.org/cerif/frapo/hasFunderIdentifier> <http://purl.org/vocab/vann/example> "\n    :my-funding-agency a frapo:FundingAgency ;\n        frapo:hasFunderIdentifier \"10.13039/501100000781\" .\n    " .
+<http://purl.org/cerif/frapo/hasFunderIdentifier> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasFunderIdentifier> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/identifier> .

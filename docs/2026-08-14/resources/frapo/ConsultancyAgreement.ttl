@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:ConsultancyAgreement a owl:Class ;
+    rdfs:label "consultancy agreement"@en ;
+    vann:example """
+    :my-consultancy-agreement a frapo:ConsultancyAgreement ;
+        frapo:hasStartDate "2026-05-01"^^xsd:date .
+    """ ;
+    rdfs:comment "A contract between an employer and a consultant, detailing the terms of the consultancy."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Contract ;
+    vs:term_status reg:statusStable .
+

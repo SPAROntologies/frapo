@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/ComputationalAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "A computer system or software program whose action has an effect on external events, for example a laboratory robot that undertakes your experiments, or the financial control system that controls an institution's payrole, or that, following programmed business rules, prevents the principal investigator from placing an order for research equipment because there is insufficient money left in the project budget."@en .
+<http://purl.org/cerif/frapo/ComputationalAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/cerif/frapo/ComputationalAgent> <http://www.w3.org/2000/01/rdf-schema#label> "computational agent"@en .
+<http://purl.org/cerif/frapo/ComputationalAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/ComputationalAgent> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/ComputationalAgent> <http://purl.org/vocab/vann/example> "\n    :my-computational-agent a frapo:ComputationalAgent ;\n        foaf:name \"Backup Bot\" ; \n        frapo:isEmployedBy :my-organization .\n    " .
+<http://purl.org/cerif/frapo/ComputationalAgent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .

@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:SME a owl:Class ;
+    rdfs:label "small to medium enterprise"@en,
+        "sme"@en ;
+    vann:example """
+    :my-sme a frapo:SME ;
+        foaf:name "Quipu Inc." .
+    """ ;
+    rdfs:comment "A small to medium enterprise, having up to 250 employees."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Company ;
+    vs:term_status reg:statusStable .
+

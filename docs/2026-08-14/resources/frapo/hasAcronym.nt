@@ -1,0 +1,6 @@
+<http://purl.org/cerif/frapo/hasAcronym> <http://purl.org/vocab/vann/example> "\n    :my-project \n        frapo:hasAcronym \"OPEN-KGP\" .\n    " .
+<http://purl.org/cerif/frapo/hasAcronym> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasAcronym> <http://www.w3.org/2000/01/rdf-schema#comment> "An acronym used to identify an entity, based on its full name or title. For example, this ontology has the full name \"Funding, Research Administration and Projects Ontology\" and the acronym \"FRAPO\"."@en .
+<http://purl.org/cerif/frapo/hasAcronym> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasAcronym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasAcronym> <http://www.w3.org/2000/01/rdf-schema#label> "has acronym"@en .

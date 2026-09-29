@@ -1,0 +1,19 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:submits a owl:ObjectProperty ;
+    rdfs:label "submits"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:submits :my-funding-application .
+    """ ;
+    rdfs:comment "The relation between an agent and an entity that is submitted to some third party, for example a grant application submitted to a funding agency, a manuscript submitted to a publisher, a quotation submitted by a vendor, or a dataset submitted by a researcher to a data repository."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,19 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasBatchNumber a owl:DatatypeProperty ;
+    rdfs:label "has batch number"@en ;
+    vann:example """
+    :my-material-output 
+        frapo:hasBatchNumber "BATCH-2026-X" .
+    """ ;
+    rdfs:comment "The manufacturing batch number for something, for example a chemical or drug."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/hasCurrency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasCurrency> <http://www.w3.org/2000/01/rdf-schema#label> "has currency"@en .
+<http://purl.org/cerif/frapo/hasCurrency> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasCurrency> <http://purl.org/vocab/vann/example> "\n    :my-account-statement \n        frapo:hasCurrency \"euro\" .\n    " .
+<http://purl.org/cerif/frapo/hasCurrency> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasCurrency> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/cerif/frapo/hasMonetaryValue> .
+<http://purl.org/cerif/frapo/hasCurrency> <http://www.w3.org/2000/01/rdf-schema#comment> "The currency used to specify a financial entity."@en .

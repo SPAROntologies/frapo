@@ -1,0 +1,19 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Company a owl:Class ;
+    rdfs:label "company"@en ;
+    vann:example """
+    :my-company a frapo:Company ;
+        foaf:name "Quipu Inc." .
+    """ ;
+    rdfs:comment "A commercial company or business run for profit."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+

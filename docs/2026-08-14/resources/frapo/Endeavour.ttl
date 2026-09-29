@@ -1,0 +1,23 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Endeavour a owl:Class ;
+    rdfs:label "endeavour"@en ;
+    vann:example """
+    :my-endeavour a frapo:Endeavour ;
+        frapo:isEnabledBy :my-project .
+    """ ;
+    rdfs:comment "An activity, such as a research investigation, that is enabled by a project."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+ An endeavour relates to the academic and practical aspects of undertaking that endeavour - thus for a research investigation the research itself, including the hypotheses being investigated, the experiments being undertaken, the data being gathered and analysed, the interpretations being drawn from the data, and the results obtained. 
+ In contrast, the project relates to the administrative aspects of undertaking an endeavour, including the funding obtained, the people employed, and the management of the project in terms of deadlines and deliverables.
+    """@en .
+

@@ -1,0 +1,23 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasIPROwner a owl:ObjectProperty ;
+    rdfs:label "has IPR owner"@en ;
+    vann:example """
+    :my-material-output 
+        frapo:hasIPROwner :my-university .
+
+    :my-university a frapo:University .
+    """ ;
+    rdfs:comment "The relation between an entity such as a project, an endeavour or an output and an agent who owns the IPR arising from or related to that entity."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range foaf:Agent ;
+    rdfs:subPropertyOf frapo:isOwnedBy ;
+    owl:inverseOf frapo:ownsIRPOf ;
+    vs:term_status reg:statusStable .
+

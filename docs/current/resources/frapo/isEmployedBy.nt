@@ -1,0 +1,9 @@
+<http://purl.org/cerif/frapo/isEmployedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is employed by"@en .
+<http://purl.org/cerif/frapo/isEmployedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/cerif/frapo/isEmployedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/isEmployedBy> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/isEmployedBy> <http://purl.org/vocab/vann/example> "\n    :my-person a foaf:Person ;\n        frapo:isEmployedBy :my-university .\n\n    :my-university a frapo:University .\n    " .
+<http://purl.org/cerif/frapo/isEmployedBy> <http://www.w3.org/2004/02/skos/core#note> "This property should not be used for the other meaning of \"employ\", meaning to use something, e.g. \"Great skill is employed by master craftsmen . . .\"/"@en .
+<http://purl.org/cerif/frapo/isEmployedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/cerif/frapo/isEmployedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an employed agent, typically a person or an organization, and an employing agent."@en .
+<http://purl.org/cerif/frapo/isEmployedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .

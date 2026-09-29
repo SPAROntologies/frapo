@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Gift a owl:Class ;
+    rdfs:label "gift"@en ;
+    vann:example """
+    :my-gift a frapo:Gift ;
+        frapo:hasMonetaryValue "1000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A gift, donation, benefaction or legacy, typically of money."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Funding ;
+    vs:term_status reg:statusStable .
+

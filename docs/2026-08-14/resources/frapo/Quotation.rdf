@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/Quotation">
+    <rdfs:comment xml:lang="en">
+A formal statement of promise (usually provided in response to a request for quotation) by potential supplier to supply goods or services at specified prices and within a specified period. Acceptance of the quotation by the buyer constitutes an agreement binding on both parties.
+</rdfs:comment>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:seeAlso rdf:resource="http://www.businessdictionary.com/definition/quotation.html"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/FinancialEntity"/>
+    <vann:example>
+    :my-quotation a frapo:Quotation ;
+        frapo:hasMonetaryValue "10000000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    </vann:example>
+    <rdfs:label xml:lang="en">quotation</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,42 @@
+[
+  {
+    "@id": "http://purl.org/cerif/frapo/full-economic-costs",
+    "@type": [
+      "http://purl.org/cerif/frapo/BudgetCategory",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-budget a frapo:Budget ;\n        frapo:hasBudgetInformation :my-budgeted-amout .\n    \n    :my-budgeted-amount a frapo:BudgetedAmount ;\n        frapo:hasBudgetCategory frapo:full-economic-costs .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A budget category to cover all the direct and indirect costs of a project. "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "full economic costs"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Frequently abbreviated \"FEC\"."
+      }
+    ]
+  }
+]

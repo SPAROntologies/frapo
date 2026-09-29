@@ -1,0 +1,27 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix scoro: <http://purl.org/spar/scoro/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasJobTitle a owl:DatatypeProperty ;
+    rdfs:label "has job title"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasJobTitle "Associate Professor" .
+    """ ;
+    rdfs:comment """The job title held by a person, such as might appear next to the name in a directory or on a conference name badge. For example, the person's specific job title might be "Linacre Professor of Zoology" or "Regius Professor of Moral Philosophy". 
+"""@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:seeAlso scoro:withJobTitle ;
+    rdfs:subPropertyOf frapo:hasPersonalInformation ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+This job title properly refers to the **role** held by that person (e.g. "Head of Department"), which can be separately defined using SCoRO, the Scholarly Contributions and Roles Ontology (http://purl.org/spar/scoro/).
+    """@en .
+

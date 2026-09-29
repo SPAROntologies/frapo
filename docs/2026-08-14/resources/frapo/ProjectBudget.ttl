@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:ProjectBudget a owl:Class ;
+    rdfs:label "project budget"@en ;
+    vann:example """
+    :my-project-budget a frapo:ProjectBudget ;
+        frapo:hasMonetaryValue "300000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A budget for a research project."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Budget ;
+    vs:term_status reg:statusStable .
+

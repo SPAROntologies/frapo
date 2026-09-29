@@ -1,0 +1,11 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix scoro: <http://purl.org/spar/scoro/> .
+
+scoro:hasORCID a owl:DatatypeProperty ;
+    rdfs:label "has ORCID"@en ;
+    rdfs:comment "A relation between an individual and their Open Researcher and Contributor ID (ORCID), an alphanumeric identifier for individual scholars."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy scoro: .
+

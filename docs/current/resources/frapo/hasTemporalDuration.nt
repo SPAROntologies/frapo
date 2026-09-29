@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/hasTemporalDuration> <http://www.w3.org/2000/01/rdf-schema#label> "has temporal duration"@en .
+<http://purl.org/cerif/frapo/hasTemporalDuration> <http://purl.org/vocab/vann/example> "\n    :my-employment-contract \n        frapo:hasTemporalDuration \"2026-01-31/2029-01-31\"^^xsd:dateTime .\n    " .
+<http://purl.org/cerif/frapo/hasTemporalDuration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasTemporalDuration> <http://www.w3.org/2000/01/rdf-schema#comment> "The temporal duration of some entity such as an event or a project."@en .
+<http://purl.org/cerif/frapo/hasTemporalDuration> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasTemporalDuration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasTemporalDuration> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .

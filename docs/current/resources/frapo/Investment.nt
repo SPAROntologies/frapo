@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/Investment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Investment> <http://www.w3.org/2000/01/rdf-schema#comment> "An investment of money, generally in stocks and shares, or in property, for the purpose of safeguarding the capital and yielding an income."@en .
+<http://purl.org/cerif/frapo/Investment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Investment> <http://purl.org/vocab/vann/example> "\n    :my-investment a frapo:Investment ;\n        frapo:hasMonetaryValue \"10000\"^^xsd:decimal ; \n        frapo:hasCurrency \"EUR\" .\n    " .
+<http://purl.org/cerif/frapo/Investment> <http://www.w3.org/2000/01/rdf-schema#label> "investment"@en .
+<http://purl.org/cerif/frapo/Investment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/FinancialEntity> .
+<http://purl.org/cerif/frapo/Investment> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

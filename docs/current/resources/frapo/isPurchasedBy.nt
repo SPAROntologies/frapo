@@ -1,0 +1,9 @@
+<http://purl.org/cerif/frapo/isPurchasedBy> <http://purl.org/vocab/vann/example> "\n    :my-equipment \n        frapo:isPurchasedBy :my-university .\n\n    :my-university a frapo:University .\n    " .
+<http://purl.org/cerif/frapo/isPurchasedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/cerif/frapo/purchases> .
+<http://purl.org/cerif/frapo/isPurchasedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a purchased entity and its purchaser."@en .
+<http://purl.org/cerif/frapo/isPurchasedBy> <http://www.w3.org/2004/02/skos/core#note> "Domain constraints have been removed from this object property to permit it to be used in unforeseen ways."@en .
+<http://purl.org/cerif/frapo/isPurchasedBy> <http://www.w3.org/2000/01/rdf-schema#label> "was purchased by"@en .
+<http://purl.org/cerif/frapo/isPurchasedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/isPurchasedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/isPurchasedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/cerif/frapo/isPurchasedBy> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

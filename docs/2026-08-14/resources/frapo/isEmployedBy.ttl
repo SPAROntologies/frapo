@@ -1,0 +1,24 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:isEmployedBy a owl:ObjectProperty ;
+    rdfs:label "is employed by"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:isEmployedBy :my-university .
+
+    :my-university a frapo:University .
+    """ ;
+    rdfs:comment "The relation between an employed agent, typically a person or an organization, and an employing agent."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range foaf:Agent ;
+    vs:term_status reg:statusStable ;
+    skos:note "This property should not be used for the other meaning of \"employ\", meaning to use something, e.g. \"Great skill is employed by master craftsmen . . .\"/"@en .
+

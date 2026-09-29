@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/funds">
+    <rdfs:label xml:lang="en">funds</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <vann:example>
+    :my-grant
+        frapo:funds :my-project .
+    </vann:example>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/supports"/>
+    <owl:inverseOf rdf:resource="http://purl.org/cerif/frapo/isFundedBy"/>
+    <rdfs:comment xml:lang="en">The relation between a grant and something that it funds (i.e. that it finances or pays for), or that links an agent providing funding to something that it funds.  This flexibility is given because of alternative usages of the English word "funds".  [See also frapo:awards and frapo:supports.]</rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>

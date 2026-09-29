@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/Investigation> <http://www.w3.org/2000/01/rdf-schema#label> "investigation"@en .
+<http://purl.org/cerif/frapo/Investigation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/Endeavour> .
+<http://purl.org/cerif/frapo/Investigation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/Investigation> <http://www.w3.org/2000/01/rdf-schema#comment> "\nAn investigation is an endeavour that involves research, enabled by a project.  \n"@en .
+<http://purl.org/cerif/frapo/Investigation> <http://purl.org/vocab/vann/example> "\n    :my-investigation a frapo:Investigation ;\n        frapo:hasOutput <http://doi.org/10.1016/j.websem.2006.11.002> .\n    " .
+<http://purl.org/cerif/frapo/Investigation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Investigation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Investigation> <http://www.w3.org/2004/02/skos/core#note> "\nThe investigation relate to the scholarly and practical aspects of conducting the research itself, including the hypotheses being investigated, the experiments being undertaken, the data being gathered and analysed, the interpretations being drawn from the data, and the results obtained.  \nIn contrast, the project that enables it encompasses the administrative aspects of undertaking the endeavour, including the funding obtained, the people employed, and the management of the project in terms of deadlines and deliverables.\n    "@en .

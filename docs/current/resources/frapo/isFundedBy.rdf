@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/isFundedBy">
+    <rdfs:comment xml:lang="en">
+The relation between something and the funding that funds it (i.e. that finances or pays for it), or to the funding agency providing that funding.
+This flexibility is given because of alternative usages of the English word "funds".  
+</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/isSupportedBy"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/cerif/frapo/hasFundingAgency"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/cerif/frapo/isAwardedBy"/>
+    <rdfs:label xml:lang="en">is funded by</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vann:example>
+    :my-project 
+        frapo:isFundedBy :my-grant .
+    </vann:example>
+  </rdf:Description>
+</rdf:RDF>

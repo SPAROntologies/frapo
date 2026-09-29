@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:AdmissionApplication a owl:Class ;
+    rdfs:label "admission application"@en ;
+    vann:example """
+    :my-admission-application a frapo:AdmissionApplication ;
+        frapo:isSubmittedBy :my-person .
+    """ ;
+    rdfs:comment "The activity of applying for admission to some group or institution, for example a learned society or a university."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Application ;
+    vs:term_status reg:statusStable .
+

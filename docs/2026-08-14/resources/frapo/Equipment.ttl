@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Equipment a owl:Class ;
+    rdfs:label "equipment"@en ;
+    vann:example """
+    :my-equipment a frapo:Equipment ;
+        foaf:name "Refrigerated centrifuge" .
+    """ ;
+    rdfs:comment "An item of equipment or apparatus, or a laboratory instrument, for example a refrigerated centrifuge."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:InfrastructureEntity ;
+    vs:term_status reg:statusStable .
+

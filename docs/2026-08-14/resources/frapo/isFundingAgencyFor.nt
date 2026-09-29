@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/isFundingAgencyFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/cerif/frapo/supports> .
+<http://purl.org/cerif/frapo/isFundingAgencyFor> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a funding agency and an entity for which it provides funding."@en .
+<http://purl.org/cerif/frapo/isFundingAgencyFor> <http://www.w3.org/2000/01/rdf-schema#label> "is funding agency for"@en .
+<http://purl.org/cerif/frapo/isFundingAgencyFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/isFundingAgencyFor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/isFundingAgencyFor> <http://purl.org/vocab/vann/example> "\n    :my-funding-agency a frapo:FundingAgency ;\n        frapo:isFundingAgencyFor :my-project .\n    " .
+<http://purl.org/cerif/frapo/isFundingAgencyFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/cerif/frapo/FundingAgency> .
+<http://purl.org/cerif/frapo/isFundingAgencyFor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .

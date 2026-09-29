@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/NotForProfitOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
+<http://purl.org/cerif/frapo/NotForProfitOrganization> <http://purl.org/vocab/vann/example> "\n    :my-not-for-profit-organization a frapo:NotForProfitOrganization ;\n        foaf:name \"OpenCitations\" .\n    " .
+<http://purl.org/cerif/frapo/NotForProfitOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/NotForProfitOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "not-for-profit organization"@en .
+<http://purl.org/cerif/frapo/NotForProfitOrganization> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/NotForProfitOrganization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/NotForProfitOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization that does not primarily exist to make profit, for example a charity or charitable foundation, a learned society, or a standards body such as the World Wide Web Consortium."@en .

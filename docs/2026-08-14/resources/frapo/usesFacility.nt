@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/usesFacility> <http://purl.org/vocab/vann/example> "\n    :my-project \n        frapo:usesFacility :my-facility .\n\n    :my-facility a frapo:Facility .\n    " .
+<http://purl.org/cerif/frapo/usesFacility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/usesFacility> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/usesFacility> <http://www.w3.org/2000/01/rdf-schema#label> "uses facility"@en .
+<http://purl.org/cerif/frapo/usesFacility> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/usesFacility> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/cerif/frapo/Facility> .
+<http://purl.org/cerif/frapo/usesFacility> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an activity such as an expedition, a research project or an investigation, and a facility employed in that activity."@en .

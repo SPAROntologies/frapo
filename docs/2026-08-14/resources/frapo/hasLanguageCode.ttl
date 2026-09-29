@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasLanguageCode a owl:DatatypeProperty ;
+    rdfs:label "has language code"@en ;
+    vann:example """
+    :my-document 
+        frapo:hasLanguageCode "en" .
+    """ ;
+    rdfs:comment "The two-letter or three-letter lower-case code used to identify a language (e.g. fr/fra for French, de/deu for Germany) (see http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf frapo:hasCode ;
+    vs:term_status reg:statusStable .
+

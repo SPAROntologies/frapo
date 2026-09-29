@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/spar/pro/withRole">
+    <rdfs:comment xml:lang="en">The relation between an agent's role in time to a definition of the type of role held by this agent.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro/"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/pro/Role"/>
+    <rdfs:label xml:lang="en">with role</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/pro/RoleInTime"/>
+  </rdf:Description>
+</rdf:RDF>

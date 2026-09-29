@@ -1,0 +1,17 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasCost a owl:DatatypeProperty ;
+    rdfs:label "has cost"@en ;
+    vann:example """
+    :my-purchase 
+        frapo:hasCost "1500"^^xsd:decimal .
+    """ ;
+    rdfs:comment "The cost of something that can be paid for to be defined."@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+

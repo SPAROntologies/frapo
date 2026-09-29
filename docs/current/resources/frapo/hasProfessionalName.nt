@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/hasProfessionalName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasProfessionalName> <http://www.w3.org/2000/01/rdf-schema#label> "has alternate name"@en .
+<http://purl.org/cerif/frapo/hasProfessionalName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasProfessionalName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/cerif/frapo/hasPersonalInformation> .
+<http://purl.org/cerif/frapo/hasProfessionalName> <http://purl.org/vocab/vann/example> "\n    :my-person a foaf:Person ;\n        frapo:hasProfessionalName \"J. D. Smith\" .\n    " .
+<http://purl.org/cerif/frapo/hasProfessionalName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasProfessionalName> <http://www.w3.org/2000/01/rdf-schema#comment> "An alternative name that a person uses for professional purposes, for example the pen name of an author, or a married woman's maiden name used as her professional name."@en .

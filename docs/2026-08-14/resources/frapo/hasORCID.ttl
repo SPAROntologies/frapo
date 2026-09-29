@@ -1,0 +1,20 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix scoro: <http://purl.org/spar/scoro/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasORCID a owl:DatatypeProperty ;
+    rdfs:label "has ORCID"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasORCID "0000-0003-0530-4305" .
+    """ ;
+    rdfs:comment "An individual's Open Researcher and Contributor ID (ORCID), an alphanumeric identifier for individual scholars."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf frapo:hasPersonalIdentifier ;
+    owl:equivalentProperty scoro:hasORCID ;
+    vs:term_status reg:statusStable .
+

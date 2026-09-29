@@ -1,0 +1,19 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasReferenceNumber a owl:DatatypeProperty ;
+    rdfs:label "has reference number"@en ;
+    vann:example """
+    :my-contract 
+        frapo:hasReferenceNumber "REF-998822" .
+    """ ;
+    rdfs:comment "The reference number for something."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+

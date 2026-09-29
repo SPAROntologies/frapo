@@ -1,0 +1,13 @@
+<http://purl.org/cerif/frapo/specifiesExpediture> <http://purl.org/vocab/vann/example> "\n    :my-budget a frapo:Budget ;\n        frapo:specifiesExpediture :my-expenditure .\n    " .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n06b5bcfaf1da46349d5b75cf5f81cd9fb3 .
+<http://purl.org/cerif/frapo/specifiesExpediture> <http://www.w3.org/2000/01/rdf-schema#domain> _:n06b5bcfaf1da46349d5b75cf5f81cd9fb1 .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb1 <http://www.w3.org/2002/07/owl#unionOf> _:n06b5bcfaf1da46349d5b75cf5f81cd9fb2 .
+<http://purl.org/cerif/frapo/specifiesExpediture> <http://www.w3.org/2000/01/rdf-schema#label> "specifies expenditure"@en .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/cerif/frapo/Budget> .
+<http://purl.org/cerif/frapo/specifiesExpediture> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an agent or a budget and the expenditure specified by that agent or budget."@en .
+<http://purl.org/cerif/frapo/specifiesExpediture> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/specifiesExpediture> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/specifiesExpediture> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/Agent> .

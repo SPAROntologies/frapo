@@ -1,0 +1,21 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:providesFractionOfTotalFunding a owl:ObjectProperty ;
+    rdfs:label "provides fraction of total funding"@en ;
+    vann:example """
+    :my-funding a frapo:Funding ;
+        frapo:providesFractionOfTotalFunding :my-budget .
+
+    :my-budget a frapo:Budget .
+    """ ;
+    rdfs:comment "The relation between funding and a budget, specifying what fraction of the total budget is provided by that source of funding."@en ;
+    rdfs:domain frapo:Funding ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range frapo:Budget ;
+    vs:term_status reg:statusStable .
+

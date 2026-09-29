@@ -1,0 +1,9 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+pro:RoleInTime a owl:Class ;
+    rdfs:label "role in time"@en ;
+    rdfs:comment "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en ;
+    rdfs:isDefinedBy pro: .
+

@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/funded> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/cerif/frapo/funded> <http://purl.org/vocab/vann/example> "\n    :my-application\n        pso:holdsStatusInTime :my-status-in-time .\n    \n    :my-status-in-time a pso:StatusInTime ;\n        pso:withStatus frapo:funded .\n    " .
+<http://purl.org/cerif/frapo/funded> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/cerif/frapo/Status> .
+<http://purl.org/cerif/frapo/funded> <http://www.w3.org/2000/01/rdf-schema#comment> "The status of something such as an investigation or a project as being funded."@en .
+<http://purl.org/cerif/frapo/funded> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/funded> <http://www.w3.org/2000/01/rdf-schema#label> "funded"@en .
+<http://purl.org/cerif/frapo/funded> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

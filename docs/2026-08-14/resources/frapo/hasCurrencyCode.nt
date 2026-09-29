@@ -1,0 +1,9 @@
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/2004/02/skos/core#note> "\nNot to be confused with the symbol used with numbers to denote an amount of money in a particular currency (e.g.€500; £3.40).\n    "@en .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/cerif/frapo/hasCode> .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/2000/01/rdf-schema#comment> "The three-letter currency code used to identify a currency, as defined by ISO 4217 (e.g. EUR or GBP).  \n"@en .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://en.wikipedia.org/wiki/ISO_4217> .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/2000/01/rdf-schema#label> "has currency code"@en .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://purl.org/vocab/vann/example> "\n    :my-payment \n        frapo:hasCurrencyCode \"EUR\" .\n    " .

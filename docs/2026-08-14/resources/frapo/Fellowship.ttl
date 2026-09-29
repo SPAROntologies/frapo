@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Fellowship a owl:Class ;
+    rdfs:label "fellowship"@en ;
+    vann:example """
+    :my-fellowship a frapo:Fellowship ;
+        frapo:hasMonetaryValue "35000"^^xsd:decimal ; 
+        frapo:isFundedBy :my-funding-agency .
+    """ ;
+    rdfs:comment "The stipend paid to a fellow in a college or university."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Stipend ;
+    vs:term_status reg:statusStable .
+

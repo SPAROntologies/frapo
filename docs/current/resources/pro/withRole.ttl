@@ -1,0 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+pro:withRole a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "with role"@en ;
+    rdfs:comment "The relation between an agent's role in time to a definition of the type of role held by this agent."@en ;
+    rdfs:domain pro:RoleInTime ;
+    rdfs:isDefinedBy pro: ;
+    rdfs:range pro:Role .
+

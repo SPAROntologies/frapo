@@ -1,0 +1,21 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:isSuppliedBy a owl:ObjectProperty ;
+    rdfs:label "is supplied by"@en ;
+    vann:example """
+    :my-service 
+        frapo:isSuppliedBy :my-supplier .
+
+    :my-supplier a frapo:Supplier .
+    """ ;
+    rdfs:comment "The relation between an entity that is supplied, or an agent to whom an entity is supplied, and the supplier."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range frapo:Supplier ;
+    owl:inverseOf frapo:supplies ;
+    vs:term_status reg:statusStable .
+

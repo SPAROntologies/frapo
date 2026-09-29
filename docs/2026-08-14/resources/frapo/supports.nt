@@ -1,0 +1,14 @@
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/2000/01/rdf-schema#label> "supports"@en .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb7 <http://www.w3.org/2002/07/owl#unionOf> _:n06b5bcfaf1da46349d5b75cf5f81cd9fb8 .
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/2004/02/skos/core#note> "This property is not intended for use to describe mechanical or physical support, as in \"The plinth supports the statue\". "@en .
+<http://purl.org/cerif/frapo/supports> <http://purl.org/vocab/vann/example> "\n    :my-grant a frapo:Grant ;\n        frapo:supports :my-project .\n    " .
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/2000/01/rdf-schema#domain> _:n06b5bcfaf1da46349d5b75cf5f81cd9fb7 .
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an agent and something that the agent supports by financial or other means."@en .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/cerif/frapo/Funding> .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n06b5bcfaf1da46349d5b75cf5f81cd9fb9 .
+_:n06b5bcfaf1da46349d5b75cf5f81cd9fb7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

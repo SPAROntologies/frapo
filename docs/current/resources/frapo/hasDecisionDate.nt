@@ -1,0 +1,12 @@
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/cerif/frapo/hasAwardDate> .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/2004/02/skos/core#note> "This same data property appears in FaBiO, the FRBR-aligned Bibliographic Ontology (http://purl.org/spar/fabio/)."@en .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://purl.org/vocab/vann/example> "\n    :my-funding-application \n        frapo:hasDecisionDate \"2026-06-30T12:00:00\"^^xsd:dateTime .\n    " .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which a particular action is or will be decided upon, or when an application, such as a grant application, is or will be approved or rejected."@en .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/2000/01/rdf-schema#label> "has decision date"@en .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/spar/fabio/hasDecisionDate> .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/date> .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasDecisionDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .

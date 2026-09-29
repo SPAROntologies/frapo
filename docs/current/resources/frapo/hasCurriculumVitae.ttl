@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasCurriculumVitae a owl:ObjectProperty ;
+    rdfs:label "has curriculum vitae"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasCurriculumVitae :my-document .
+
+    :my-document a foaf:Document .
+    """ ;
+    rdfs:comment "The relation between a person and an on-line version of that person's curriculum vitae."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range foaf:Document ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:givenNameInitial a owl:DatatypeProperty ;
+    rdfs:label "given name initial"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:givenNameInitial "S" .
+    """ ;
+    rdfs:comment "The initial(s) of a person's given name(s)."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf frapo:initial ;
+    vs:term_status reg:statusStable .
+

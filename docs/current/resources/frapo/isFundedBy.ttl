@@ -1,0 +1,23 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:isFundedBy a owl:ObjectProperty ;
+    rdfs:label "is funded by"@en ;
+    vann:example """
+    :my-project 
+        frapo:isFundedBy :my-grant .
+    """ ;
+    rdfs:comment """
+The relation between something and the funding that funds it (i.e. that finances or pays for it), or to the funding agency providing that funding.
+This flexibility is given because of alternative usages of the English word "funds".  
+"""@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:seeAlso frapo:hasFundingAgency,
+        frapo:isAwardedBy ;
+    rdfs:subPropertyOf frapo:isSupportedBy ;
+    vs:term_status reg:statusStable .
+

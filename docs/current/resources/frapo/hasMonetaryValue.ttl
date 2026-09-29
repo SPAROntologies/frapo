@@ -1,0 +1,21 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasMonetaryValue a owl:DatatypeProperty ;
+    rdfs:label "has value"@en ;
+    vann:example """
+    :my-payment 
+        frapo:hasMonetaryValue "3500"^^xsd:decimal .
+    """ ;
+    rdfs:comment "The monetary value of a financial entity such as a grant, a gift or a budget category."@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+Use in conjuction with `frapo:hasCurrency`.
+    """@en .
+

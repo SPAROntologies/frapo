@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/DocumentRepository">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <skos:note xml:lang="en">May also be described as a document archive, or a digital library.</skos:note>
+    <rdfs:label xml:lang="en">document repository</rdfs:label>
+    <rdfs:comment xml:lang="en">A facility in which digital documents are deposited for long-term preservation and (optional) publication.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/Repository"/>
+    <vann:example>
+    :my-document-repository a frapo:DocumentRepository ;
+        foaf:name "arXiv" .
+    </vann:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

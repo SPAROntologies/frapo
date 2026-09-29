@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/funds> <http://www.w3.org/2000/01/rdf-schema#label> "funds"@en .
+<http://purl.org/cerif/frapo/funds> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/funds> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/funds> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/funds> <http://purl.org/vocab/vann/example> "\n    :my-grant\n        frapo:funds :my-project .\n    " .
+<http://purl.org/cerif/frapo/funds> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/cerif/frapo/supports> .
+<http://purl.org/cerif/frapo/funds> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/cerif/frapo/isFundedBy> .
+<http://purl.org/cerif/frapo/funds> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a grant and something that it funds (i.e. that it finances or pays for), or that links an agent providing funding to something that it funds.  This flexibility is given because of alternative usages of the English word \"funds\".  [See also frapo:awards and frapo:supports.]"@en .

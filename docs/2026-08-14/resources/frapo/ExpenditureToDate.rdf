@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/ExpenditureToDate">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:comment xml:lang="en">Total money expended to date from an an account, or from a particular budget category.</rdfs:comment>
+    <vann:example>
+    :my-expenditure-to-date a frapo:ExpenditureToDate ;
+        frapo:hasMonetaryValue "42000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    </vann:example>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">expenditure to date</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/Expenditure"/>
+  </rdf:Description>
+</rdf:RDF>

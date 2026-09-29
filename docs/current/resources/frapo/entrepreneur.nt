@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/entrepreneur> <http://www.w3.org/2000/01/rdf-schema#label> "entrepreneur"@en .
+<http://purl.org/cerif/frapo/entrepreneur> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/entrepreneur> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/cerif/frapo/entrepreneur> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a person who invests in novel enterprises."@en .
+<http://purl.org/cerif/frapo/entrepreneur> <http://purl.org/vocab/vann/example> "\n    :my-person a foaf:Person ;\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole frapo:entrepreneur .\n    " .
+<http://purl.org/cerif/frapo/entrepreneur> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/scoro/FinancialRole> .
+<http://purl.org/cerif/frapo/entrepreneur> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .

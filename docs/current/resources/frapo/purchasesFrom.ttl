@@ -1,0 +1,23 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:purchasesFrom a owl:ObjectProperty ;
+    rdfs:label "purchases from"@en ;
+    vann:example """
+    :my-university a frapo:University ;
+        frapo:purchasesFrom :my-vendor .
+
+    :my-vendor a frapo:Vendor .
+    """ ;
+    rdfs:comment "The relation between a purchaser and a supplier from whom the purchase is made."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range foaf:Agent ;
+    owl:inverseOf frapo:sellsTo ;
+    vs:term_status reg:statusStable .
+

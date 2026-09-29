@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/purchasesFrom">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <vann:example>
+    :my-university a frapo:University ;
+        frapo:purchasesFrom :my-vendor .
+
+    :my-vendor a frapo:Vendor .
+    </vann:example>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <owl:inverseOf rdf:resource="http://purl.org/cerif/frapo/sellsTo"/>
+    <rdfs:comment xml:lang="en">The relation between a purchaser and a supplier from whom the purchase is made.</rdfs:comment>
+    <rdfs:label xml:lang="en">purchases from</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>
