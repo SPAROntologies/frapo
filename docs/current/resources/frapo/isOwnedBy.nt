@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/isOwnedBy> <http://purl.org/vocab/vann/example> "\n    :my-account \n        frapo:isOwnedBy :my-organization .\n\n    :my-organization a foaf:Organization .\n    " .
+<http://purl.org/cerif/frapo/isOwnedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/cerif/frapo/isOwnedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is owned by"@en .
+<http://purl.org/cerif/frapo/isOwnedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/cerif/frapo/owns> .
+<http://purl.org/cerif/frapo/isOwnedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/isOwnedBy> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/isOwnedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an entity and the agent that owns it."@en .
+<http://purl.org/cerif/frapo/isOwnedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .

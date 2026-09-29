@@ -1,0 +1,6 @@
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/2000/01/rdf-schema#comment> "The date of birth of an agent."@en .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/2000/01/rdf-schema#label> "has birthday"@en .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/date> .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://xmlns.com/foaf/0.1/birthday> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .

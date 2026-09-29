@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/ArticleProcessingCharge">
+    <rdfs:label xml:lang="en">article processing charge</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/Fee"/>
+    <rdfs:comment xml:lang="en">A fee levied by a publisher on an author or an institution to cover the cost of publishing an Open Access journal article.  Also knows as Article Processing Fee, Article Publication Charge, Author Processing Charge or Author Publishing Charge.</rdfs:comment>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <vann:example>
+    :my-article-processing-charge a frapo:ArticleProcessingCharge ;
+        frapo:hasCurrency "USD" ; 
+        frapo:hasValue "2500"^^xsd:decimal .
+    </vann:example>
+  </rdf:Description>
+</rdf:RDF>

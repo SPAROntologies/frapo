@@ -1,0 +1,17 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasAcronym a owl:DatatypeProperty ;
+    rdfs:label "has acronym"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasAcronym "OPEN-KGP" .
+    """ ;
+    rdfs:comment "An acronym used to identify an entity, based on its full name or title. For example, this ontology has the full name \"Funding, Research Administration and Projects Ontology\" and the acronym \"FRAPO\"."@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+

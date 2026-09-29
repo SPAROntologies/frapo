@@ -1,0 +1,24 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasCurrencyCode a owl:DatatypeProperty ;
+    rdfs:label "has currency code"@en ;
+    vann:example """
+    :my-payment 
+        frapo:hasCurrencyCode "EUR" .
+    """ ;
+    rdfs:comment """The three-letter currency code used to identify a currency, as defined by ISO 4217 (e.g. EUR or GBP).  
+"""@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:seeAlso <http://en.wikipedia.org/wiki/ISO_4217> ;
+    rdfs:subPropertyOf frapo:hasCode ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+Not to be confused with the symbol used with numbers to denote an amount of money in a particular currency (e.g.€500; £3.40).
+    """@en .
+

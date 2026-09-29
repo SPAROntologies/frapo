@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/Application">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vann:example>
+    :my-application a frapo:Application ;
+        frapo:hasApplicationDeadline "2026-10-31T23:59:59"^^xsd:dateTime .
+    </vann:example>
+    <rdfs:label xml:lang="en">application</rdfs:label>
+    <rdfs:comment xml:lang="en">The activity of making an application, for example for a job, or for funding.</rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>

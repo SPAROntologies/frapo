@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Invoice a owl:Class ;
+    rdfs:label "invoice"@en ;
+    vann:example """
+    :my-invoice a frapo:Invoice ;
+        frapo:hasInvoiceDate "2026-07-10"^^xsd:date .
+    """ ;
+    rdfs:comment "An invoice for payment of goods or services."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+

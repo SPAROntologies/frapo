@@ -1,0 +1,24 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pso: <http://purl.org/spar/pso/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Status a owl:Class ;
+    rdfs:label "status"@en ;
+    vann:example """
+    :my-application
+        pso:holdsStatusInTime :my-status-in-time .
+    
+    :my-status-in-time a pso:StatusInTime ;
+        pso:withStatus frapo:accepted .
+    
+    frapo:accepted a frapo:Status .
+    """ ;
+    rdfs:comment "The status of something such as an application, an investigation or a project."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf pso:Status ;
+    vs:term_status reg:statusStable .
+

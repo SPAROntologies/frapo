@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/RegistrationAuthority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/RegistrationAuthority> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent with responsibility for registering and maintaining international standards, internet domain names, patents, controlled vocabularies and other similar entities required for reliable international cooperatative activities. For example, the International DOI Foundation (IDF) is the Registration Authority for DOIs."@en .
+<http://purl.org/cerif/frapo/RegistrationAuthority> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
+<http://purl.org/cerif/frapo/RegistrationAuthority> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/RegistrationAuthority> <http://purl.org/vocab/vann/example> "\n    :my-registration-authority a frapo:RegistrationAuthority ;\n        foaf:name \"International DOI Foundation\" .\n    " .
+<http://purl.org/cerif/frapo/RegistrationAuthority> <http://www.w3.org/2000/01/rdf-schema#label> "registration authority"@en .
+<http://purl.org/cerif/frapo/RegistrationAuthority> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

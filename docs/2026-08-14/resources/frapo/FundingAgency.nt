@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/FundingAgency> <http://purl.org/vocab/vann/example> "\n    :my-funding-agency a frapo:FundingAgency ;\n        foaf:name \"The National Science Foundation\" .\n    " .
+<http://purl.org/cerif/frapo/FundingAgency> <http://www.w3.org/2000/01/rdf-schema#label> "funding agency"@en .
+<http://purl.org/cerif/frapo/FundingAgency> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization that provides funding for projects or resources, often in the form of grants awarded on the basis of competitive application."@en .
+<http://purl.org/cerif/frapo/FundingAgency> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/FundingAgency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/FundingAgency> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/FundingAgency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .

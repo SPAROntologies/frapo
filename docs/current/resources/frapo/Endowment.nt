@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/Endowment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Endowment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Endowment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/Gift> .
+<http://purl.org/cerif/frapo/Endowment> <http://www.w3.org/2000/01/rdf-schema#label> "endowment"@en .
+<http://purl.org/cerif/frapo/Endowment> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/Endowment> <http://purl.org/vocab/vann/example> "\n    :my-endowment a frapo:Endowment ;\n        frapo:hasMonetaryValue \"500000\"^^xsd:decimal ; \n        frapo:hasCurrency \"USD\" .\n    " .
+<http://purl.org/cerif/frapo/Endowment> <http://www.w3.org/2000/01/rdf-schema#comment> "A transfer, generally as a gift, of money or property to an institution to provide a permanent fund, the income from which is to be used for a particular purpose."@en .

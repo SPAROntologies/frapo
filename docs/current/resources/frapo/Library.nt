@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/Library> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Library> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Library> <http://www.w3.org/2000/01/rdf-schema#comment> "A facility in which printed documents (for example books and journals) are deposited for long-term preservation and access."@en .
+<http://purl.org/cerif/frapo/Library> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/Repository> .
+<http://purl.org/cerif/frapo/Library> <http://www.w3.org/2000/01/rdf-schema#label> "library"@en .
+<http://purl.org/cerif/frapo/Library> <http://purl.org/vocab/vann/example> "\n    :my-library a frapo:Library ;\n        foaf:name \"Biblioteca Umanistica \"Ezio Raimondi\"\" .\n    " .

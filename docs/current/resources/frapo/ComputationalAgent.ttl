@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:ComputationalAgent a owl:Class ;
+    rdfs:label "computational agent"@en ;
+    vann:example """
+    :my-computational-agent a frapo:ComputationalAgent ;
+        foaf:name "Backup Bot" ; 
+        frapo:isEmployedBy :my-organization .
+    """ ;
+    rdfs:comment "A computer system or software program whose action has an effect on external events, for example a laboratory robot that undertakes your experiments, or the financial control system that controls an institution's payrole, or that, following programmed business rules, prevents the principal investigator from placing an order for research equipment because there is insufficient money left in the project budget."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf foaf:Agent ;
+    vs:term_status reg:statusStable .
+

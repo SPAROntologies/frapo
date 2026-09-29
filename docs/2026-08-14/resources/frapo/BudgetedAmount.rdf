@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/BudgetedAmount">
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">budgeted amount</rdfs:label>
+    <vann:example>
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:travel-and-subsistence-costs .
+    </vann:example>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/BudgetInformation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:comment xml:lang="en">The amount of money originally available to spend in a particular budget category.</rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>

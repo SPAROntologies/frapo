@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:SpinOffCompany a owl:Class ;
+    rdfs:label "spin-off company"@en ;
+    vann:example """
+    :my-spin-off-company a frapo:SpinOffCompany ;
+        foaf:name "Quipu Inc." .
+    """ ;
+    rdfs:comment "A company that has been established by a university or research institute to mature and market the results of research conducted at that research institution."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Company ;
+    vs:term_status reg:statusStable .
+

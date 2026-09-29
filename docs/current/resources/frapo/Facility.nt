@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/Facility> <http://www.w3.org/2000/01/rdf-schema#comment> "A place or installation built or designed to serve a specific function or provide a specific service, for example an animal breeding centre, a DNA sequencing facility or a confocal imaging laboratory."@en .
+<http://purl.org/cerif/frapo/Facility> <http://purl.org/vocab/vann/example> "\n    :my-facility a frapo:Facility ;\n        foaf:name \"Quipu DNA Sequencing Facility\"@en .\n    " .
+<http://purl.org/cerif/frapo/Facility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Facility> <http://www.w3.org/2000/01/rdf-schema#label> "facility"@en .
+<http://purl.org/cerif/frapo/Facility> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/Facility> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Facility> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/InfrastructureEntity> .

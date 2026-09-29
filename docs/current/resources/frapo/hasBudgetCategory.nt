@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/hasBudgetCategory> <http://www.w3.org/2000/01/rdf-schema#label> "has budget category"@en .
+<http://purl.org/cerif/frapo/hasBudgetCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/cerif/frapo/BudgetInformation> .
+<http://purl.org/cerif/frapo/hasBudgetCategory> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/cerif/frapo/BudgetCategory> .
+<http://purl.org/cerif/frapo/hasBudgetCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasBudgetCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between some budget information and its category."@en .
+<http://purl.org/cerif/frapo/hasBudgetCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/hasBudgetCategory> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasBudgetCategory> <http://purl.org/vocab/vann/example> "\n    :my-budget a frapo:Budget ;\n        frapo:hasBudgetInformation :travel-budgeted .\n    \n    :travel-budgeted a frapo:BudgetInformation ;\n        frapo:hasBudgetCategory frapo:travel-and-subsistence-costs .\n\n    frapo:travel-and-subsistence-costs a frapo:BudgetCategory .\n    "@en .

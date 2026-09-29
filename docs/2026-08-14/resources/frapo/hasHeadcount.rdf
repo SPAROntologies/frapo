@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasHeadcount">
+    <vann:example>
+    :my-research-group a frapo:ResearchGroup ;
+        frapo:hasHeadcount "12"^^xsd:nonNegativeInteger .
+    </vann:example>
+    <rdfs:comment xml:lang="en">The number of people employed by an organization.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/hasOrganizationalInformation"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has headcount</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+  </rdf:Description>
+</rdf:RDF>

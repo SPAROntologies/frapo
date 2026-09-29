@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Application a owl:Class ;
+    rdfs:label "application"@en ;
+    vann:example """
+    :my-application a frapo:Application ;
+        frapo:hasApplicationDeadline "2026-10-31T23:59:59"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The activity of making an application, for example for a job, or for funding."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable .
+

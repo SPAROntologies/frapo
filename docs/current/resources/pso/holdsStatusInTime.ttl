@@ -1,0 +1,10 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pso: <http://purl.org/spar/pso/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+pso:holdsStatusInTime a owl:ObjectProperty ;
+    rdfs:label "holds status in time"@en ;
+    rdfs:comment "The relation between a document, a dataset or some other thing and a status that it holds at a specific time."@en ;
+    rdfs:isDefinedBy pso: ;
+    rdfs:range pso:StatusInTime .
+

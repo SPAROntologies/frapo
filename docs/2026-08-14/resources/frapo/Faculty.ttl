@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Faculty a owl:Class ;
+    rdfs:label "faculty"@en ;
+    vann:example """
+    :my-faculty a frapo:Faculty ;
+        foaf:name "Faculty of Engineering" .
+    """ ;
+    rdfs:comment "A grouping of similar departments within a university context, also known as a school or a division, for example the Humanities Division, the Mathematics Faculty, or the School of Medicine."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Division ;
+    vs:term_status reg:statusStable .
+

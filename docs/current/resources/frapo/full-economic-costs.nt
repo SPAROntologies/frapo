@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/full-economic-costs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/cerif/frapo/BudgetCategory> .
+<http://purl.org/cerif/frapo/full-economic-costs> <http://www.w3.org/2000/01/rdf-schema#label> "full economic costs"@en .
+<http://purl.org/cerif/frapo/full-economic-costs> <http://www.w3.org/2000/01/rdf-schema#comment> "A budget category to cover all the direct and indirect costs of a project. "@en .
+<http://purl.org/cerif/frapo/full-economic-costs> <http://www.w3.org/2004/02/skos/core#note> "Frequently abbreviated \"FEC\"."@en .
+<http://purl.org/cerif/frapo/full-economic-costs> <http://purl.org/vocab/vann/example> "\n    :my-budget a frapo:Budget ;\n        frapo:hasBudgetInformation :my-budgeted-amout .\n    \n    :my-budgeted-amount a frapo:BudgetedAmount ;\n        frapo:hasBudgetCategory frapo:full-economic-costs .\n    " .
+<http://purl.org/cerif/frapo/full-economic-costs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/cerif/frapo/full-economic-costs> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/full-economic-costs> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

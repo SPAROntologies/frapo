@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/isDonatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/isDonatedBy> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/isDonatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a gift and the benefactor who provided it."@en .
+<http://purl.org/cerif/frapo/isDonatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is donated by"@en .
+<http://purl.org/cerif/frapo/isDonatedBy> <http://purl.org/vocab/vann/example> "\n    :my-gift \n        frapo:isDonatedBy :my-person .\n\n    :my-person a foaf:Person .\n    " .
+<http://purl.org/cerif/frapo/isDonatedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/isDonatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .

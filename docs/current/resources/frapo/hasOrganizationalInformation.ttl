@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasOrganizationalInformation a owl:DatatypeProperty ;
+    rdfs:label "has organizational information"@en ;
+    vann:example """
+    :my-organization a foaf:Organization ;
+        frapo:hasOrganizationalInformation "Non-profit research institute founded in 1980" .
+    """ ;
+    rdfs:comment "Some information about the organization."@en ;
+    rdfs:domain foaf:Organization ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf frapo:hasAgentInformation ;
+    vs:term_status reg:statusStable .
+

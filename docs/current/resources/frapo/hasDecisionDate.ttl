@@ -1,0 +1,27 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+frapo:hasDecisionDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has decision date"@en ;
+    vann:example """
+    :my-funding-application 
+        frapo:hasDecisionDate "2026-06-30T12:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The date on which a particular action is or will be decided upon, or when an application, such as a grant application, is or will be approved or rejected."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range xsd:dateTime ;
+    rdfs:seeAlso frapo:hasAwardDate,
+        fabio:hasDecisionDate ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable ;
+    skos:note "This same data property appears in FaBiO, the FRBR-aligned Bibliographic Ontology (http://purl.org/spar/fabio/)."@en .
+

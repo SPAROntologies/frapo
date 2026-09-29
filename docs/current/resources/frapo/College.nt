@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/College> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/College> <http://www.w3.org/2000/01/rdf-schema#label> "college"@en .
+<http://purl.org/cerif/frapo/College> <http://purl.org/vocab/vann/example> "\n    :my-college a frapo:College ;\n        foaf:name \"Trinity College\" ;\n        frapo:collaboratesWith :my-university .\n    " .
+<http://purl.org/cerif/frapo/College> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
+<http://purl.org/cerif/frapo/College> <http://www.w3.org/2000/01/rdf-schema#comment> "An academic organization that is either a small degree-giving university, or (in the OxBridge sense) an independent corporation of scholars within a larger university, providing undergraduate tuition and a social environment for its students and fellows."@en .
+<http://purl.org/cerif/frapo/College> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/College> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

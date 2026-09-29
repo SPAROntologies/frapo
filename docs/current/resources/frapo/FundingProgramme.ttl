@@ -1,0 +1,23 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:FundingProgramme a owl:Class ;
+    rdfs:label "funding programme"@en ;
+    vann:example """
+    :my-funding-programme a frapo:FundingProgramme ;
+        dcterms:title "Horizon Europe" ;
+        dcterms:relation :my-call-for-applications .
+
+    :my-call-for-applications a fabio:CallForApplications .
+    """ ;
+    rdfs:comment "A programme of related funded activities or projects, typically established by a funding agency."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable ;
+    skos:note "Often associated with publication of a call for applications (`fabio:CallForApplications`)."@en .
+

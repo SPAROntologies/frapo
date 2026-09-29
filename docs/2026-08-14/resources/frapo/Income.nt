@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/Income> <http://www.w3.org/2004/02/skos/core#note> "May be associated with a particular budget category."@en .
+<http://purl.org/cerif/frapo/Income> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/Income> <http://purl.org/vocab/vann/example> "\n    :my-income a frapo:Income ;\n        frapo:hasMonetaryValue \"120000\"^^xsd:decimal ; \n        frapo:hasCurrency \"EUR\" .\n    " .
+<http://purl.org/cerif/frapo/Income> <http://www.w3.org/2000/01/rdf-schema#label> "income"@en .
+<http://purl.org/cerif/frapo/Income> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Income> <http://www.w3.org/2000/01/rdf-schema#comment> "Money coming into an account."@en .
+<http://purl.org/cerif/frapo/Income> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/BudgetInformation> .
+<http://purl.org/cerif/frapo/Income> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .

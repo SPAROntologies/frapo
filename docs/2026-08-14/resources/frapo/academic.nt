@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/academic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/cerif/frapo/academic> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/academic> <http://purl.org/vocab/vann/example> "\n    :my-person a foaf:Person ;\n        pro:holdsRoleInTime :my-person-role .\n\n    :my-person-role a pro:RoleInTime ;\n        pro:withRole frapo:academic .    \n    " .
+<http://purl.org/cerif/frapo/academic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spar/scoro/OrganizationRole> .
+<http://purl.org/cerif/frapo/academic> <http://www.w3.org/2000/01/rdf-schema#label> "academic"@en .
+<http://purl.org/cerif/frapo/academic> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/academic> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a member of the academic staff of an academic institution, such as a university."@en .

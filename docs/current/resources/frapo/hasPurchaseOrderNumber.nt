@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/hasPurchaseOrderNumber> <http://www.w3.org/2000/01/rdf-schema#label> "has purchase order number"@en .
+<http://purl.org/cerif/frapo/hasPurchaseOrderNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "An official purchase order issued by a purchasing agent to a supplier of goods or services, and used by the supplier to identify the order when delivering goods or submitting an invoice."@en .
+<http://purl.org/cerif/frapo/hasPurchaseOrderNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasPurchaseOrderNumber> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasPurchaseOrderNumber> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasPurchaseOrderNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/cerif/frapo/PurchaseOrder> .
+<http://purl.org/cerif/frapo/hasPurchaseOrderNumber> <http://purl.org/vocab/vann/example> "\n    :my-purchase-order a frapo:PurchaseOrder ;\n        frapo:hasPurchaseOrderNumber \"PO-2026-0045\" .\n    " .
+<http://purl.org/cerif/frapo/hasPurchaseOrderNumber> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/identifier> .

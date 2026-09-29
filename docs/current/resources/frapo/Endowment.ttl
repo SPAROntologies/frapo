@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Endowment a owl:Class ;
+    rdfs:label "endowment"@en ;
+    vann:example """
+    :my-endowment a frapo:Endowment ;
+        frapo:hasMonetaryValue "500000"^^xsd:decimal ; 
+        frapo:hasCurrency "USD" .
+    """ ;
+    rdfs:comment "A transfer, generally as a gift, of money or property to an institution to provide a permanent fund, the income from which is to be used for a particular purpose."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Gift ;
+    vs:term_status reg:statusStable .
+

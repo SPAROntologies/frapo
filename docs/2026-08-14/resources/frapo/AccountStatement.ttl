@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:AccountStatement a owl:Class ;
+    rdfs:label "account statement"@en ;
+    vann:example """
+	:my-account-statement a frapo:AccountStatement ;
+        frapo:hasMonetaryValue "5000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A statement of income and expenditure for an account, typically presented as dated income receipts and outgoings against categories in a budget for that account."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/spar/pro/holdsRoleInTime">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro/"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/pro/RoleInTime"/>
+    <rdfs:comment xml:lang="en">The relation between an agent and a role that the agent holds.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">holds role in time</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

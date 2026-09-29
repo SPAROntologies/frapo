@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/PurchaseOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/PurchaseOrder> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/PurchaseOrder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/FinancialEntity> .
+<http://purl.org/cerif/frapo/PurchaseOrder> <http://www.w3.org/2000/01/rdf-schema#label> "purchase order"@en .
+<http://purl.org/cerif/frapo/PurchaseOrder> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/PurchaseOrder> <http://www.w3.org/2000/01/rdf-schema#comment> "An official order from a purchasing institution to a supplier for the purchase of goods or services, often issued in response to the receipt of a quotation from the supplier."@en .
+<http://purl.org/cerif/frapo/PurchaseOrder> <http://purl.org/vocab/vann/example> "\n    :my-purchase-order a frapo:PurchaseOrder ;\n        frapo:hasPurchaseOrderNumber \"PO-2026-0045\" .\n    " .

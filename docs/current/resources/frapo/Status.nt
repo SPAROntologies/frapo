@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/Status> <http://www.w3.org/2000/01/rdf-schema#comment> "The status of something such as an application, an investigation or a project."@en .
+<http://purl.org/cerif/frapo/Status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Status> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/Status> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/pso/Status> .
+<http://purl.org/cerif/frapo/Status> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Status> <http://www.w3.org/2000/01/rdf-schema#label> "status"@en .
+<http://purl.org/cerif/frapo/Status> <http://purl.org/vocab/vann/example> "\n    :my-application\n        pso:holdsStatusInTime :my-status-in-time .\n    \n    :my-status-in-time a pso:StatusInTime ;\n        pso:withStatus frapo:accepted .\n    \n    frapo:accepted a frapo:Status .\n    " .

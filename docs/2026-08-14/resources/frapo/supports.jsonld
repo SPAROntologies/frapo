@@ -1,0 +1,64 @@
+[
+  {
+    "@id": "http://purl.org/cerif/frapo/supports",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-grant a frapo:Grant ;\n        frapo:supports :my-project .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between an agent and something that the agent supports by financial or other means."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:n06b5bcfaf1da46349d5b75cf5f81cd9fb7"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "supports"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "This property is not intended for use to describe mechanical or physical support, as in \"The plinth supports the statue\". "
+      }
+    ]
+  },
+  {
+    "@id": "_:n06b5bcfaf1da46349d5b75cf5f81cd9fb7",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://purl.org/cerif/frapo/Funding"
+          },
+          {
+            "@id": "http://xmlns.com/foaf/0.1/Agent"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Commitments a owl:Class ;
+    rdfs:label "commitments"@en ;
+    vann:example """
+    :my-commitments a frapo:Commitments ;
+        frapo:hasCurrency "EUR" ; 
+        frapo:hasValue "45000"^^xsd:decimal .
+    """ ;
+    rdfs:comment "Money set aside to honour expenditures already made but for which no invoices have yet been received, or expenditures planned for the future, for example for salaries."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:BudgetInformation ;
+    vs:term_status reg:statusStable .
+

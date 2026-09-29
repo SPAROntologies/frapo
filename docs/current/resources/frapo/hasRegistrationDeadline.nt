@@ -1,0 +1,9 @@
+<http://purl.org/cerif/frapo/hasRegistrationDeadline> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.org/cerif/frapo/hasRegistrationDeadline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://purl.org/cerif/frapo/hasRegistrationDeadline> <http://www.w3.org/2000/01/rdf-schema#label> "has registration deadline"@en .
+<http://purl.org/cerif/frapo/hasRegistrationDeadline> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasRegistrationDeadline> <http://www.w3.org/2000/01/rdf-schema#comment> "The date by which registration must be made, for example renewal of an internet domain name."@en .
+<http://purl.org/cerif/frapo/hasRegistrationDeadline> <http://purl.org/vocab/vann/example> "\n    :my-funding-programme \n        frapo:hasRegistrationDeadline \"2026-09-30T17:00:00\"^^xsd:dateTime . \n    " .
+<http://purl.org/cerif/frapo/hasRegistrationDeadline> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/date> .
+<http://purl.org/cerif/frapo/hasRegistrationDeadline> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasRegistrationDeadline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .

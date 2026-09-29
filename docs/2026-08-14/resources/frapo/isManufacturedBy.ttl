@@ -1,0 +1,21 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:isManufacturedBy a owl:ObjectProperty ;
+    rdfs:label "is manufactured by"@en ;
+    vann:example """
+    :my-equipment 
+        frapo:isManufacturedBy :my-manufacturer .
+    
+    :my-manufacturer a frapo:Manufacturer .
+    """ ;
+    rdfs:comment "The relation between a manufactured entity and its manufacturer."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range frapo:Manufacturer ;
+    owl:inverseOf frapo:manufactures ;
+    vs:term_status reg:statusStable .
+

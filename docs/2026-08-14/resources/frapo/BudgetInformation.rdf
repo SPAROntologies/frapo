@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/BudgetInformation">
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vann:example>
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :travel-budgeted .
+    
+    :travel-budgeted a frapo:BudgetInformation .
+    </vann:example>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/FinancialEntity"/>
+    <rdfs:comment xml:lang="en">Information about an aspect of a budget.</rdfs:comment>
+    <rdfs:label xml:lang="en">budget information</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/Vendor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/Vendor> <http://www.w3.org/2000/01/rdf-schema#label> "vendor"@en .
+<http://purl.org/cerif/frapo/Vendor> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent who supplies goods or services in exchange for payment, in response to receipt of payment or of an official purchase order from a purchaser that is responded to by submission of an invoice for what is supplied."@en .
+<http://purl.org/cerif/frapo/Vendor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Vendor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/Supplier> .
+<http://purl.org/cerif/frapo/Vendor> <http://purl.org/vocab/vann/example> "\n    :my-vendor a frapo:Vendor ;\n        foaf:name \"Quipu Inc.\" .\n    " .
+<http://purl.org/cerif/frapo/Vendor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .

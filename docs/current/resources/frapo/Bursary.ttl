@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Bursary a owl:Class ;
+    rdfs:label "bursary"@en ;
+    vann:example """
+    :my-bursary a frapo:Bursary ;
+        frapo:hasValue "5000"^^xsd:decimal ;
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "An amount of money given to a person by an organization, for example by a university to a university student in need to enable that student to continue his/her studies."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Funding ;
+    vs:term_status reg:statusStable .
+

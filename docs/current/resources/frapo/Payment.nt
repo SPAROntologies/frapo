@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/Payment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Payment> <http://www.w3.org/2000/01/rdf-schema#label> "payment"@en .
+<http://purl.org/cerif/frapo/Payment> <http://purl.org/vocab/vann/example> "\n    :my-payment a frapo:Payment ;\n        frapo:hasMonetaryValue \"2000\"^^xsd:decimal ; \n        frapo:hasCurrency \"EUR\" .\n    " .
+<http://purl.org/cerif/frapo/Payment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/FinancialEntity> .
+<http://purl.org/cerif/frapo/Payment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Payment> <http://www.w3.org/2000/01/rdf-schema#comment> "A financial payment made, for example in exchange for something purchased such as property, goods or services, or to refund expenses incurred."@en .
+<http://purl.org/cerif/frapo/Payment> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

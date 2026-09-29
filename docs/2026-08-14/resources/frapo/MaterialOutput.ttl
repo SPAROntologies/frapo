@@ -1,0 +1,17 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:MaterialOutput a owl:Class ;
+    rdfs:label "material output"@en ;
+    vann:example """
+    :my-material-output a frapo:MaterialOutput .
+    """ ;
+    rdfs:comment "A material or physical output created or produced as a result of a project or an endeavour such as a research investigation. Examples include a building constructed as a result of a building project, and research outputs such as a cell line, a mouse mutant or a new form of microscope."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Output ;
+    vs:term_status reg:statusStable .
+

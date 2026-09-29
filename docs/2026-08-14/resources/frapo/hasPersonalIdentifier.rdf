@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasPersonalIdentifier">
+    <rdfs:comment xml:lang="en">A unique and unambiguous identifier for an individual person within a given context.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/hasPersonalInformation"/>
+    <owl:equivalentProperty rdf:resource="http://purl.org/spar/scoro/hasPersonalIdentifier"/>
+    <vann:example>
+    :my-person a foaf:Person ;
+        frapo:hasPersonalIdentifier "ID-992384" .
+    </vann:example>
+    <rdfs:label xml:lang="en">has personal identifier</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+</rdf:RDF>

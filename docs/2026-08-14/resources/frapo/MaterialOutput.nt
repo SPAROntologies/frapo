@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/MaterialOutput> <http://purl.org/vocab/vann/example> "\n    :my-material-output a frapo:MaterialOutput .\n    " .
+<http://purl.org/cerif/frapo/MaterialOutput> <http://www.w3.org/2000/01/rdf-schema#label> "material output"@en .
+<http://purl.org/cerif/frapo/MaterialOutput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/MaterialOutput> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/MaterialOutput> <http://www.w3.org/2000/01/rdf-schema#comment> "A material or physical output created or produced as a result of a project or an endeavour such as a research investigation. Examples include a building constructed as a result of a building project, and research outputs such as a cell line, a mouse mutant or a new form of microscope."@en .
+<http://purl.org/cerif/frapo/MaterialOutput> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/MaterialOutput> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/Output> .

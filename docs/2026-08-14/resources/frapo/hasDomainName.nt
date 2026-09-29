@@ -1,0 +1,6 @@
+<http://purl.org/cerif/frapo/hasDomainName> <http://purl.org/vocab/vann/example> "\n    :my-university \n        frapo:hasDomainName \"unibo.it\" .\n    " .
+<http://purl.org/cerif/frapo/hasDomainName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasDomainName> <http://www.w3.org/2000/01/rdf-schema#label> "has domain name"@en .
+<http://purl.org/cerif/frapo/hasDomainName> <http://www.w3.org/2000/01/rdf-schema#comment> "An internet domain name that has been registered for an entity, for example http://www.miidi.org for MIIDI, the Minimal Information standard for reporting an Infectious Disease Investigation."@en .
+<http://purl.org/cerif/frapo/hasDomainName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasDomainName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .

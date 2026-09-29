@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/Repository> <http://www.w3.org/2000/01/rdf-schema#label> "repository"@en .
+<http://purl.org/cerif/frapo/Repository> <http://www.w3.org/2000/01/rdf-schema#comment> "A facility in which entities can be deposited for long-term preservation."@en .
+<http://purl.org/cerif/frapo/Repository> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/Facility> .
+<http://purl.org/cerif/frapo/Repository> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Repository> <http://www.w3.org/2004/02/skos/core#note> "May also be described as an archive, or as a database."@en .
+<http://purl.org/cerif/frapo/Repository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Repository> <http://purl.org/vocab/vann/example> "\n    :my-repository a frapo:Repository ;\n        foaf:name \"Zenodo\" .\n    " .
+<http://purl.org/cerif/frapo/Repository> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

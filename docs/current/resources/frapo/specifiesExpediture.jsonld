@@ -1,0 +1,58 @@
+[
+  {
+    "@id": "http://purl.org/cerif/frapo/specifiesExpediture",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-budget a frapo:Budget ;\n        frapo:specifiesExpediture :my-expenditure .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between an agent or a budget and the expenditure specified by that agent or budget."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:n06b5bcfaf1da46349d5b75cf5f81cd9fb1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "specifies expenditure"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "_:n06b5bcfaf1da46349d5b75cf5f81cd9fb1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://purl.org/cerif/frapo/Budget"
+          },
+          {
+            "@id": "http://xmlns.com/foaf/0.1/Agent"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/hasCountryCode> <http://purl.org/vocab/vann/example> "\n    :my-postal-address \n        frapo:hasCountryCode \"IT\" .\n    " .
+<http://purl.org/cerif/frapo/hasCountryCode> <http://www.w3.org/2000/01/rdf-schema#comment> "AThe two-letter or three-letter upper-case country code used to identify a country (e.g. FR/FRA for France, DE/DEU for Germany)."@en .
+<http://purl.org/cerif/frapo/hasCountryCode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasCountryCode> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://countrycode.org/> .
+<http://purl.org/cerif/frapo/hasCountryCode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/cerif/frapo/hasCode> .
+<http://purl.org/cerif/frapo/hasCountryCode> <http://www.w3.org/2000/01/rdf-schema#label> "has country code"@en .
+<http://purl.org/cerif/frapo/hasCountryCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasCountryCode> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

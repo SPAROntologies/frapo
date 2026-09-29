@@ -1,0 +1,69 @@
+[
+  {
+    "@id": "http://purl.org/cerif/frapo/isSupportedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-project \n        frapo:isSupportedBy :my-funding .\n    \n    :my-funding a frapo:Funding .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between something and an agent that provides funding or other support for it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is supported by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:n06b5bcfaf1da46349d5b75cf5f81cd9fb4"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/cerif/frapo/supports"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "This property is not intended for use to describe mechanical or physical support, as in \"The statue is supported by the plinth\". "
+      }
+    ]
+  },
+  {
+    "@id": "_:n06b5bcfaf1da46349d5b75cf5f81cd9fb4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://purl.org/cerif/frapo/Funding"
+          },
+          {
+            "@id": "http://xmlns.com/foaf/0.1/Agent"
+          }
+        ]
+      }
+    ]
+  }
+]

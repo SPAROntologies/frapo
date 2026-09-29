@@ -1,0 +1,17 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:isEnabledBy a owl:ObjectProperty ;
+    rdfs:label "is enabled by"@en ;
+    vann:example """
+    :my-endeavour a frapo:Endeavour ;
+        frapo:isEnabledBy :my-project .
+    """ ;
+    rdfs:comment "The relation between an entity and another entity that enables it, e.g. linking an investigation to a project that enables it."@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+

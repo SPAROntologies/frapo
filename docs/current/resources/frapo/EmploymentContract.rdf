@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/EmploymentContract">
+    <rdfs:label xml:lang="en">employment contract</rdfs:label>
+    <vann:example>
+    :my-employment-contract a frapo:EmploymentContract ;
+        frapo:hasStartDate "2026-02-01"^^xsd:date ; 
+        frapo:hasEndDate "2029-01-31"^^xsd:date .
+    </vann:example>
+    <rdfs:comment xml:lang="en">A contract of employment between a person and an organization.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/Contract"/>
+  </rdf:Description>
+</rdf:RDF>

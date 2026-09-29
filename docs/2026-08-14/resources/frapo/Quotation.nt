@@ -1,0 +1,8 @@
+<http://purl.org/cerif/frapo/Quotation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/Quotation> <http://www.w3.org/2000/01/rdf-schema#label> "quotation"@en .
+<http://purl.org/cerif/frapo/Quotation> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.businessdictionary.com/definition/quotation.html> .
+<http://purl.org/cerif/frapo/Quotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Quotation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Quotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/FinancialEntity> .
+<http://purl.org/cerif/frapo/Quotation> <http://purl.org/vocab/vann/example> "\n    :my-quotation a frapo:Quotation ;\n        frapo:hasMonetaryValue \"10000000\"^^xsd:decimal ; \n        frapo:hasCurrency \"EUR\" .\n    " .
+<http://purl.org/cerif/frapo/Quotation> <http://www.w3.org/2000/01/rdf-schema#comment> "\nA formal statement of promise (usually provided in response to a request for quotation) by potential supplier to supply goods or services at specified prices and within a specified period. Acceptance of the quotation by the buyer constitutes an agreement binding on both parties.\n"@en .

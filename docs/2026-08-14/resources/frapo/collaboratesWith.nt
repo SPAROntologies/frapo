@@ -1,0 +1,9 @@
+<http://purl.org/cerif/frapo/collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between agents, for example different organizations, or people typically from different groups or organizations, that work together on a common task, project or endeavour, or towards a common goal."@en .
+<http://purl.org/cerif/frapo/collaboratesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/cerif/frapo/collaboratesWith> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/cerif/frapo/collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#label> "collaborates with"@en .
+<http://purl.org/cerif/frapo/collaboratesWith> <http://purl.org/vocab/vann/example> "\n    :my-college a frapo:College ;\n        foaf:name \"Trinity College\" ;\n        frapo:collaboratesWith :my-university .\n    " .
+<http://purl.org/cerif/frapo/collaboratesWith> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/collaboratesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .

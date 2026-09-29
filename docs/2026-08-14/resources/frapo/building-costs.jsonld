@@ -1,0 +1,36 @@
+[
+  {
+    "@id": "http://purl.org/cerif/frapo/building-costs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/cerif/frapo/BudgetCategory"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-budget a frapo:Budget ;\n        frapo:hasBudgetInformation :my-budgeted-amout .\n    \n    :my-budgeted-amount a frapo:BudgetedAmount ;\n        frapo:hasBudgetCategory frapo:building-costs .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A budget category to cover the costs of constructing, renovating or modifying a physical building."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "building costs"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  }
+]

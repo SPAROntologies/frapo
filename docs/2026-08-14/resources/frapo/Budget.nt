@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/Budget> <http://www.w3.org/2000/01/rdf-schema#label> "has budget"@en .
+<http://purl.org/cerif/frapo/Budget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/Budget> <http://purl.org/vocab/vann/example> "\n    :my-budget a frapo:Budget ;\n        frapo:hasBudgetInformation :travel-budgeted .\n    " .
+<http://purl.org/cerif/frapo/Budget> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/FinancialEntity> .
+<http://purl.org/cerif/frapo/Budget> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Budget> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/Budget> <http://www.w3.org/2000/01/rdf-schema#comment> "A structured statement of how funds are to be used for expenditure in defined budget categories. A budget is created, for example, when applying for funding for a project, and is subsequently used to manage the expenditure from the awarded grant for that project."@en .

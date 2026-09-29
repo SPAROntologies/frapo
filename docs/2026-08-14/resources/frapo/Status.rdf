@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/Status">
+    <rdfs:comment xml:lang="en">The status of something such as an application, an investigation or a project.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pso/Status"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:label xml:lang="en">status</rdfs:label>
+    <vann:example>
+    :my-application
+        pso:holdsStatusInTime :my-status-in-time .
+    
+    :my-status-in-time a pso:StatusInTime ;
+        pso:withStatus frapo:accepted .
+    
+    frapo:accepted a frapo:Status .
+    </vann:example>
+  </rdf:Description>
+</rdf:RDF>

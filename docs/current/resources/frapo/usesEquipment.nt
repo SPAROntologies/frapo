@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/usesEquipment> <http://www.w3.org/2000/01/rdf-schema#label> "uses equipment"@en .
+<http://purl.org/cerif/frapo/usesEquipment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/usesEquipment> <http://purl.org/vocab/vann/example> "\n    :my-project \n        frapo:usesEquipment :my-equipment .\n\n    :my-equipment a frapo:Equipment .\n    " .
+<http://purl.org/cerif/frapo/usesEquipment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/usesEquipment> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/usesEquipment> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an activity such as an expedition, a research project or an investigation, and an item of equipment employed in that activity."@en .
+<http://purl.org/cerif/frapo/usesEquipment> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/cerif/frapo/Equipment> .

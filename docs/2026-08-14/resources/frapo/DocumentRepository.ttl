@@ -1,0 +1,20 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:DocumentRepository a owl:Class ;
+    rdfs:label "document repository"@en ;
+    vann:example """
+    :my-document-repository a frapo:DocumentRepository ;
+        foaf:name "arXiv" .
+    """ ;
+    rdfs:comment "A facility in which digital documents are deposited for long-term preservation and (optional) publication."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Repository ;
+    vs:term_status reg:statusStable ;
+    skos:note "May also be described as a document archive, or a digital library."@en .
+

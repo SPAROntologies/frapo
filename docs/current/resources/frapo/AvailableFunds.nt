@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/AvailableFunds> <http://purl.org/vocab/vann/example> "\n    :my-available-funds a frapo:AvailableFunds ;\n        frapo:hasCurrency \"GBP\" ; \n        frapo:hasValue \"12500\"^^xsd:decimal .\n    " .
+<http://purl.org/cerif/frapo/AvailableFunds> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/BudgetInformation> .
+<http://purl.org/cerif/frapo/AvailableFunds> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/AvailableFunds> <http://www.w3.org/2000/01/rdf-schema#label> "available funds"@en .
+<http://purl.org/cerif/frapo/AvailableFunds> <http://www.w3.org/2000/01/rdf-schema#comment> "The amount available to spend in a budget category, equalling the income minus the expenditure to date plus future expenditure commitments. "@en .
+<http://purl.org/cerif/frapo/AvailableFunds> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/AvailableFunds> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

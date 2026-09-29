@@ -1,0 +1,9 @@
+<http://purl.org/cerif/frapo/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://purl.org/cerif/frapo/hasBirthDate> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The birth date of a person."@en .
+<http://purl.org/cerif/frapo/hasBirthDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasBirthDate> <http://purl.org/vocab/vann/example> "\n    :my-person \n        frapo:hasBirthDate \"1985-04-12T00:00:00\"^^xsd:dateTime .\n    " .
+<http://purl.org/cerif/frapo/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/birthday> .
+<http://purl.org/cerif/frapo/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.org/cerif/frapo/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#label> "has birth date"@en .
+<http://purl.org/cerif/frapo/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .

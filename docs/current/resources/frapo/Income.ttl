@@ -1,0 +1,21 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Income a owl:Class ;
+    rdfs:label "income"@en ;
+    vann:example """
+    :my-income a frapo:Income ;
+        frapo:hasMonetaryValue "120000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "Money coming into an account."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:BudgetInformation ;
+    vs:term_status reg:statusStable ;
+    skos:note "May be associated with a particular budget category."@en .
+

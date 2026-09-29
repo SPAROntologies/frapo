@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/EmploymentContract> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/EmploymentContract> <http://www.w3.org/2000/01/rdf-schema#label> "employment contract"@en .
+<http://purl.org/cerif/frapo/EmploymentContract> <http://purl.org/vocab/vann/example> "\n    :my-employment-contract a frapo:EmploymentContract ;\n        frapo:hasStartDate \"2026-02-01\"^^xsd:date ; \n        frapo:hasEndDate \"2029-01-31\"^^xsd:date .\n    " .
+<http://purl.org/cerif/frapo/EmploymentContract> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/EmploymentContract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/EmploymentContract> <http://www.w3.org/2000/01/rdf-schema#comment> "A contract of employment between a person and an organization."@en .
+<http://purl.org/cerif/frapo/EmploymentContract> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/cerif/frapo/Contract> .

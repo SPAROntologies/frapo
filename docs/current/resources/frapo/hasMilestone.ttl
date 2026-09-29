@@ -1,0 +1,17 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasMilestone a owl:DatatypeProperty ;
+    rdfs:label "has milestone"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasMilestone "M1: Data Integration Complete" .
+    """ ;
+    rdfs:comment "A significant event (a \"milestone\") in the progress of a project."@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+

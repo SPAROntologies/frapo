@@ -1,0 +1,7 @@
+<http://purl.org/cerif/frapo/HostInstitution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
+<http://purl.org/cerif/frapo/HostInstitution> <http://www.w3.org/2000/01/rdf-schema#label> "host institution"@en .
+<http://purl.org/cerif/frapo/HostInstitution> <http://www.w3.org/2000/01/rdf-schema#comment> "An institution that acts as a host, for example of a project, a resource or a person, for example by providing accommodation, services, operational support and/or funding."@en .
+<http://purl.org/cerif/frapo/HostInstitution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/HostInstitution> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/HostInstitution> <http://purl.org/vocab/vann/example> "\n    :my-host-institution a frapo:HostInstitution ;\n        foaf:name \"University of Bologna\" ; \n        frapo:hasPostalAddress \"Via Zamboni 33, Bologna (BO), Italy\" .\n    " .
+<http://purl.org/cerif/frapo/HostInstitution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .

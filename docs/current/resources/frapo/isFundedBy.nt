@@ -1,0 +1,9 @@
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "\nThe relation between something and the funding that funds it (i.e. that finances or pays for it), or to the funding agency providing that funding.\nThis flexibility is given because of alternative usages of the English word \"funds\".  \n"@en .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/cerif/frapo/isSupportedBy> .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/cerif/frapo/hasFundingAgency> .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/cerif/frapo/isAwardedBy> .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is funded by"@en .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/isFundedBy> <http://purl.org/vocab/vann/example> "\n    :my-project \n        frapo:isFundedBy :my-grant .\n    " .

@@ -1,0 +1,9 @@
+<http://purl.org/cerif/frapo/hasAwardDate> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasAwardDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasAwardDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/cerif/frapo/hasAwardDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasAwardDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://purl.org/cerif/frapo/hasAwardDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which notification is given or received that something, for example a scholarship or a grant, has been awarded.  [See also frapo:hasDecisionDate.]"@en .
+<http://purl.org/cerif/frapo/hasAwardDate> <http://purl.org/vocab/vann/example> "\n    :my-grant \n        frapo:hasAwardDate \"2026-05-15\"^^xsd:date .\n    " .
+<http://purl.org/cerif/frapo/hasAwardDate> <http://www.w3.org/2000/01/rdf-schema#label> "has award date"@en .
+<http://purl.org/cerif/frapo/hasAwardDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/date> .

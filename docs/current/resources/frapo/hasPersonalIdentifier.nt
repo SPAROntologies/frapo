@@ -1,0 +1,10 @@
+<http://purl.org/cerif/frapo/hasPersonalIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "A unique and unambiguous identifier for an individual person within a given context."@en .
+<http://purl.org/cerif/frapo/hasPersonalIdentifier> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/identifier> .
+<http://purl.org/cerif/frapo/hasPersonalIdentifier> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.org/spar/scoro/hasPersonalIdentifier> .
+<http://purl.org/cerif/frapo/hasPersonalIdentifier> <http://purl.org/vocab/vann/example> "\n    :my-person a foaf:Person ;\n        frapo:hasPersonalIdentifier \"ID-992384\" .\n    " .
+<http://purl.org/cerif/frapo/hasPersonalIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "has personal identifier"@en .
+<http://purl.org/cerif/frapo/hasPersonalIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasPersonalIdentifier> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/cerif/frapo/hasPersonalInformation> .
+<http://purl.org/cerif/frapo/hasPersonalIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://purl.org/cerif/frapo/hasPersonalIdentifier> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/cerif/frapo/hasPersonalIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
