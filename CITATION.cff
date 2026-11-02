@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: The Funding, Research Administration and Projects Ontology (FRAPO)
+message: >-
+If you use this software, please cite it using the
+metadata from this file.
+type: software
+authors:
+- given-names: David
+  family-names: Shotton
+  orcid: 'https://orcid.org/0000-0001-5506-523X'
+identifiers:
+- type: doi
+  value: 10.25504/FAIRsharing.0a2576
+repository-code: 'https://github.com/SPAROntologies/frapo'
+url: 'http://www.sparontologies.net/ontologies/frapo'
+abstract: The Funding, Research Administration and Projects Ontology (FRAPO) is an OWL 2 DL ontology for describing the administrative information of research projects, e.g., grant applications, funding bodies, project partners, and so on. 
+keywords:
+- scholarly funding
+- bibliometrics
+- scholarly publishing
+- scientometrics
+- semantic publishing
+license: CC-BY-4.0
+version: 1.2.1
+date-released: '2026-10-05'

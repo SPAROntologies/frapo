@@ -1,11 +1,7 @@
 [project]
 name = "frapo"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.2.1"
+description = "The Funding, Research Administration and Projects Ontology (FRAPO) is an OWL 2 DL ontology for describing the administrative information of research projects, e.g., grant applications, funding bodies, project partners, and so on."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "codespell>=2.4.3",
-    "rdflib>=7.6.0",
-    "requests>=2.34.2",
-]
+dependencies = []
