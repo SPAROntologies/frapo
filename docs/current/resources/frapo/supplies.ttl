@@ -1,4 +1,3 @@
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,7 +12,7 @@ frapo:supplies a owl:ObjectProperty ;
         frapo:supplies :my-service .
     """ ;
     rdfs:comment "The relation between a supplier and a supplied entity, or an agent to whom the entity is supplied."@en ;
-    rdfs:domain foaf:Agent ;
+    rdfs:domain frapo:Supplier ;
     rdfs:isDefinedBy frapo: ;
     vs:term_status reg:statusStable .
 

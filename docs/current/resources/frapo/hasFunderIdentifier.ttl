@@ -7,7 +7,7 @@
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 
 frapo:hasFunderIdentifier a owl:DatatypeProperty ;
-    rdfs:label "has funder identifer"@en ;
+    rdfs:label "has funder identifier"@en ;
     vann:example """
     :my-funding-agency a frapo:FundingAgency ;
         frapo:hasFunderIdentifier "10.13039/501100000781" .

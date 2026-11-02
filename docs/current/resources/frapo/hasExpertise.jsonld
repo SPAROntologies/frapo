@@ -12,7 +12,7 @@
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The area(s) of expertise and skills posessed by an individual or an organization."
+        "@value": "The area(s) of expertise and skills possessed by an individual or an organization."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [

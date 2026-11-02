@@ -12,7 +12,7 @@
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An organization that is part of, or funded by, central or local goverment."
+        "@value": "An organization that is part of, or funded by, central or local government."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [

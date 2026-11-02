@@ -12,7 +12,7 @@ frapo:GovernmentOrganization a owl:Class ;
     :my-government-organization a frapo:GovernmentOrganization ;
         foaf:name "Ministry of Research" .
     """ ;
-    rdfs:comment "An organization that is part of, or funded by, central or local goverment."@en ;
+    rdfs:comment "An organization that is part of, or funded by, central or local government."@en ;
     rdfs:isDefinedBy frapo: ;
     rdfs:subClassOf foaf:Organization ;
     vs:term_status reg:statusStable .
