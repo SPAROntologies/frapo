@@ -22,7 +22,7 @@
     dc:contributor "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"^^xsd:string,
         "Silvio Peroni (https://orcid.org/0000-0003-0530-4305)"^^xsd:string ;
     dc:creator "David Shotton (https://orcid.org/0000-0001-5506-523X)"^^xsd:string ;
-    dc:date "2026-08-14"^^xsd:string ;
+    dc:date "2026-10-05"^^xsd:string ;
     dc:description """
 The **_Funding, Research Administration and Projects Ontology (FRAPO)_** is a [CERIF-compliant](http://www.eurocris.org/cerif/main-features-cerif) ontology for describing administrative information relating to grant funding and research projects. 
 It can be used for the characterization of grant applications (e.g., `frapo:Grant`), funding bodies (e.g., `frapo:University`), research projects, project partners, etc.; in other words, the sort of information stored in Current Research Information Systems (CRIS). 
@@ -180,7 +180,7 @@ What specific contributions are made by a person toward an output document resul
     dcterms:created "2014-01-31" ;
     dcterms:issued "2017-09-04" ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-08-14" ;
+    dcterms:modified "2026-10-05" ;
     dcterms:publisher <https://ror.org/00wb4mk85> ;
     dcterms:source <https://github.com/sparontologies/frapo/docs/cq.md> ;
     bibo:doi "https://doi.org/10.25504/FAIRsharing.0a2576" ;
@@ -188,16 +188,21 @@ What specific contributions are made by a person toward an output document resul
     vann:preferredNamespacePrefix "frapo"@en ;
     vann:preferredNamespaceUri "http://purl.org/spar/frapo"@en ;
     rdfs:seeAlso <http://www.sparontologies.net/ontologies/frapo> ;
-    owl:backwardCompatibleWith <https://sparontologies.github.io/frapo/2017-09-04/frapo.xml> ;
+    owl:backwardCompatibleWith frapo:2026-08-14 ;
     owl:imports <https://w3id.org/spar/foaf> ;
-    owl:priorVersion <https://sparontologies.github.io/frapo/2017-09-04/frapo.xml> ;
-    owl:versionIRI <https://sparontologies.github.io/frapo/2026-08-14/frapo.xml> ;
-    owl:versionInfo "1.2.0"^^xsd:string ;
-    foaf:logo <https://github.com/SPAROntologies/frapo/blob/master/spar.png> ;
+    owl:priorVersion frapo:2026-08-14 ;
+    owl:versionIRI frapo:2026-10-05 ;
+    owl:versionInfo "1.2.1"^^xsd:string ;
+    vann:changes <https://github.com/SPAROntologies/frapo/blob/master/CHANGELOG.md> ;
+    foaf:logo <https://github.com/SPAROntologies/sparontologies.github.io/blob/master/static/img/spar/spar-logo.png> ;
     schema:codeRepository <https://github.com/SPAROntologies/frapo> ;
     schema:image <https://github.com/SPAROntologies/frapo/blob/master/docs/current/frapo.png> ;
     schema:includedInDataCatalog <https://fairsharing.org/> ;
-    schema:keywords "bibliometrics"@en,
+    dc:language <http://id.loc.gov/vocabulary/iso639-2/eng> ;
+    schema:keywords 
+        "SPAR Ontologies"@en ,
+        "Semantic Publishing and Referencing Ontologies"@en ,
+        "bibliometrics"@en,
         "scholarly funding"@en,
         "scholarly publishing"@en,
         "scientometrics"@en,
@@ -531,7 +536,7 @@ frapo:GovernmentOrganization a owl:Class ;
     :my-government-organization a frapo:GovernmentOrganization ;
         foaf:name "Ministry of Research" .
     """ ;
-    rdfs:comment "An organization that is part of, or funded by, central or local goverment."@en ;
+    rdfs:comment "An organization that is part of, or funded by, central or local government."@en ;
     rdfs:isDefinedBy frapo: ;
     rdfs:subClassOf foaf:Organization ;
     vs:term_status reg:statusStable .
@@ -1039,7 +1044,7 @@ frapo:contributions-in-kind a frapo:BudgetCategory,
     :my-budgeted-amount a frapo:BudgetedAmount ;
         frapo:hasBudgetCategory frapo:contributions-in-kind .
     """ ;
-    rdfs:comment "A budget category to categorize the financial worth of contributions in kind (e.g. staff effort, access to facilities, sharing of know-how) given to a project by an agent, for example by the host institution or by a commerical partner in an academic project. "@en ;
+    rdfs:comment "A budget category to categorize the financial worth of contributions in kind (e.g. staff effort, access to facilities, sharing of know-how) given to a project by an agent, for example by the host institution or by a commercial partner in an academic project. "@en ;
     rdfs:isDefinedBy frapo: ;
     vs:term_status reg:statusStable .
 
@@ -1550,7 +1555,7 @@ frapo:hasExpertise a owl:DatatypeProperty ;
     :my-person 
         frapo:hasExpertise "Knowledge Representation and Semantic Web" .
     """ ;
-    rdfs:comment "The area(s) of expertise and skills posessed by an individual or an organization."@en ;
+    rdfs:comment "The area(s) of expertise and skills possessed by an individual or an organization."@en ;
     rdfs:isDefinedBy frapo: ;
     rdfs:subPropertyOf frapo:hasAgentInformation ;
     vs:term_status reg:statusStable .
@@ -1591,7 +1596,7 @@ frapo:hasFaxNumber a owl:DatatypeProperty ;
     vs:term_status reg:statusStable .
 
 frapo:hasFunderIdentifier a owl:DatatypeProperty ;
-    rdfs:label "has funder identifer"@en ;
+    rdfs:label "has funder identifier"@en ;
     vann:example """
     :my-funding-agency a frapo:FundingAgency ;
         frapo:hasFunderIdentifier "10.13039/501100000781" .
@@ -1651,8 +1656,7 @@ frapo:hasIPROwner a owl:ObjectProperty ;
     owl:inverseOf frapo:ownsIRPOf ;
     vs:term_status reg:statusStable .
 
-frapo:hasInvoiceDate a owl:AnnotationProperty,
-        owl:DatatypeProperty,
+frapo:hasInvoiceDate a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:label "has invoice date"@en ;
     vann:example """
@@ -1827,8 +1831,7 @@ frapo:hasProfessionalName a owl:DatatypeProperty ;
     rdfs:subPropertyOf frapo:hasPersonalInformation ;
     vs:term_status reg:statusStable .
 
-frapo:hasProjectIdentifier a owl:AnnotationProperty,
-        owl:DatatypeProperty ;
+frapo:hasProjectIdentifier a owl:DatatypeProperty ;
     rdfs:label "has project identifier"@en ;
     vann:example """
     :my-project a foaf:Project ;
@@ -2490,7 +2493,7 @@ frapo:hasMonetaryValue a owl:DatatypeProperty ;
     rdfs:isDefinedBy frapo: ;
     vs:term_status reg:statusStable ;
     skos:note """
-Use in conjuction with `frapo:hasCurrency`.
+Use in conjunction with `frapo:hasCurrency`.
     """@en .
 
 frapo:hasOrganizationalInformation a owl:DatatypeProperty ;
@@ -2701,7 +2704,7 @@ frapo:supplies a owl:ObjectProperty ;
         frapo:supplies :my-service .
     """ ;
     rdfs:comment "The relation between a supplier and a supplied entity, or an agent to whom the entity is supplied."@en ;
-    rdfs:domain foaf:Agent ;
+    rdfs:domain frapo:Supplier ;
     rdfs:isDefinedBy frapo: ;
     vs:term_status reg:statusStable .
 

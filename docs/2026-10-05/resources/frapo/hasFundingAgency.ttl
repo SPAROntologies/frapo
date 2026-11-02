@@ -1,0 +1,22 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasFundingAgency a owl:ObjectProperty ;
+    rdfs:label "has funding agency"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasFundingAgency :my-funding-agency .
+
+    :my-funding-agency a frapo:FundingAgency .
+    """ ;
+    rdfs:comment "The relation between something and a funding agency that provides funding for it."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range frapo:FundingAgency ;
+    rdfs:subPropertyOf frapo:isSupportedBy ;
+    owl:inverseOf frapo:isFundingAgencyFor ;
+    vs:term_status reg:statusStable .
+

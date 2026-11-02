@@ -1,0 +1,9 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+pro:Role a owl:Class ;
+    rdfs:label "role"@en ;
+    rdfs:comment "A role an agent may have. Individual members of this class or its sub-classes are used to specify particular roles."@en ;
+    rdfs:isDefinedBy pro: .
+

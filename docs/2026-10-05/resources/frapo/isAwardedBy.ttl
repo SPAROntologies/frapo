@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:isAwardedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "is awarded by"@en ;
+    vann:example """
+    :my-grant 
+        frapo:isAwardedBy :my-funding-agency .
+    
+    :my-funding-agency a frapo:FundingAgency .
+    """ ;
+    rdfs:comment "The relation between something awarded and the agent making the award, for example linking a grant to a funding agency, a degree to a university, or a prize to the awarding organization."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range foaf:Agent ;
+    vs:term_status reg:statusStable .
+

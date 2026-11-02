@@ -1,0 +1,22 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+frapo:hasPurchaseDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has purchase date"@en ;
+    vann:example """
+    :my-purchase 
+        frapo:hasPurchaseDate "2026-08-01T15:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The purchase date of something."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+

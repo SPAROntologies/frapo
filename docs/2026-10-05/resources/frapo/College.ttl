@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:College a owl:Class ;
+    rdfs:label "college"@en ;
+    vann:example """
+    :my-college a frapo:College ;
+        foaf:name "Trinity College" ;
+        frapo:collaboratesWith :my-university .
+    """ ;
+    rdfs:comment "An academic organization that is either a small degree-giving university, or (in the OxBridge sense) an independent corporation of scholars within a larger university, providing undergraduate tuition and a social environment for its students and fellows."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+

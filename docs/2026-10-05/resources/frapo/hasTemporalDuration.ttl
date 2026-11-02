@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+frapo:hasTemporalDuration a owl:DatatypeProperty ;
+    rdfs:label "has temporal duration"@en ;
+    vann:example """
+    :my-employment-contract 
+        frapo:hasTemporalDuration "2026-01-31/2029-01-31"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The temporal duration of some entity such as an event or a project."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range xsd:dateTime ;
+    vs:term_status reg:statusStable .
+

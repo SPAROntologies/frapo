@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Grant a owl:Class ;
+    rdfs:label "grant"@en ;
+    vann:example """
+    :my-grant a frapo:Grant ;
+        frapo:hasValue "50000"^^xsd:decimal;
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A financial award by a funding agency for a particular project or purpose, usually awarded on the basis of a competitive application."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Funding ;
+    vs:term_status reg:statusStable .
+

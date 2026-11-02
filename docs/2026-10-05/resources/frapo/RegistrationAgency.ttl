@@ -1,0 +1,19 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:RegistrationAgency a owl:Class ;
+    rdfs:label "registration agency"@en ;
+    vann:example """
+    :my-registration-agency a frapo:RegistrationAgency ;
+        foaf:name "CrossRef" .
+    """ ;
+    rdfs:comment "An institution or organization officially appointed by a Registration Authority that acts to register things. For example, CrossRef is a registration agency for DOIs relating to documents, while DataCite is a registration agency for DOIs relating to datasets, acting for the Registration Authority for DOIs, namely the International DOI Foundation (IDF)."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+

@@ -34,7 +34,7 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "\nUse in conjuction with `frapo:hasCurrency`.\n    "
+        "@value": "\nUse in conjunction with `frapo:hasCurrency`.\n    "
       }
     ]
   }
