@@ -7,17 +7,17 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasMonetaryValue">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
     <vann:example>
     :my-payment 
         frapo:hasMonetaryValue "3500"^^xsd:decimal .
     </vann:example>
-    <rdfs:label xml:lang="en">has value</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">The monetary value of a financial entity such as a grant, a gift or a budget category.</rdfs:comment>
+    <rdfs:label xml:lang="en">has value</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <skos:note xml:lang="en">
 Use in conjunction with `frapo:hasCurrency`.
     </skos:note>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:comment xml:lang="en">The monetary value of a financial entity such as a grant, a gift or a budget category.</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>

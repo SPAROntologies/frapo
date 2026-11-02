@@ -4,11 +4,11 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdfs:comment xml:lang="en">The date of creation of a resource.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+    <rdfs:label xml:lang="en">has creation date</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:comment xml:lang="en">The date of creation of a resource.</rdfs:comment>
-    <rdfs:label xml:lang="en">has creation date</rdfs:label>
   </rdf:Description>
 </rdf:RDF>

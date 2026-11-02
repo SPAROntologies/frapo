@@ -4,9 +4,9 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://purl.org/spar/scoro/OrganizationRole">
-    <rdfs:comment xml:lang="en">A role that an agent might hold with respect to an organization and its administration, particularly within an academic context.</rdfs:comment>
     <rdfs:label xml:lang="en">organizational role</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/scoro/"/>
+    <rdfs:comment xml:lang="en">A role that an agent might hold with respect to an organization and its administration, particularly within an academic context.</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>

@@ -6,15 +6,15 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasSerialNumber">
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:label xml:lang="en">has serial number</rdfs:label>
+    <rdfs:comment xml:lang="en">The serial number of something, for example a piece of equipment.</rdfs:comment>
     <vann:example>
     :my-equipment 
         frapo:hasSerialNumber "SN-987654321" .
     </vann:example>
-    <rdfs:label xml:lang="en">has serial number</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:comment xml:lang="en">The serial number of something, for example a piece of equipment.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
   </rdf:Description>
 </rdf:RDF>

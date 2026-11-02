@@ -5,9 +5,9 @@
 >
   <rdf:Description rdf:about="http://www.w3.org/2006/timezone#TimeZone">
     <rdfs:comment xml:lang="en">The time zone relating to an entity.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/timezone#"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdfs:label xml:lang="en">has time zone</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/timezone#"/>
   </rdf:Description>
 </rdf:RDF>
