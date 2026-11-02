@@ -8,17 +8,17 @@
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/evaluates">
     <rdfs:label xml:lang="en">evaluates</rdfs:label>
-    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <owl:inverseOf rdf:resource="http://purl.org/cerif/frapo/isEvaluatedBy"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://purl.org/cerif/frapo/isEvaluatedBy"/>
+    <rdfs:comment xml:lang="en">The relation between an agent and an entity which that agent evaluates, for example a funding agency that is evaluating a grant application to determine whether the proposed project is worthy of funding, or a publisher evaluating a manuscript to determine whether it is suitable for publication.</rdfs:comment>
     <vann:example>
     :my-funding-agency a frapo:FundingAgency ;
         frapo:evaluates :my-funding-application .
     
     :my-funding-application a frapo:FundingApplication .
     </vann:example>
-    <rdfs:comment xml:lang="en">The relation between an agent and an entity which that agent evaluates, for example a funding agency that is evaluating a grant application to determine whether the proposed project is worthy of funding, or a publisher evaluating a manuscript to determine whether it is suitable for publication.</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>

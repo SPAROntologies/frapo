@@ -7,14 +7,14 @@
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasProvenance">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:comment xml:lang="en">The description of the provenance of an entity.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <rdfs:label xml:lang="en">has provenance</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">has provenance</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
     <vann:example>
     :my-material-output 
         frapo:hasProvenance "Generated via chemical synthesis" .
     </vann:example>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">The description of the provenance of an entity.</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>

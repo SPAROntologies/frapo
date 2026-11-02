@@ -2,8 +2,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/rejected",
     "@type": [
-      "http://purl.org/cerif/frapo/Status",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/cerif/frapo/Status"
     ],
     "http://purl.org/vocab/vann/example": [
       {

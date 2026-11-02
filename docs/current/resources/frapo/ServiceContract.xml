@@ -6,16 +6,16 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/ServiceContract">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/Contract"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">service contract</rdfs:label>
-    <rdfs:comment xml:lang="en">A contract for the provision of a service such as a cleaning service, or for the regular servicing, maintenance and repair of some item of equipment or infrastructure.</rdfs:comment>
     <vann:example>
     :my-service-contract a frapo:ServiceContract ;
         frapo:hasStartDate "2026-02-01"^^xsd:date ; 
         frapo:hasEndDate "2029-01-31"^^xsd:date .
     </vann:example>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/Contract"/>
+    <rdfs:comment xml:lang="en">A contract for the provision of a service such as a cleaning service, or for the regular servicing, maintenance and repair of some item of equipment or infrastructure.</rdfs:comment>
+    <rdfs:label xml:lang="en">service contract</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
 </rdf:RDF>

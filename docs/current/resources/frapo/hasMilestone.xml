@@ -6,6 +6,7 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasMilestone">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
     <vann:example>
     :my-project 
         frapo:hasMilestone "M1: Data Integration Complete" .
@@ -14,6 +15,5 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="en">A significant event (a "milestone") in the progress of a project.</rdfs:comment>
     <rdfs:label xml:lang="en">has milestone</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
   </rdf:Description>
 </rdf:RDF>
