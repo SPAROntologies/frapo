@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Vendor a owl:Class ;
+    rdfs:label "vendor"@en ;
+    vann:example """
+    :my-vendor a frapo:Vendor ;
+        foaf:name "Quipu Inc." .
+    """ ;
+    rdfs:comment "An agent who supplies goods or services in exchange for payment, in response to receipt of payment or of an official purchase order from a purchaser that is responded to by submission of an invoice for what is supplied."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Supplier ;
+    vs:term_status reg:statusStable .
+

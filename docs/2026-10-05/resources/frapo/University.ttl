@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:University a owl:Class ;
+    rdfs:label "university"@en ;
+    vann:example """
+    :my-university a frapo:University ;
+        foaf:name "Free University Amsterdam"@en ;
+        frapo:awards :phd-scholarship-2004 .
+    """ ;
+    rdfs:comment "A university at which higher education and research is conducted."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+

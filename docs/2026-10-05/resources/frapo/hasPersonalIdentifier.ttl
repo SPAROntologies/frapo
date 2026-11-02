@@ -1,0 +1,24 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix scoro: <http://purl.org/spar/scoro/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasPersonalIdentifier a owl:DatatypeProperty ;
+    rdfs:label "has personal identifier"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasPersonalIdentifier "ID-992384" .
+    """ ;
+    rdfs:comment "A unique and unambiguous identifier for an individual person within a given context."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf frapo:hasPersonalInformation,
+        dcterms:identifier ;
+    owl:equivalentProperty scoro:hasPersonalIdentifier ;
+    vs:term_status reg:statusStable .
+

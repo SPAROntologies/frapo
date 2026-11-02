@@ -1,0 +1,9 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pso: <http://purl.org/spar/pso/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+pso:StatusInTime a owl:Class ;
+    rdfs:label "status in time"@en ;
+    rdfs:comment "A particular situation that describe a state or condition some documents may have at a particular time as consequence of one or more events."@en ;
+    rdfs:isDefinedBy pso: .
+

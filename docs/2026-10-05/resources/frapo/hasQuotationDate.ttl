@@ -1,0 +1,21 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+frapo:hasQuotationDate a owl:DatatypeProperty ;
+    rdfs:label "has quotation date"@en ;
+    vann:example """
+    :my-quotation 
+        frapo:hasQuotationDate "2026-06-15T11:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The date of a quotation."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+frapo:hasBirthDate a owl:DatatypeProperty ;
+    rdfs:label "has birth date"@en ;
+    vann:example """
+    :my-person 
+        frapo:hasBirthDate "1985-04-12T00:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The birth date of a person."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf foaf:birthday ;
+    vs:term_status reg:statusStable .
+

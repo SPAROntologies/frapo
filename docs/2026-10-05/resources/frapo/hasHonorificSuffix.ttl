@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasHonorificSuffix a owl:DatatypeProperty ;
+    rdfs:label "has post-nominals"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasHonorificSuffix "OBE" .
+    """ ;
+    rdfs:comment "The letters that should be displayed after a person's name to indicate qualification, membership or fellowship in a professional society, honours or elite status, e.g. MRCVS, FRCS, FRS, OBE, Kt."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf frapo:hasNameSuffix ;
+    vs:term_status reg:statusStable .
+

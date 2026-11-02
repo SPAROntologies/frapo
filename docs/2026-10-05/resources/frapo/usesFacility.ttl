@@ -1,0 +1,20 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:usesFacility a owl:ObjectProperty ;
+    rdfs:label "uses facility"@en ;
+    vann:example """
+    :my-project 
+        frapo:usesFacility :my-facility .
+
+    :my-facility a frapo:Facility .
+    """ ;
+    rdfs:comment "The relation between an activity such as an expedition, a research project or an investigation, and a facility employed in that activity."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range frapo:Facility ;
+    vs:term_status reg:statusStable .
+

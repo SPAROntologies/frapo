@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Funding a owl:Class ;
+    rdfs:label "funding"@en ;
+    vann:example """
+    :my-funding a frapo:Funding ;
+        frapo:hasMonetaryValue "50000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "An amount of money available to finance some project or activity. "@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+

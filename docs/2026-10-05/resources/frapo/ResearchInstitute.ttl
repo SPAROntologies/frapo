@@ -1,0 +1,19 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:ResearchInstitute a owl:Class ;
+    rdfs:label "research institute"@en ;
+    vann:example """
+    :my-research-institute a frapo:ResearchInstitute ;
+        foaf:name "CNR" .
+    """ ;
+    rdfs:comment "An organization primarily dedicated to undertaking research, that might be part of a university or of a commercial company, or might be independently funded by a research funding agency."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:ArticleProcessingCharge a owl:Class ;
+    rdfs:label "article processing charge"@en ;
+    vann:example """
+    :my-article-processing-charge a frapo:ArticleProcessingCharge ;
+        frapo:hasCurrency "USD" ; 
+        frapo:hasValue "2500"^^xsd:decimal .
+    """ ;
+    rdfs:comment "A fee levied by a publisher on an author or an institution to cover the cost of publishing an Open Access journal article.  Also knows as Article Processing Fee, Article Publication Charge, Author Processing Charge or Author Publishing Charge."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Fee ;
+    vs:term_status reg:statusStable .
+

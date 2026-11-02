@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Deliverable a owl:Class ;
+    rdfs:label "deliverable"@en ;
+    vann:example """
+    :my-deliverable a frapo:Deliverable ;
+        dcterms:title "Final Report" ; 
+        frapo:isOutputOf :my-project .
+    """ ;
+    rdfs:comment "A class defining a \"deliverable\" of a project, i.e. something that the project set out to deliver, or succeeds in delivering."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Output ;
+    vs:term_status reg:statusStable .
+

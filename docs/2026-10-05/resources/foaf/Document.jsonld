@@ -1,0 +1,31 @@
+[
+  {
+    "@id": "http://xmlns.com/foaf/0.1/Document",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A document."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "document"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "\nOntology terms and definitions for many documents relevant to FRAPO are given as \"Expression\" classes in FaBiO, the FRBR-aligned Bibliographic Ontology, e.g. `fabio:CallForApplications`, `fabio:DataManagementPlan`, `fabio:GrantApplicationDocument`, `fabio:ProjectPlan`.\nOthers are given as sub-classes of this class.\n"
+      }
+    ]
+  }
+]

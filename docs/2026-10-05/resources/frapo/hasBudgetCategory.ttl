@@ -1,0 +1,24 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasBudgetCategory a owl:ObjectProperty ;
+    rdfs:label "has budget category"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :travel-budgeted .
+    
+    :travel-budgeted a frapo:BudgetInformation ;
+        frapo:hasBudgetCategory frapo:travel-and-subsistence-costs .
+
+    frapo:travel-and-subsistence-costs a frapo:BudgetCategory .
+    """@en ;
+    rdfs:comment "The relation between some budget information and its category."@en ;
+    rdfs:domain frapo:BudgetInformation ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:range frapo:BudgetCategory ;
+    vs:term_status reg:statusStable .
+

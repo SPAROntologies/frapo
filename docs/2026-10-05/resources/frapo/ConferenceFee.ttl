@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:ConferenceFee a owl:Class ;
+    rdfs:label "conference fee"@en ;
+    vann:example """
+    :my-conference-fee a frapo:ConferenceFee ;
+        frapo:hasCurrency "EUR" ; 
+        frapo:hasValue "350"^^xsd:decimal .
+    """ ;
+    rdfs:comment "A fee paid to attend a conference."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Fee ;
+    vs:term_status reg:statusStable .
+
