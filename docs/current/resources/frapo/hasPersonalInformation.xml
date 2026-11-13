@@ -6,16 +6,16 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasPersonalInformation">
-    <rdfs:label xml:lang="en">has personal information</rdfs:label>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <vann:example>
     :my-person a foaf:Person ;
         frapo:hasPersonalInformation "Senior Researcher at the Institute" .
     </vann:example>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     <rdfs:comment xml:lang="en">Information about a person.</rdfs:comment>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/hasAgentInformation"/>
+    <rdfs:label xml:lang="en">has personal information</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
   </rdf:Description>
 </rdf:RDF>

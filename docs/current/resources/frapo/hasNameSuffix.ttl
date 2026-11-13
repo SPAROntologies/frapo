@@ -12,7 +12,7 @@ frapo:hasNameSuffix a owl:DatatypeProperty ;
         frapo:hasNameSuffix "Jr." .
     """ ;
     rdfs:comment "The letters that should be displayed after a person's name."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:hasPersonalInformation ;
     vs:term_status reg:statusStable .
 

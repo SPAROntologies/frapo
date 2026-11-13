@@ -12,7 +12,7 @@ frapo:Library a owl:Class ;
         foaf:name "Biblioteca Umanistica "Ezio Raimondi"" .
     """ ;
     rdfs:comment "A facility in which printed documents (for example books and journals) are deposited for long-term preservation and access."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Repository ;
     vs:term_status reg:statusStable .
 

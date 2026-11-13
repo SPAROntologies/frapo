@@ -12,7 +12,7 @@ frapo:hasApplicationOutcome a owl:DatatypeProperty ;
         frapo:hasApplicationOutcome "Funded" .
     """ ;
     rdfs:comment "The description of an outcome of an application, for example that a job has been offered or that a grant has been awarded."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf owl:topDataProperty ;
     vs:term_status reg:statusStable .
 

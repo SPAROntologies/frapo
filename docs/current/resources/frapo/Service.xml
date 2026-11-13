@@ -6,15 +6,15 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/Service">
-    <rdfs:label xml:lang="en">service</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/InfrastructureEntity"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
     <vann:example>
     :my-service a frapo:Service ;
         foaf:name "Quipu Library Service" .
     </vann:example>
     <rdfs:comment xml:lang="en">A service of help to others, often requiring funding, employees, equipment and/or facilities for its provision, for example a library service, a transportation service, a DNA sequencing service.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/InfrastructureEntity"/>
+    <rdfs:label xml:lang="en">service</rdfs:label>
   </rdf:Description>
 </rdf:RDF>

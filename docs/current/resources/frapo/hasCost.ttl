@@ -12,6 +12,6 @@ frapo:hasCost a owl:DatatypeProperty ;
         frapo:hasCost "1500"^^xsd:decimal .
     """ ;
     rdfs:comment "The cost of something that can be paid for to be defined."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

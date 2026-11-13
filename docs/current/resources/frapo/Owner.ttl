@@ -13,7 +13,7 @@ frapo:Owner a owl:Class ;
         foaf:name "John Doe" .
     """ ;
     rdfs:comment "The agent who owns an entity."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Agent ;
     vs:term_status reg:statusStable .
 

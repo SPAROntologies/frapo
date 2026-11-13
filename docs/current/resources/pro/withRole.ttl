@@ -7,6 +7,6 @@ pro:withRole a owl:FunctionalProperty,
     rdfs:label "with role"@en ;
     rdfs:comment "The relation between an agent's role in time to a definition of the type of role held by this agent."@en ;
     rdfs:domain pro:RoleInTime ;
-    rdfs:isDefinedBy pro: ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
     rdfs:range pro:Role .
 

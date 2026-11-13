@@ -13,7 +13,7 @@ frapo:hasCatalogNumber a owl:DatatypeProperty ;
         frapo:hasCatalogNumber "CAT-00982" .
     """ ;
     rdfs:comment "The catalog number of something."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf dcterms:identifier ;
     vs:term_status reg:statusStable .
 

@@ -7,12 +7,9 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/full-economic-costs">
-    <skos:note xml:lang="en">Frequently abbreviated "FEC".</skos:note>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://purl.org/cerif/frapo/BudgetCategory"/>
-    <rdfs:comment xml:lang="en">A budget category to cover all the direct and indirect costs of a project. </rdfs:comment>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdfs:label xml:lang="en">full economic costs</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
     <vann:example>
     :my-budget a frapo:Budget ;
         frapo:hasBudgetInformation :my-budgeted-amout .
@@ -20,6 +17,9 @@
     :my-budgeted-amount a frapo:BudgetedAmount ;
         frapo:hasBudgetCategory frapo:full-economic-costs .
     </vann:example>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.org/cerif/frapo/BudgetCategory"/>
+    <rdfs:comment xml:lang="en">A budget category to cover all the direct and indirect costs of a project. </rdfs:comment>
+    <skos:note xml:lang="en">Frequently abbreviated "FEC".</skos:note>
   </rdf:Description>
 </rdf:RDF>

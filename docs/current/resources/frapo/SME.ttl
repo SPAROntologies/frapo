@@ -13,7 +13,7 @@ frapo:SME a owl:Class ;
         foaf:name "Quipu Inc." .
     """ ;
     rdfs:comment "A small to medium enterprise, having up to 250 employees."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Company ;
     vs:term_status reg:statusStable .
 

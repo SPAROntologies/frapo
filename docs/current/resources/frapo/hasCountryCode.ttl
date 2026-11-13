@@ -12,7 +12,7 @@ frapo:hasCountryCode a owl:DatatypeProperty ;
         frapo:hasCountryCode "IT" .
     """ ;
     rdfs:comment "AThe two-letter or three-letter upper-case country code used to identify a country (e.g. FR/FRA for France, DE/DEU for Germany)."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:seeAlso <http://countrycode.org/> ;
     rdfs:subPropertyOf frapo:hasCode ;
     vs:term_status reg:statusStable .

@@ -12,6 +12,6 @@ frapo:hasExchangeRate a owl:DatatypeProperty ;
         frapo:hasExchangeRate "1.08"^^xsd:decimal .
     """ ;
     rdfs:comment "he currency exchange rate between two specified currencies."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

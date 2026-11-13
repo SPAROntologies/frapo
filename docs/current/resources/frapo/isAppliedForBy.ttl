@@ -15,7 +15,7 @@ frapo:isAppliedForBy a owl:ObjectProperty ;
     :my-person a foaf:Person .
     """ ;
     rdfs:comment "The relation between something applied for and the agent making the application."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     vs:term_status reg:statusStable .
 

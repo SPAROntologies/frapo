@@ -4,9 +4,9 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://purl.org/spar/pro/Role">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro"/>
+    <rdfs:comment xml:lang="en">A role an agent may have. Individual members of this class or its sub-classes are used to specify particular roles.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">role</rdfs:label>
-    <rdfs:comment xml:lang="en">A role an agent may have. Individual members of this class or its sub-classes are used to specify particular roles.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro/"/>
   </rdf:Description>
 </rdf:RDF>

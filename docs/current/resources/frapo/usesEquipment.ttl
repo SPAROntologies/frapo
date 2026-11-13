@@ -14,7 +14,7 @@ frapo:usesEquipment a owl:ObjectProperty ;
     :my-equipment a frapo:Equipment .
     """ ;
     rdfs:comment "The relation between an activity such as an expedition, a research project or an investigation, and an item of equipment employed in that activity."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range frapo:Equipment ;
     vs:term_status reg:statusStable .
 

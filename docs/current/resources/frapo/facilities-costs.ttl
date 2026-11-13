@@ -16,6 +16,6 @@ frapo:facilities-costs a frapo:BudgetCategory,
         frapo:hasBudgetCategory frapo:facilities-costs .
     """ ;
     rdfs:comment "A budget category to cover the costs of maintaining facilities used by a project, for example an electron microscopy facility."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

@@ -13,7 +13,7 @@ frapo:hasReferenceNumber a owl:DatatypeProperty ;
         frapo:hasReferenceNumber "REF-998822" .
     """ ;
     rdfs:comment "The reference number for something."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf dcterms:identifier ;
     vs:term_status reg:statusStable .
 

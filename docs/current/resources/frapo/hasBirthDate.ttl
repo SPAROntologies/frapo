@@ -15,7 +15,7 @@ frapo:hasBirthDate a owl:DatatypeProperty ;
     """ ;
     rdfs:comment "The birth date of a person."@en ;
     rdfs:domain foaf:Person ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf foaf:birthday ;
     vs:term_status reg:statusStable .

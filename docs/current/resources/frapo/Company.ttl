@@ -13,7 +13,7 @@ frapo:Company a owl:Class ;
         foaf:name "Quipu Inc." .
     """ ;
     rdfs:comment "A commercial company or business run for profit."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Organization ;
     vs:term_status reg:statusStable .
 

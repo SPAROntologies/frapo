@@ -12,7 +12,7 @@ frapo:familyNameInitial a owl:DatatypeProperty ;
         frapo:familyNameInitial "B" .
     """ ;
     rdfs:comment "The initial(s) of a person's family name."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:initial ;
     vs:term_status reg:statusStable .
 

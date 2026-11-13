@@ -12,6 +12,6 @@ frapo:FeeOrFree a owl:DatatypeProperty ;
         frapo:feeOrFree "fee" .
     """ ;
     rdfs:comment "The specification whether participation in an event is free, or requires payment of a fee."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

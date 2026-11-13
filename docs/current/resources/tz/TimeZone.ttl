@@ -6,5 +6,5 @@ tz:TimeZone a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:label "has time zone"@en ;
     rdfs:comment "The time zone relating to an entity."@en ;
-    rdfs:isDefinedBy tz: .
+    rdfs:isDefinedBy <http://www.w3.org/2006/timezone> .
 

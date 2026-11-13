@@ -15,7 +15,7 @@ frapo:hasEndDate a owl:DatatypeProperty,
         frapo:hasEndDate "2029-01-31T23:59:59"^^xsd:dateTime .
     """ ;
     rdfs:comment "The end date for something, such as a project."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf dcterms:date ;
     vs:term_status reg:statusStable .

@@ -13,7 +13,7 @@ frapo:NotForProfitOrganization a owl:Class ;
         foaf:name "OpenCitations" .
     """ ;
     rdfs:comment "An organization that does not primarily exist to make profit, for example a charity or charitable foundation, a learned society, or a standards body such as the World Wide Web Consortium."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Organization ;
     vs:term_status reg:statusStable .
 

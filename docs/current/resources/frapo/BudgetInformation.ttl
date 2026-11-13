@@ -14,7 +14,7 @@ frapo:BudgetInformation a owl:Class ;
     :travel-budgeted a frapo:BudgetInformation .
     """ ;
     rdfs:comment "Information about an aspect of a budget."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

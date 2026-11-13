@@ -5,8 +5,8 @@
 >
   <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1"/>
     <rdfs:comment xml:lang="en">An organization.</rdfs:comment>
     <rdfs:label xml:lang="en">organization</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
   </rdf:Description>
 </rdf:RDF>

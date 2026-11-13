@@ -16,7 +16,7 @@ frapo:isPurchasedBy a owl:ObjectProperty ;
     :my-university a frapo:University .
     """ ;
     rdfs:comment "The relation between a purchased entity and its purchaser."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     owl:inverseOf frapo:purchases ;
     vs:term_status reg:statusStable ;

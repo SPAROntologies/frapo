@@ -13,7 +13,7 @@ frapo:Purchaser a owl:Class ;
         frapo:hasCustomerNumber "CUST-44556" .
     """ ;
     rdfs:comment "An agent who purchases something from a supplier."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Agent ;
     vs:term_status reg:statusStable .
 

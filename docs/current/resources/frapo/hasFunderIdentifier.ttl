@@ -14,7 +14,7 @@ frapo:hasFunderIdentifier a owl:DatatypeProperty ;
     """ ;
     rdfs:comment "An identifier for a funding agency."@en ;
     rdfs:domain frapo:FundingAgency ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf dcterms:identifier ;
     vs:term_status reg:statusStable .
 

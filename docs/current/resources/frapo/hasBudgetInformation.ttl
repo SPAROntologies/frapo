@@ -15,7 +15,7 @@ frapo:hasBudgetInformation a owl:ObjectProperty ;
     """@en ;
     rdfs:comment "The relation between a budget and some piece of information describing it."@en ;
     rdfs:domain frapo:Budget ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range frapo:BudgetInformation ;
     vs:term_status reg:statusStable .
 

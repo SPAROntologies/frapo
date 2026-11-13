@@ -15,7 +15,7 @@ frapo:hasRegistrationDeadline a owl:DatatypeProperty,
         frapo:hasRegistrationDeadline "2026-09-30T17:00:00"^^xsd:dateTime . 
     """ ;
     rdfs:comment "The date by which registration must be made, for example renewal of an internet domain name."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf dcterms:date ;
     vs:term_status reg:statusStable .

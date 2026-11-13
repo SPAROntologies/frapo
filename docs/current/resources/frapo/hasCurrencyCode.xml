@@ -7,20 +7,20 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasCurrencyCode">
+    <rdfs:seeAlso rdf:resource="http://en.wikipedia.org/wiki/ISO_4217"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/hasCode"/>
+    <rdfs:comment xml:lang="en">The three-letter currency code used to identify a currency, as defined by ISO 4217 (e.g. EUR or GBP).  
+</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <vann:example>
     :my-payment 
         frapo:hasCurrencyCode "EUR" .
     </vann:example>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:label xml:lang="en">has currency code</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
     <skos:note xml:lang="en">
 Not to be confused with the symbol used with numbers to denote an amount of money in a particular currency (e.g.€500; £3.40).
     </skos:note>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:comment xml:lang="en">The three-letter currency code used to identify a currency, as defined by ISO 4217 (e.g. EUR or GBP).  
-</rdfs:comment>
-    <rdfs:seeAlso rdf:resource="http://en.wikipedia.org/wiki/ISO_4217"/>
-    <rdfs:label xml:lang="en">has currency code</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/hasCode"/>
   </rdf:Description>
 </rdf:RDF>

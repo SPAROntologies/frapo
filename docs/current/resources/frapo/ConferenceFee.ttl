@@ -13,7 +13,7 @@ frapo:ConferenceFee a owl:Class ;
         frapo:hasValue "350"^^xsd:decimal .
     """ ;
     rdfs:comment "A fee paid to attend a conference."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Fee ;
     vs:term_status reg:statusStable .
 

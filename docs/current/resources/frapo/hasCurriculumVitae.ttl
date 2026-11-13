@@ -16,7 +16,7 @@ frapo:hasCurriculumVitae a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between a person and an on-line version of that person's curriculum vitae."@en ;
     rdfs:domain foaf:Person ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Document ;
     vs:term_status reg:statusStable .
 

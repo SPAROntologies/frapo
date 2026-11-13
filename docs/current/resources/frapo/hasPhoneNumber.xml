@@ -6,15 +6,15 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasPhoneNumber">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:label xml:lang="en">has phone number</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/hasAgentInformation"/>
     <rdfs:comment xml:lang="en">A telephone number for an agent.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <vann:example>
     :my-person a foaf:Person ;
         frapo:hasPhoneNumber "+39 051-654-4321" .
     </vann:example>
+    <rdfs:label xml:lang="en">has phone number</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
   </rdf:Description>
 </rdf:RDF>

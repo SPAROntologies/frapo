@@ -6,28 +6,28 @@
    xmlns:vann="http://purl.org/vocab/vann/"
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
+  <rdf:Description rdf:nodeID="na05655ae3ccd4989bcabd017a19c8935b2">
+    <rdf:first rdf:resource="http://purl.org/cerif/frapo/Budget"/>
+    <rdf:rest rdf:nodeID="na05655ae3ccd4989bcabd017a19c8935b3"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/specifiesExpediture">
-    <rdfs:comment xml:lang="en">The relation between an agent or a budget and the expenditure specified by that agent or budget.</rdfs:comment>
+    <rdfs:domain rdf:nodeID="na05655ae3ccd4989bcabd017a19c8935b1"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:domain rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb1"/>
-    <rdfs:label xml:lang="en">specifies expenditure</rdfs:label>
     <vann:example>
     :my-budget a frapo:Budget ;
         frapo:specifiesExpediture :my-expenditure .
     </vann:example>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:comment xml:lang="en">The relation between an agent or a budget and the expenditure specified by that agent or budget.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
+    <rdfs:label xml:lang="en">specifies expenditure</rdfs:label>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb1">
-    <owl:unionOf rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb2"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb3">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="na05655ae3ccd4989bcabd017a19c8935b3">
     <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb2">
-    <rdf:rest rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb3"/>
-    <rdf:first rdf:resource="http://purl.org/cerif/frapo/Budget"/>
+  <rdf:Description rdf:nodeID="na05655ae3ccd4989bcabd017a19c8935b1">
+    <owl:unionOf rdf:nodeID="na05655ae3ccd4989bcabd017a19c8935b2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
 </rdf:RDF>

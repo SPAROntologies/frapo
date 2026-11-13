@@ -12,7 +12,7 @@ frapo:hasPostCode a owl:DatatypeProperty ;
         frapo:hasPostCode "40126" .
     """ ;
     rdfs:comment "The postal code of an address."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:hasCode ;
     vs:term_status reg:statusStable .
 

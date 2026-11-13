@@ -14,7 +14,7 @@ frapo:hasCustomerNumber a owl:DatatypeProperty ;
     """ ;
     rdfs:comment "An identifying number for an agent, typically used by the accounting system of the supplier when issuing quotations, fulfilling orders and submitting invoices."@en ;
     rdfs:domain frapo:Purchaser ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf dcterms:identifier ;
     vs:term_status reg:statusStable .
 

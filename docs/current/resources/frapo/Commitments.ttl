@@ -13,7 +13,7 @@ frapo:Commitments a owl:Class ;
         frapo:hasValue "45000"^^xsd:decimal .
     """ ;
     rdfs:comment "Money set aside to honour expenditures already made but for which no invoices have yet been received, or expenditures planned for the future, for example for salaries."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:BudgetInformation ;
     vs:term_status reg:statusStable .
 

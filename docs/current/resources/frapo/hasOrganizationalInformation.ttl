@@ -14,7 +14,7 @@ frapo:hasOrganizationalInformation a owl:DatatypeProperty ;
     """ ;
     rdfs:comment "Some information about the organization."@en ;
     rdfs:domain foaf:Organization ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:hasAgentInformation ;
     vs:term_status reg:statusStable .
 

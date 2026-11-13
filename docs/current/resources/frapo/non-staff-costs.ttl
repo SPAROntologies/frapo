@@ -16,6 +16,6 @@ frapo:non-staff-costs a frapo:BudgetCategory,
         frapo:hasBudgetCategory frapo:non-staff-costs .
     """ ;
     rdfs:comment "A budget category to cover all the costs associated with a project that do not involve the employment of staff by the institution, thus, for example, including consumables purchase, travel costs and consultancy fees, but excluding the salary, estates and indirect costs associated with the allocation of the PI's time to the project and the direct employment of a project manager."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

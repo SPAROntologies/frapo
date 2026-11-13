@@ -12,7 +12,7 @@ frapo:hasProvenance a owl:DatatypeProperty ;
         frapo:hasProvenance "Generated via chemical synthesis" .
     """ ;
     rdfs:comment "The description of the provenance of an entity."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf owl:topDataProperty ;
     vs:term_status reg:statusStable .
 

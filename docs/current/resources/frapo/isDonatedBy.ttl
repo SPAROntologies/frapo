@@ -15,7 +15,7 @@ frapo:isDonatedBy a owl:ObjectProperty ;
     :my-person a foaf:Person .
     """ ;
     rdfs:comment "The relation between a gift and the benefactor who provided it."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     vs:term_status reg:statusStable .
 

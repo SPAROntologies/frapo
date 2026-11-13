@@ -13,7 +13,7 @@ frapo:Gift a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "A gift, donation, benefaction or legacy, typically of money."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Funding ;
     vs:term_status reg:statusStable .
 

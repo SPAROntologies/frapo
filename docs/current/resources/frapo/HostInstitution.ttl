@@ -14,7 +14,7 @@ frapo:HostInstitution a owl:Class ;
         frapo:hasPostalAddress "Via Zamboni 33, Bologna (BO), Italy" .
     """ ;
     rdfs:comment "An institution that acts as a host, for example of a project, a resource or a person, for example by providing accommodation, services, operational support and/or funding."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Organization ;
     vs:term_status reg:statusStable .
 

@@ -14,6 +14,6 @@ frapo:purchases a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between a purchaser and a purchased entity."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

@@ -2,8 +2,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/accepted",
     "@type": [
-      "http://purl.org/cerif/frapo/Status",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.org/cerif/frapo/Status"
     ],
     "http://purl.org/vocab/vann/example": [
       {
@@ -18,7 +18,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.org/cerif/frapo/"
+        "@id": "http://purl.org/cerif/frapo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [

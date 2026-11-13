@@ -13,7 +13,7 @@ frapo:ServiceContractFee a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "A fee paid periodically, typically annually, to obtain access when required to a service such as an equipment maintenance contract.\""@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Fee ;
     vs:term_status reg:statusStable .
 

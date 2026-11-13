@@ -12,7 +12,7 @@ frapo:ResearchInformationSystem a owl:Class ;
         foaf:name "Quipu Research DB" .
     """ ;
     rdfs:comment "A database containing administrative information about the research undertaken in an institution, and the publications and other outputs from such research."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:ComputationalService ;
     vs:term_status reg:statusStable .
 

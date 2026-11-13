@@ -7,7 +7,11 @@
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/contributions-in-kind">
     <rdfs:comment xml:lang="en">A budget category to categorize the financial worth of contributions in kind (e.g. staff effort, access to facilities, sharing of know-how) given to a project by an agent, for example by the host institution or by a commercial partner in an academic project. </rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:label xml:lang="en">contributions in kind</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://purl.org/cerif/frapo/BudgetCategory"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <vann:example>
     :my-budget a frapo:Budget ;
         frapo:hasBudgetInformation :my-budgeted-amout .
@@ -15,9 +19,5 @@
     :my-budgeted-amount a frapo:BudgetedAmount ;
         frapo:hasBudgetCategory frapo:contributions-in-kind .
     </vann:example>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://purl.org/cerif/frapo/BudgetCategory"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:label xml:lang="en">contributions in kind</rdfs:label>
   </rdf:Description>
 </rdf:RDF>

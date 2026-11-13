@@ -13,7 +13,7 @@ frapo:hasSerialNumber a owl:DatatypeProperty ;
         frapo:hasSerialNumber "SN-987654321" .
     """ ;
     rdfs:comment "The serial number of something, for example a piece of equipment."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf dcterms:identifier ;
     vs:term_status reg:statusStable .
 

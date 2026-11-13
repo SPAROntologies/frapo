@@ -12,7 +12,7 @@ frapo:hasQualification a owl:DatatypeProperty ;
         frapo:hasQualification "Doctor of Philosophy in Computer Science" .
     """ ;
     rdfs:comment "The qualification held by a person."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:hasPersonalInformation ;
     vs:term_status reg:statusStable .
 

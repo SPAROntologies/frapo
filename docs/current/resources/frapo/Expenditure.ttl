@@ -12,7 +12,7 @@ frapo:Expenditure a owl:Class ;
     :my-expenditure a frapo:Expenditure .
     """ ;
     rdfs:comment "Money going out of an account, because of expenditure on various entities."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:BudgetInformation ;
     vs:term_status reg:statusStable ;
     skos:note """

@@ -5,5 +5,5 @@
 pso:Status a owl:Class ;
     rdfs:label "status"@en ;
     rdfs:comment "A state or condition that a document may have."@en ;
-    rdfs:isDefinedBy pso: .
+    rdfs:isDefinedBy <http://purl.org/spar/pso> .
 

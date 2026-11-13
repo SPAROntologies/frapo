@@ -14,7 +14,7 @@ frapo:usesFacility a owl:ObjectProperty ;
     :my-facility a frapo:Facility .
     """ ;
     rdfs:comment "The relation between an activity such as an expedition, a research project or an investigation, and a facility employed in that activity."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range frapo:Facility ;
     vs:term_status reg:statusStable .
 

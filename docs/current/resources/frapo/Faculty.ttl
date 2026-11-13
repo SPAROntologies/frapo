@@ -12,7 +12,7 @@ frapo:Faculty a owl:Class ;
         foaf:name "Faculty of Engineering" .
     """ ;
     rdfs:comment "A grouping of similar departments within a university context, also known as a school or a division, for example the Humanities Division, the Mathematics Faculty, or the School of Medicine."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Division ;
     vs:term_status reg:statusStable .
 

@@ -17,17 +17,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.org/cerif/frapo/"
+        "@id": "http://purl.org/cerif/frapo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "sme"
+        "@value": "small to medium enterprise"
       },
       {
         "@language": "en",
-        "@value": "small to medium enterprise"
+        "@value": "sme"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [

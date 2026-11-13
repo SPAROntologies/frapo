@@ -17,6 +17,6 @@ frapo:academic a scoro:OrganizationRole,
         pro:withRole frapo:academic .    
     """ ;
     rdfs:comment "The role of a member of the academic staff of an academic institution, such as a university."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

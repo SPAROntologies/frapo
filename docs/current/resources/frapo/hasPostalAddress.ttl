@@ -12,7 +12,7 @@ frapo:hasPostalAddress a owl:DatatypeProperty ;
         frapo:hasPostalAddress "Via Zamboni 33, Bologna (BO), Italy" .
     """ ;
     rdfs:comment "A postal address for an agent."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:hasAgentInformation ;
     vs:term_status reg:statusStable .
 

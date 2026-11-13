@@ -14,7 +14,7 @@ frapo:isManufacturedBy a owl:ObjectProperty ;
     :my-manufacturer a frapo:Manufacturer .
     """ ;
     rdfs:comment "The relation between a manufactured entity and its manufacturer."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range frapo:Manufacturer ;
     owl:inverseOf frapo:manufactures ;
     vs:term_status reg:statusStable .

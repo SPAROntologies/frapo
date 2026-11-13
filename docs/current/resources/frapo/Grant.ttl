@@ -13,7 +13,7 @@ frapo:Grant a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "A financial award by a funding agency for a particular project or purpose, usually awarded on the basis of a competitive application."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Funding ;
     vs:term_status reg:statusStable .
 

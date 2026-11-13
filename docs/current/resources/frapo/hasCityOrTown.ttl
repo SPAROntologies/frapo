@@ -12,6 +12,6 @@ frapo:hasCityOrTown a owl:DatatypeProperty ;
         frapo:hasCityOrTown "Bologna" .
     """ ;
     rdfs:comment "The specification of a city or town, for example as the location of an event."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

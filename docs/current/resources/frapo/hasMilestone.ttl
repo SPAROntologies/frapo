@@ -12,6 +12,6 @@ frapo:hasMilestone a owl:DatatypeProperty ;
         frapo:hasMilestone "M1: Data Integration Complete" .
     """ ;
     rdfs:comment "A significant event (a \"milestone\") in the progress of a project."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

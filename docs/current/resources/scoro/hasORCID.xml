@@ -4,10 +4,10 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://purl.org/spar/scoro/hasORCID">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/scoro"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has ORCID</rdfs:label>
     <rdfs:comment xml:lang="en">A relation between an individual and their Open Researcher and Contributor ID (ORCID), an alphanumeric identifier for individual scholars.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/scoro/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
 </rdf:RDF>

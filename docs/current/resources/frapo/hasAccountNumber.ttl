@@ -14,7 +14,7 @@ frapo:hasAccountNumber a owl:DatatypeProperty ;
     """ ;
     rdfs:comment "An identifying number for a financial account."@en ;
     rdfs:domain frapo:Account ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf dcterms:identifier ;
     vs:term_status reg:statusStable .
 

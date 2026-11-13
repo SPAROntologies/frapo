@@ -12,6 +12,6 @@ frapo:hasCode a owl:DatatypeProperty ;
         frapo:hasCode "DEPT-CS-01" .
     """ ;
     rdfs:comment "A code for something."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

@@ -14,7 +14,7 @@ frapo:Income a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "Money coming into an account."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:BudgetInformation ;
     vs:term_status reg:statusStable ;
     skos:note "May be associated with a particular budget category."@en .

@@ -13,7 +13,7 @@ frapo:hasTemporalDuration a owl:DatatypeProperty ;
         frapo:hasTemporalDuration "2026-01-31/2029-01-31"^^xsd:dateTime .
     """ ;
     rdfs:comment "The temporal duration of some entity such as an event or a project."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range xsd:dateTime ;
     vs:term_status reg:statusStable .
 

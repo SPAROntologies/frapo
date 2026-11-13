@@ -14,7 +14,7 @@ frapo:hasCurrencyCode a owl:DatatypeProperty ;
     """ ;
     rdfs:comment """The three-letter currency code used to identify a currency, as defined by ISO 4217 (e.g. EUR or GBP).  
 """@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:seeAlso <http://en.wikipedia.org/wiki/ISO_4217> ;
     rdfs:subPropertyOf frapo:hasCode ;
     vs:term_status reg:statusStable ;

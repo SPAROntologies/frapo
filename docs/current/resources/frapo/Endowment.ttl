@@ -13,7 +13,7 @@ frapo:Endowment a owl:Class ;
         frapo:hasCurrency "USD" .
     """ ;
     rdfs:comment "A transfer, generally as a gift, of money or property to an institution to provide a permanent fund, the income from which is to be used for a particular purpose."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Gift ;
     vs:term_status reg:statusStable .
 

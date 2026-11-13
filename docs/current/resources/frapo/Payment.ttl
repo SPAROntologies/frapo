@@ -13,7 +13,7 @@ frapo:Payment a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "A financial payment made, for example in exchange for something purchased such as property, goods or services, or to refund expenses incurred."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

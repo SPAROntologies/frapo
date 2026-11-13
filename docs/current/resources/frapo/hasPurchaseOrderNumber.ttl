@@ -14,7 +14,7 @@ frapo:hasPurchaseOrderNumber a owl:DatatypeProperty ;
     """ ;
     rdfs:comment "An official purchase order issued by a purchasing agent to a supplier of goods or services, and used by the supplier to identify the order when delivering goods or submitting an invoice."@en ;
     rdfs:domain frapo:PurchaseOrder ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf dcterms:identifier ;
     vs:term_status reg:statusStable .
 

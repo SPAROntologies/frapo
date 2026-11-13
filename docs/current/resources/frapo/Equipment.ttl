@@ -12,7 +12,7 @@ frapo:Equipment a owl:Class ;
         foaf:name "Refrigerated centrifuge" .
     """ ;
     rdfs:comment "An item of equipment or apparatus, or a laboratory instrument, for example a refrigerated centrifuge."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:InfrastructureEntity ;
     vs:term_status reg:statusStable .
 

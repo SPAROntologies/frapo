@@ -11,7 +11,7 @@ frapo:Tender a owl:Class ;
     :my-tender a frapo:Tender .
     """ ;
     rdfs:comment "Sealed bid or offer document submitted in response to a request for tenders, containing detailed information on costs, requirements and terms associated with a potential contract."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:seeAlso <http://www.businessdictionary.com/definition/tender.html> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .

@@ -12,6 +12,6 @@ frapo:isEnabledBy a owl:ObjectProperty ;
         frapo:isEnabledBy :my-project .
     """ ;
     rdfs:comment "The relation between an entity and another entity that enables it, e.g. linking an investigation to a project that enables it."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

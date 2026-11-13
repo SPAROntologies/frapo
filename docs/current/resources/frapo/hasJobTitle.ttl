@@ -17,7 +17,7 @@ frapo:hasJobTitle a owl:DatatypeProperty ;
     rdfs:comment """The job title held by a person, such as might appear next to the name in a directory or on a conference name badge. For example, the person's specific job title might be "Linacre Professor of Zoology" or "Regius Professor of Moral Philosophy". 
 """@en ;
     rdfs:domain foaf:Person ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:seeAlso scoro:withJobTitle ;
     rdfs:subPropertyOf frapo:hasPersonalInformation ;
     vs:term_status reg:statusStable ;

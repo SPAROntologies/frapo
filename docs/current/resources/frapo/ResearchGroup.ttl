@@ -13,7 +13,7 @@ frapo:ResearchGroup a owl:Class ;
         foaf:name "OpenCitations Research Unit" .
     """ ;
     rdfs:comment "A group of people, usually within a university department or a research institute, and typically under a single group leader, dedicated to working together to undertake research on one or more topics. May also be called a research unit."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Group ;
     vs:term_status reg:statusStable .
 

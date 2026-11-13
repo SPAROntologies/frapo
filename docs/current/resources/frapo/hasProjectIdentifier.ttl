@@ -15,7 +15,7 @@ frapo:hasProjectIdentifier a owl:DatatypeProperty ;
     """ ;
     rdfs:comment "An identifier for a project."@en ;
     rdfs:domain foaf:Project ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf dcterms:identifier ;
     vs:term_status reg:statusStable .
 

@@ -13,7 +13,7 @@ frapo:Supplier a owl:Class ;
         foaf:name "Quipu Supplies" .
     """ ;
     rdfs:comment "An agent who supplies something, such as goods or services."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Agent ;
     vs:term_status reg:statusStable .
 

@@ -13,7 +13,7 @@ frapo:DocumentRepository a owl:Class ;
         foaf:name "arXiv" .
     """ ;
     rdfs:comment "A facility in which digital documents are deposited for long-term preservation and (optional) publication."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Repository ;
     vs:term_status reg:statusStable ;
     skos:note "May also be described as a document archive, or a digital library."@en .

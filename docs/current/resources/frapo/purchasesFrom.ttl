@@ -16,7 +16,7 @@ frapo:purchasesFrom a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between a purchaser and a supplier from whom the purchase is made."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     owl:inverseOf frapo:sellsTo ;
     vs:term_status reg:statusStable .

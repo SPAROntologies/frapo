@@ -12,7 +12,7 @@ frapo:hasHeadcount a owl:DatatypeProperty ;
         frapo:hasHeadcount "12"^^xsd:nonNegativeInteger .
     """ ;
     rdfs:comment "The number of people employed by an organization."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:hasOrganizationalInformation ;
     vs:term_status reg:statusStable .
 

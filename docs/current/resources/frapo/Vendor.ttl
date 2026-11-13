@@ -12,7 +12,7 @@ frapo:Vendor a owl:Class ;
         foaf:name "Quipu Inc." .
     """ ;
     rdfs:comment "An agent who supplies goods or services in exchange for payment, in response to receipt of payment or of an official purchase order from a purchaser that is responded to by submission of an invoice for what is supplied."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Supplier ;
     vs:term_status reg:statusStable .
 

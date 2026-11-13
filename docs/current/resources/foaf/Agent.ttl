@@ -5,5 +5,5 @@
 foaf:Agent a owl:Class ;
     rdfs:label "agent"@en ;
     rdfs:comment "An agent (eg. person, group, software or physical artifact)."@en ;
-    rdfs:isDefinedBy foaf: .
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
 

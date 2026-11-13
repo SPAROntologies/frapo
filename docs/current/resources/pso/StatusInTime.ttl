@@ -5,5 +5,5 @@
 pso:StatusInTime a owl:Class ;
     rdfs:label "status in time"@en ;
     rdfs:comment "A particular situation that describe a state or condition some documents may have at a particular time as consequence of one or more events."@en ;
-    rdfs:isDefinedBy pso: .
+    rdfs:isDefinedBy <http://purl.org/spar/pso> .
 

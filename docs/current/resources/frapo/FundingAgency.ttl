@@ -13,7 +13,7 @@ frapo:FundingAgency a owl:Class ;
         foaf:name "The National Science Foundation" .
     """ ;
     rdfs:comment "An organization that provides funding for projects or resources, often in the form of grants awarded on the basis of competitive application."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Organization ;
     vs:term_status reg:statusStable .
 

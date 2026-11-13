@@ -16,7 +16,7 @@ frapo:awards a owl:InverseFunctionalProperty,
     """ ;
     rdfs:comment "The relation between an agent and something the agent awards, for example linking a funding agency to a grant, a university to a degree, or an organization to a prize."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     owl:inverseOf frapo:isAwardedBy ;
     vs:term_status reg:statusStable .
 

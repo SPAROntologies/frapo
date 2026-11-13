@@ -14,7 +14,7 @@ frapo:University a owl:Class ;
         frapo:awards :phd-scholarship-2004 .
     """ ;
     rdfs:comment "A university at which higher education and research is conducted."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Organization ;
     vs:term_status reg:statusStable .
 

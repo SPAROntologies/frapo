@@ -16,6 +16,6 @@ frapo:service-costs a frapo:BudgetCategory,
         frapo:hasBudgetCategory frapo:service-costs .
     """ ;
     rdfs:comment "A budget category to cover the costs of services used by a project, for example a DNA sequencing service, or an equipment maintenance service."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

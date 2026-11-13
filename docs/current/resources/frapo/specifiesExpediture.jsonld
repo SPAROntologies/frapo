@@ -17,12 +17,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:n73b58469ef3a4310b6c74936a4970c5fb1"
+        "@id": "_:na05655ae3ccd4989bcabd017a19c8935b1"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.org/cerif/frapo/"
+        "@id": "http://purl.org/cerif/frapo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -38,7 +38,7 @@
     ]
   },
   {
-    "@id": "_:n73b58469ef3a4310b6c74936a4970c5fb1",
+    "@id": "_:na05655ae3ccd4989bcabd017a19c8935b1",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],

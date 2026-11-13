@@ -14,7 +14,7 @@ frapo:ownsIRPOf a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between an agent who owns IPR arising from or relating and an entity to that entity."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:owns ;
     vs:term_status reg:statusStable .
 

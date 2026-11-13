@@ -16,7 +16,7 @@ frapo:hasInvoiceDate a owl:DatatypeProperty,
     """ ;
     rdfs:comment "The date of an invoice."@en ;
     rdfs:domain frapo:Invoice ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range xsd:date ;
     rdfs:subPropertyOf dcterms:date ;
     vs:term_status reg:statusStable .

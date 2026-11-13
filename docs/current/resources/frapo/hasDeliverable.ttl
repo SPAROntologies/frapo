@@ -12,6 +12,6 @@ frapo:hasDeliverable a owl:DatatypeProperty ;
         frapo:hasDeliverable "D1.1 Technical Architecture" .
     """ ;
     rdfs:comment "A deliverable of a project."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

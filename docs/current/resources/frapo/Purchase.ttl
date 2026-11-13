@@ -13,7 +13,7 @@ frapo:Purchase a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "The payment for obtaining something, for example property, goods or services."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

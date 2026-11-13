@@ -13,7 +13,7 @@ frapo:Department a owl:Class ;
         foaf:name "Computer Science Department" .
     """ ;
     rdfs:comment "A department or sub-section within a larger organization, for example a university academic department."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Organization ;
     vs:term_status reg:statusStable .
 

@@ -5,5 +5,5 @@
 foaf:Person a owl:Class ;
     rdfs:label "person"@en ;
     rdfs:comment "A person."@en ;
-    rdfs:isDefinedBy foaf: .
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
 

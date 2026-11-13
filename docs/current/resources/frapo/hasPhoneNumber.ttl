@@ -12,7 +12,7 @@ frapo:hasPhoneNumber a owl:DatatypeProperty ;
         frapo:hasPhoneNumber "+39 051-654-4321" .
     """ ;
     rdfs:comment "A telephone number for an agent."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:hasAgentInformation ;
     vs:term_status reg:statusStable .
 
