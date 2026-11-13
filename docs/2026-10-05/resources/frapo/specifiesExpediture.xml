@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/cerif/frapo/specifiesExpediture">
+    <rdfs:label xml:lang="en">specifies expenditure</rdfs:label>
+    <vann:example>
+    :my-budget a frapo:Budget ;
+        frapo:specifiesExpediture :my-expenditure .
+    </vann:example>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The relation between an agent or a budget and the expenditure specified by that agent or budget.</rdfs:comment>
+    <rdfs:domain rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb1"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb2">
+    <rdf:rest rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb3"/>
+    <rdf:first rdf:resource="http://purl.org/cerif/frapo/Budget"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb3">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+</rdf:RDF>

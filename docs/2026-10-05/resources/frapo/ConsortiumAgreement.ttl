@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:ConsortiumAgreement a owl:Class ;
+    rdfs:label "consortium agreement"@en ;
+    vann:example """
+    :my-consortium-agreement a frapo:ConsortiumAgreement ;
+        frapo:hasStartDate "2026-01-01"^^xsd:date ; 
+        frapo:hasEndDate "2029-12-31"^^xsd:date .
+    """ ;
+    rdfs:comment "A formal agreement between members of a consortium, for example between research groups at different universities engaged in a multi-partner research project."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Contract ;
+    vs:term_status reg:statusStable .
+

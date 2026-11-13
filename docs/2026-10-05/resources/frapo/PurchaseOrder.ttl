@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:PurchaseOrder a owl:Class ;
+    rdfs:label "purchase order"@en ;
+    vann:example """
+    :my-purchase-order a frapo:PurchaseOrder ;
+        frapo:hasPurchaseOrderNumber "PO-2026-0045" .
+    """ ;
+    rdfs:comment "An official order from a purchasing institution to a supplier for the purchase of goods or services, often issued in response to the receipt of a quotation from the supplier."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+

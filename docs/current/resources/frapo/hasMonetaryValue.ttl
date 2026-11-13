@@ -16,6 +16,6 @@ frapo:hasMonetaryValue a owl:DatatypeProperty ;
     rdfs:isDefinedBy frapo: ;
     vs:term_status reg:statusStable ;
     skos:note """
-Use in conjuction with `frapo:hasCurrency`.
+Use in conjunction with `frapo:hasCurrency`.
     """@en .
 

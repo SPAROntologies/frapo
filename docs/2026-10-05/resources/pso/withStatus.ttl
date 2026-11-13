@@ -1,0 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pso: <http://purl.org/spar/pso/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+pso:withStatus a owl:ObjectProperty ;
+    rdfs:label "with status"@en ;
+    rdfs:comment "The relation between the holding of a status to a document, a dataset or something else at a specific time and the definition of that status."@en ;
+    rdfs:domain pso:StatusInTime ;
+    rdfs:isDefinedBy pso: ;
+    rdfs:range pso:Status .
+

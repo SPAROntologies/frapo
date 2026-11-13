@@ -1,0 +1,19 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasModelNumber a owl:DatatypeProperty ;
+    rdfs:label "has model number"@en ;
+    vann:example """
+    :my-equipment 
+        frapo:hasModelNumber "MDL-X500" .
+    """ ;
+    rdfs:comment "The model number of something, for example a piece of equipment."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+

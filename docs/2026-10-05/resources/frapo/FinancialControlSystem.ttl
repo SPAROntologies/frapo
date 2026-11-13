@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:FinancialControlSystem a owl:Class ;
+    rdfs:label "financial control system"@en ;
+    vann:example """
+    :my-financial-control-system a frapo:FinancialControlSystem ;
+        foaf:name "Quipu Accounting System" .
+    """ ;
+    rdfs:comment "A software system controlling the financial activities of an organization, for example determining full economic cost budgets for grant applications, and managing the funding of funded projects."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:ComputationalService ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,25 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Investigation a owl:Class ;
+    rdfs:label "investigation"@en ;
+    vann:example """
+    :my-investigation a frapo:Investigation ;
+        frapo:hasOutput <http://doi.org/10.1016/j.websem.2006.11.002> .
+    """ ;
+    rdfs:comment """
+An investigation is an endeavour that involves research, enabled by a project.  
+"""@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Endeavour ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+The investigation relate to the scholarly and practical aspects of conducting the research itself, including the hypotheses being investigated, the experiments being undertaken, the data being gathered and analysed, the interpretations being drawn from the data, and the results obtained.  
+In contrast, the project that enables it encompasses the administrative aspects of undertaking the endeavour, including the funding obtained, the people employed, and the management of the project in terms of deadlines and deliverables.
+    """@en .
+

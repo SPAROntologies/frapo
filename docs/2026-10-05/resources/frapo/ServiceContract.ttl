@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:ServiceContract a owl:Class ;
+    rdfs:label "service contract"@en ;
+    vann:example """
+    :my-service-contract a frapo:ServiceContract ;
+        frapo:hasStartDate "2026-02-01"^^xsd:date ; 
+        frapo:hasEndDate "2029-01-31"^^xsd:date .
+    """ ;
+    rdfs:comment "A contract for the provision of a service such as a cleaning service, or for the regular servicing, maintenance and repair of some item of equipment or infrastructure."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Contract ;
+    vs:term_status reg:statusStable .
+

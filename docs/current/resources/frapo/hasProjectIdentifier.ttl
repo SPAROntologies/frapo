@@ -7,8 +7,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 
-frapo:hasProjectIdentifier a owl:AnnotationProperty,
-        owl:DatatypeProperty ;
+frapo:hasProjectIdentifier a owl:DatatypeProperty ;
     rdfs:label "has project identifier"@en ;
     vann:example """
     :my-project a foaf:Project ;

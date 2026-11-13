@@ -1,0 +1,17 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasLocation a owl:DatatypeProperty ;
+    rdfs:label "has location"@en ;
+    vann:example """
+    :my-facility 
+        frapo:hasLocation "Campus Navile, Bologna" .
+    """ ;
+    rdfs:comment "The relevant location for an entity, which might be geographical (e.g. New York City) or local (e.g. Freezer B, second shelf)."@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+

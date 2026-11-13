@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Legacy a owl:Class ;
+    rdfs:label "legacy"@en ;
+    vann:example """
+    :my-legacy a frapo:Legacy ;
+        frapo:hasMonetaryValue "10000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A gift of money or property specified in the will of a person, that is made after that person's death."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Gift ;
+    vs:term_status reg:statusStable .
+

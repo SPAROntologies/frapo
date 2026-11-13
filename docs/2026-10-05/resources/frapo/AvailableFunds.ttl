@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:AvailableFunds a owl:Class ;
+    rdfs:label "available funds"@en ;
+    vann:example """
+    :my-available-funds a frapo:AvailableFunds ;
+        frapo:hasCurrency "GBP" ; 
+        frapo:hasValue "12500"^^xsd:decimal .
+    """ ;
+    rdfs:comment "The amount available to spend in a budget category, equalling the income minus the expenditure to date plus future expenditure commitments. "@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:BudgetInformation ;
+    vs:term_status reg:statusStable .
+

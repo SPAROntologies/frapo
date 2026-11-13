@@ -1,0 +1,9 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+foaf:Project a owl:Class ;
+    rdfs:label "project"@en ;
+    rdfs:comment "An administrative entity that enables an endeavour such as a research investigation.  A project relates to the administrative aspects of undertaking an endeavour, including the funding obtained, the people employed, and the management of the project in terms of deadlines and deliverables.  In contrast, an endeavour such as a research investigation relate to the academic and practical aspects of undertaking that endeavour - thus for a research investigation: the research itself, including the hypotheses being investigated, the experiments being undertaken, the data being gathered and analysed, the interpretations being drawn from the data, and the results obtained."@en ;
+    rdfs:isDefinedBy foaf: .
+

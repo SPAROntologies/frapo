@@ -1,0 +1,20 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasPurchaseOrderNumber a owl:DatatypeProperty ;
+    rdfs:label "has purchase order number"@en ;
+    vann:example """
+    :my-purchase-order a frapo:PurchaseOrder ;
+        frapo:hasPurchaseOrderNumber "PO-2026-0045" .
+    """ ;
+    rdfs:comment "An official purchase order issued by a purchasing agent to a supplier of goods or services, and used by the supplier to identify the order when delivering goods or submitting an invoice."@en ;
+    rdfs:domain frapo:PurchaseOrder ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+

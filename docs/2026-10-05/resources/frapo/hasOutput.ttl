@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasOutput a owl:ObjectProperty ;
+    rdfs:label "has output"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasOutput :my-output .
+    """ ;
+    rdfs:comment "The relation between an activity such as a project or endeavour and something that is created or produced as a result of that activity. Examples include a building created as a result of a building project, and a journal article published to describe the results of a research investigation."@en ;
+    rdfs:isDefinedBy frapo: ;
+    owl:inverseOf frapo:isOutputOf ;
+    vs:term_status reg:statusStable .
+

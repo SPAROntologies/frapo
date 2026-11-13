@@ -11,7 +11,7 @@ frapo:hasExpertise a owl:DatatypeProperty ;
     :my-person 
         frapo:hasExpertise "Knowledge Representation and Semantic Web" .
     """ ;
-    rdfs:comment "The area(s) of expertise and skills posessed by an individual or an organization."@en ;
+    rdfs:comment "The area(s) of expertise and skills possessed by an individual or an organization."@en ;
     rdfs:isDefinedBy frapo: ;
     rdfs:subPropertyOf frapo:hasAgentInformation ;
     vs:term_status reg:statusStable .

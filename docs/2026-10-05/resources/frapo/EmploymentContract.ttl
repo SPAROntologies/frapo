@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:EmploymentContract a owl:Class ;
+    rdfs:label "employment contract"@en ;
+    vann:example """
+    :my-employment-contract a frapo:EmploymentContract ;
+        frapo:hasStartDate "2026-02-01"^^xsd:date ; 
+        frapo:hasEndDate "2029-01-31"^^xsd:date .
+    """ ;
+    rdfs:comment "A contract of employment between a person and an organization."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Contract ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,19 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Owner a owl:Class ;
+    rdfs:label "owner"@en ;
+    vann:example """
+    :my-owner a frapo:Owner ;
+        foaf:name "John Doe" .
+    """ ;
+    rdfs:comment "The agent who owns an entity."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf foaf:Agent ;
+    vs:term_status reg:statusStable .
+

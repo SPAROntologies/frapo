@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Subscription a owl:Class ;
+    rdfs:label "subscription"@en ;
+    vann:example """
+    :my-subscription a frapo:Subscription ;
+        frapo:hasMonetaryValue "200"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "Payment, commonly made annually, to obtain access to something on a periodic or continuing basis, such as a journal."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:Fee ;
+    vs:term_status reg:statusStable .
+

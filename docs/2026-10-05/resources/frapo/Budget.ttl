@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:Budget a owl:Class ;
+    rdfs:label "has budget"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :travel-budgeted .
+    """ ;
+    rdfs:comment "A structured statement of how funds are to be used for expenditure in defined budget categories. A budget is created, for example, when applying for funding for a project, and is subsequently used to manage the expenditure from the awarded grant for that project."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+

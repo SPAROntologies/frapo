@@ -1,0 +1,17 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:isOutputOf a owl:ObjectProperty ;
+    rdfs:label "is output of"@en ;
+    vann:example """
+    :my-output 
+        frapo:isOutputOf :my-project .
+    """ ;
+    rdfs:comment "The relation between something that is created or produced and the activity that created or produced it."@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+

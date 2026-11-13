@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:evaluates a owl:ObjectProperty ;
+    rdfs:label "evaluates"@en ;
+    vann:example """
+    :my-funding-agency a frapo:FundingAgency ;
+        frapo:evaluates :my-funding-application .
+    
+    :my-funding-application a frapo:FundingApplication .
+    """ ;
+    rdfs:comment "The relation between an agent and an entity which that agent evaluates, for example a funding agency that is evaluating a grant application to determine whether the proposed project is worthy of funding, or a publisher evaluating a manuscript to determine whether it is suitable for publication."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy frapo: ;
+    owl:inverseOf frapo:isEvaluatedBy ;
+    vs:term_status reg:statusStable .
+

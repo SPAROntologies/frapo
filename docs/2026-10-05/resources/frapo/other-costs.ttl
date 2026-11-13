@@ -1,0 +1,21 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:other-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "other costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:other-costs .
+    """ ;
+    rdfs:comment "A budget category to cover costs not covered in other budget categories."@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+

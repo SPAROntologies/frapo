@@ -1,0 +1,19 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasCountryCode a owl:DatatypeProperty ;
+    rdfs:label "has country code"@en ;
+    vann:example """
+    :my-postal-address 
+        frapo:hasCountryCode "IT" .
+    """ ;
+    rdfs:comment "AThe two-letter or three-letter upper-case country code used to identify a country (e.g. FR/FRA for France, DE/DEU for Germany)."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:seeAlso <http://countrycode.org/> ;
+    rdfs:subPropertyOf frapo:hasCode ;
+    vs:term_status reg:statusStable .
+

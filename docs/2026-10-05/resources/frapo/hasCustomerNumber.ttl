@@ -1,0 +1,20 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:hasCustomerNumber a owl:DatatypeProperty ;
+    rdfs:label "has customer number"@en ;
+    vann:example """
+    :my-purchaser a frapo:Purchaser ;
+        frapo:hasCustomerNumber "CUST-44556" .
+    """ ;
+    rdfs:comment "An identifying number for an agent, typically used by the accounting system of the supplier when issuing quotations, fulfilling orders and submitting invoices."@en ;
+    rdfs:domain frapo:Purchaser ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+

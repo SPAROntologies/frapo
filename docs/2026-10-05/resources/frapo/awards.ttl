@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:awards a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "awards"@en ;
+    vann:example """
+    :my-university a frapo:University ;
+        foaf:name "Free University Amsterdam"@en ;
+        frapo:awards :phd-scholarship-2004 .
+    """ ;
+    rdfs:comment "The relation between an agent and something the agent awards, for example linking a funding agency to a grant, a university to a degree, or an organization to a prize."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy frapo: ;
+    owl:inverseOf frapo:isAwardedBy ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,18 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:PostalAddress a owl:Class ;
+    rdfs:label "postal address"@en ;
+    vann:example """
+    :my-postal-address a frapo:PostalAddress ;
+        frapo:hasPostalAddressLine "Via Zamboni 33" .
+    """ ;
+    rdfs:comment "A postal address."@en ;
+    rdfs:isDefinedBy frapo: ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable .
+

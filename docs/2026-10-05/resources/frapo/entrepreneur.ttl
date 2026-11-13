@@ -1,0 +1,22 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix scoro: <http://purl.org/spar/scoro/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:entrepreneur a scoro:FinancialRole,
+        owl:NamedIndividual ;
+    rdfs:label "entrepreneur"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole frapo:entrepreneur .
+    """ ;
+    rdfs:comment "The role of a person who invests in novel enterprises."@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+

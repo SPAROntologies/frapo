@@ -1,0 +1,21 @@
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:directly-allocated-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "directly allocated costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:directly-allocated-costs .
+    """ ;
+    rdfs:comment "A budget category to cover those costs normally borne by an institution, that are assigned to the budget of an externally funded project to cover the value of contributions to that project, for example to pay for the salary of a permanent member of staff seconded to work on the project, to compensate the employing organization for the loss of that person's efforts on other activities that he or she would otherwise be undertaking were it not for that secondment."@en ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+

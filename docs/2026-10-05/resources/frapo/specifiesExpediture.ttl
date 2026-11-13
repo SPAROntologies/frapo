@@ -1,0 +1,21 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+frapo:specifiesExpediture a owl:ObjectProperty ;
+    rdfs:label "specifies expenditure"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:specifiesExpediture :my-expenditure .
+    """ ;
+    rdfs:comment "The relation between an agent or a budget and the expenditure specified by that agent or budget."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( frapo:Budget foaf:Agent ) ] ;
+    rdfs:isDefinedBy frapo: ;
+    vs:term_status reg:statusStable .
+
