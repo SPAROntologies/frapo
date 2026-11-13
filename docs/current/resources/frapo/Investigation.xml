@@ -7,16 +7,16 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/Investigation">
-    <rdfs:label xml:lang="en">investigation</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/Endeavour"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <rdfs:comment xml:lang="en">
-An investigation is an endeavour that involves research, enabled by a project.  
-</rdfs:comment>
     <vann:example>
     :my-investigation a frapo:Investigation ;
         frapo:hasOutput &lt;http://doi.org/10.1016/j.websem.2006.11.002&gt; .
     </vann:example>
+    <rdfs:label xml:lang="en">investigation</rdfs:label>
+    <rdfs:comment xml:lang="en">
+An investigation is an endeavour that involves research, enabled by a project.  
+</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/Endeavour"/>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <skos:note xml:lang="en">

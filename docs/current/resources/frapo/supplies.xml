@@ -6,15 +6,15 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/supplies">
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
     <rdfs:domain rdf:resource="http://purl.org/cerif/frapo/Supplier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <vann:example>
     :my-supplier a frapo:Supplier ;
         frapo:supplies :my-service .
     </vann:example>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdfs:label xml:lang="en">supplies</rdfs:label>
     <rdfs:comment xml:lang="en">The relation between a supplier and a supplied entity, or an agent to whom the entity is supplied.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
   </rdf:Description>
 </rdf:RDF>

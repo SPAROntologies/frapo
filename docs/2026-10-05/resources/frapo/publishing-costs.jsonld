@@ -2,8 +2,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/publishing-costs",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.org/cerif/frapo/BudgetCategory"
+      "http://purl.org/cerif/frapo/BudgetCategory",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://purl.org/vocab/vann/example": [
       {

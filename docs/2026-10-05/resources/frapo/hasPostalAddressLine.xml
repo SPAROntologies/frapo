@@ -6,16 +6,16 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasPostalAddressLine">
-    <rdfs:domain rdf:resource="http://purl.org/cerif/frapo/PostalAddress"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <rdfs:comment xml:lang="en">A single line of a postal address.</rdfs:comment>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:label xml:lang="en">has postal address line</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/hasAgentInformation"/>
     <vann:example>
     :my-postal-address a frapo:PostalAddress ;
         frapo:hasPostalAddressLine "Via Zamboni 33" .
     </vann:example>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/hasAgentInformation"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/cerif/frapo/PostalAddress"/>
+    <rdfs:label xml:lang="en">has postal address line</rdfs:label>
+    <rdfs:comment xml:lang="en">A single line of a postal address.</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>

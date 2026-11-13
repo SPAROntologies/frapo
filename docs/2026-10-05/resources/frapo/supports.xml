@@ -7,29 +7,29 @@
    xmlns:vann="http://purl.org/vocab/vann/"
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
+  <rdf:Description rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb8">
+    <rdf:first rdf:resource="http://purl.org/cerif/frapo/Funding"/>
+    <rdf:rest rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb9"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/supports">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb7"/>
     <rdfs:comment xml:lang="en">The relation between an agent and something that the agent supports by financial or other means.</rdfs:comment>
-    <rdfs:label xml:lang="en">supports</rdfs:label>
-    <rdfs:domain rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb7"/>
+    <skos:note xml:lang="en">This property is not intended for use to describe mechanical or physical support, as in "The plinth supports the statue". </skos:note>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <vann:example>
     :my-grant a frapo:Grant ;
         frapo:supports :my-project .
     </vann:example>
+    <rdfs:label xml:lang="en">supports</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <skos:note xml:lang="en">This property is not intended for use to describe mechanical or physical support, as in "The plinth supports the statue". </skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb8">
-    <rdf:first rdf:resource="http://purl.org/cerif/frapo/Funding"/>
-    <rdf:rest rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb9"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb9">
+  <rdf:Description rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb9">
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
     <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb7">
+  <rdf:Description rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb7">
+    <owl:unionOf rdf:nodeID="n73b58469ef3a4310b6c74936a4970c5fb8"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="n01261e6c533f4ffbb1af3e45719e84bdb8"/>
   </rdf:Description>
 </rdf:RDF>

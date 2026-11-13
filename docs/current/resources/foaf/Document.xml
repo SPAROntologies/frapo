@@ -6,12 +6,12 @@
 >
   <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Document">
     <rdfs:label xml:lang="en">document</rdfs:label>
+    <rdfs:comment xml:lang="en">A document.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <skos:note xml:lang="en">
 Ontology terms and definitions for many documents relevant to FRAPO are given as "Expression" classes in FaBiO, the FRBR-aligned Bibliographic Ontology, e.g. `fabio:CallForApplications`, `fabio:DataManagementPlan`, `fabio:GrantApplicationDocument`, `fabio:ProjectPlan`.
 Others are given as sub-classes of this class.
 </skos:note>
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-    <rdfs:comment xml:lang="en">A document.</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>

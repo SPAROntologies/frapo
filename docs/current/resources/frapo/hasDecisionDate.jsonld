@@ -2,8 +2,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/hasDecisionDate",
     "@type": [
-      "http://www.w3.org/2002/07/owl#FunctionalProperty",
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
     ],
     "http://purl.org/vocab/vann/example": [
       {
@@ -34,10 +34,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
       {
-        "@id": "http://purl.org/cerif/frapo/hasAwardDate"
+        "@id": "http://purl.org/spar/fabio/hasDecisionDate"
       },
       {
-        "@id": "http://purl.org/spar/fabio/hasDecisionDate"
+        "@id": "http://purl.org/cerif/frapo/hasAwardDate"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [

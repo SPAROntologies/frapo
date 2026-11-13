@@ -4,9 +4,9 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://purl.org/spar/scoro/FinancialRole">
-    <rdfs:label xml:lang="en">financial role</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">A role that an agent might hold with respect to academic and project finance.</rdfs:comment>
+    <rdfs:label xml:lang="en">financial role</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/scoro/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
 </rdf:RDF>

@@ -6,16 +6,16 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/Deliverable">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/Output"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:label xml:lang="en">deliverable</rdfs:label>
     <vann:example>
     :my-deliverable a frapo:Deliverable ;
         dcterms:title "Final Report" ; 
         frapo:isOutputOf :my-project .
     </vann:example>
+    <rdfs:label xml:lang="en">deliverable</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">A class defining a "deliverable" of a project, i.e. something that the project set out to deliver, or succeeds in delivering.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/cerif/frapo/Output"/>
   </rdf:Description>
 </rdf:RDF>

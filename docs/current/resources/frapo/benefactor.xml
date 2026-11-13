@@ -6,12 +6,8 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/benefactor">
-    <rdf:type rdf:resource="http://purl.org/spar/scoro/FinancialRole"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:comment xml:lang="en">The role of a person who gives a gift.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:label xml:lang="en">benefactor</rdfs:label>
     <vann:example>
     :my-person a foaf:Person ;
         pro:holdsRoleInTime :my-person-role .
@@ -19,5 +15,9 @@
     :my-person-role a pro:RoleInTime ;
         pro:withRole frapo:benefactor .
     </vann:example>
+    <rdf:type rdf:resource="http://purl.org/spar/scoro/FinancialRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="en">The role of a person who gives a gift.</rdfs:comment>
+    <rdfs:label xml:lang="en">benefactor</rdfs:label>
   </rdf:Description>
 </rdf:RDF>

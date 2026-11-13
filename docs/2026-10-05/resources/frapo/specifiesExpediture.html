@@ -179,17 +179,17 @@ What specific contributions are made by a person toward an output document resul
         frapo:specifiesExpediture :my-expenditure .
     """ ;
         rdfs:comment "The relation between an agent or a budget and the expenditure specified by that agent or budget."@en ;
-        rdfs:domain _:n01261e6c533f4ffbb1af3e45719e84bdb1 ;
+        rdfs:domain _:n73b58469ef3a4310b6c74936a4970c5fb1 ;
         rdfs:isDefinedBy frapo: ;
         vs:term_status reg:statusStable .
 
-    _:n01261e6c533f4ffbb1af3e45719e84bdb1 a owl:Class ;
-        owl:unionOf _:n01261e6c533f4ffbb1af3e45719e84bdb2 .
+    _:n73b58469ef3a4310b6c74936a4970c5fb1 a owl:Class ;
+        owl:unionOf _:n73b58469ef3a4310b6c74936a4970c5fb2 .
 
-    _:n01261e6c533f4ffbb1af3e45719e84bdb2 rdf:first frapo:Budget ;
-        rdf:rest _:n01261e6c533f4ffbb1af3e45719e84bdb3 .
+    _:n73b58469ef3a4310b6c74936a4970c5fb2 rdf:first frapo:Budget ;
+        rdf:rest _:n73b58469ef3a4310b6c74936a4970c5fb3 .
 
-    _:n01261e6c533f4ffbb1af3e45719e84bdb3 rdf:first foaf:Agent ;
+    _:n73b58469ef3a4310b6c74936a4970c5fb3 rdf:first foaf:Agent ;
         rdf:rest () .
 }
 
@@ -214,7 +214,7 @@ What specific contributions are made by a person toward an output document resul
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "_:n01261e6c533f4ffbb1af3e45719e84bdb1"
+            "@id": "_:n73b58469ef3a4310b6c74936a4970c5fb1"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -235,7 +235,7 @@ What specific contributions are made by a person toward an output document resul
         ]
       },
       {
-        "@id": "_:n01261e6c533f4ffbb1af3e45719e84bdb1",
+        "@id": "_:n73b58469ef3a4310b6c74936a4970c5fb1",
         "@type": [
           "http://www.w3.org/2002/07/owl#Class"
         ],
@@ -255,18 +255,18 @@ What specific contributions are made by a person toward an output document resul
     ],
     "@id": "http://purl.org/cerif/frapo"
   }
-]</code></pre></div><div class="tab-pane fade" id=id_cec9ebbf3348b6b050585b12e683518c_Relation_prov_3 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://www.w3.org/2000/01/rdf-schema#label> "specifies expenditure"@en &lt;http://purl.org/cerif/frapo> .
-_:n01261e6c533f4ffbb1af3e45719e84bdb2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n01261e6c533f4ffbb1af3e45719e84bdb3 &lt;http://purl.org/cerif/frapo> .
-_:n01261e6c533f4ffbb1af3e45719e84bdb1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/cerif/frapo> .
-&lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://purl.org/vocab/vann/example> "\n    :my-budget a frapo:Budget ;\n        frapo:specifiesExpediture :my-expenditure .\n    " &lt;http://purl.org/cerif/frapo> .
-_:n01261e6c533f4ffbb1af3e45719e84bdb3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> &lt;http://purl.org/cerif/frapo> .
-&lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/cerif/frapo> .
+]</code></pre></div><div class="tab-pane fade" id=id_cec9ebbf3348b6b050585b12e683518c_Relation_prov_3 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an agent or a budget and the expenditure specified by that agent or budget."@en &lt;http://purl.org/cerif/frapo> .
+_:n73b58469ef3a4310b6c74936a4970c5fb1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/cerif/frapo> .
 &lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#ObjectProperty> &lt;http://purl.org/cerif/frapo> .
-_:n01261e6c533f4ffbb1af3e45719e84bdb1 &lt;http://www.w3.org/2002/07/owl#unionOf> _:n01261e6c533f4ffbb1af3e45719e84bdb2 &lt;http://purl.org/cerif/frapo> .
-_:n01261e6c533f4ffbb1af3e45719e84bdb3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> &lt;http://xmlns.com/foaf/0.1/Agent> &lt;http://purl.org/cerif/frapo> .
-_:n01261e6c533f4ffbb1af3e45719e84bdb2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> &lt;http://purl.org/cerif/frapo/Budget> &lt;http://purl.org/cerif/frapo> .
-&lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an agent or a budget and the expenditure specified by that agent or budget."@en &lt;http://purl.org/cerif/frapo> .
-&lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://www.w3.org/2000/01/rdf-schema#domain> _:n01261e6c533f4ffbb1af3e45719e84bdb1 &lt;http://purl.org/cerif/frapo> .
+&lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/cerif/frapo> .
+&lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://www.w3.org/2000/01/rdf-schema#domain> _:n73b58469ef3a4310b6c74936a4970c5fb1 &lt;http://purl.org/cerif/frapo> .
+_:n73b58469ef3a4310b6c74936a4970c5fb3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> &lt;http://purl.org/cerif/frapo> .
+&lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://www.w3.org/2000/01/rdf-schema#label> "specifies expenditure"@en &lt;http://purl.org/cerif/frapo> .
+_:n73b58469ef3a4310b6c74936a4970c5fb2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n73b58469ef3a4310b6c74936a4970c5fb3 &lt;http://purl.org/cerif/frapo> .
+_:n73b58469ef3a4310b6c74936a4970c5fb3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> &lt;http://xmlns.com/foaf/0.1/Agent> &lt;http://purl.org/cerif/frapo> .
+_:n73b58469ef3a4310b6c74936a4970c5fb2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> &lt;http://purl.org/cerif/frapo/Budget> &lt;http://purl.org/cerif/frapo> .
+&lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://purl.org/vocab/vann/example> "\n    :my-budget a frapo:Budget ;\n        frapo:specifiesExpediture :my-expenditure .\n    " &lt;http://purl.org/cerif/frapo> .
+_:n73b58469ef3a4310b6c74936a4970c5fb1 &lt;http://www.w3.org/2002/07/owl#unionOf> _:n73b58469ef3a4310b6c74936a4970c5fb2 &lt;http://purl.org/cerif/frapo> .
 &lt;http://purl.org/cerif/frapo/specifiesExpediture> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/cerif/frapo/> &lt;http://purl.org/cerif/frapo> .
 
 </code></pre></div></div></div></div></div></div></div></div></div></div><div><a class="btn btn-outline-secondary" href=../../frapo.html>← Back to full documentation</a></div><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js></script><script src=https://cdn.jsdelivr.net/npm/marked/marked.min.js></script><script src=https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js></script><script>document.addEventListener("DOMContentLoaded", function() {

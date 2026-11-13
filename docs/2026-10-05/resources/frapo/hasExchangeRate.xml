@@ -7,13 +7,13 @@
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasExchangeRate">
     <rdfs:label xml:lang="en">has exchange rate</rdfs:label>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdfs:comment xml:lang="en">he currency exchange rate between two specified currencies.</rdfs:comment>
     <vann:example>
     :my-payment 
         frapo:hasExchangeRate "1.08"^^xsd:decimal .
     </vann:example>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
   </rdf:Description>
 </rdf:RDF>
