@@ -6,12 +6,10 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/service-costs">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://purl.org/cerif/frapo/BudgetCategory"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdfs:label xml:lang="en">service costs</rdfs:label>
-    <rdfs:comment xml:lang="en">A budget category to cover the costs of services used by a project, for example a DNA sequencing service, or an equipment maintenance service.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
+    <rdf:type rdf:resource="http://purl.org/cerif/frapo/BudgetCategory"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <vann:example>
     :my-budget a frapo:Budget ;
         frapo:hasBudgetInformation :my-budgeted-amout .
@@ -19,5 +17,7 @@
     :my-budgeted-amount a frapo:BudgetedAmount ;
         frapo:hasBudgetCategory frapo:service-costs .
     </vann:example>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">A budget category to cover the costs of services used by a project, for example a DNA sequencing service, or an equipment maintenance service.</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>

@@ -15,7 +15,7 @@ frapo:hasPurchaseDate a owl:DatatypeProperty,
         frapo:hasPurchaseDate "2026-08-01T15:00:00"^^xsd:dateTime .
     """ ;
     rdfs:comment "The purchase date of something."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf dcterms:date ;
     vs:term_status reg:statusStable .

@@ -16,6 +16,6 @@ frapo:specifiesExpediture a owl:ObjectProperty ;
     rdfs:comment "The relation between an agent or a budget and the expenditure specified by that agent or budget."@en ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( frapo:Budget foaf:Agent ) ] ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

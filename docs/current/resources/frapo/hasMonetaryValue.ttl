@@ -13,7 +13,7 @@ frapo:hasMonetaryValue a owl:DatatypeProperty ;
         frapo:hasMonetaryValue "3500"^^xsd:decimal .
     """ ;
     rdfs:comment "The monetary value of a financial entity such as a grant, a gift or a budget category."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable ;
     skos:note """
 Use in conjunction with `frapo:hasCurrency`.

@@ -14,7 +14,7 @@ frapo:College a owl:Class ;
         frapo:collaboratesWith :my-university .
     """ ;
     rdfs:comment "An academic organization that is either a small degree-giving university, or (in the OxBridge sense) an independent corporation of scholars within a larger university, providing undergraduate tuition and a social environment for its students and fellows."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Organization ;
     vs:term_status reg:statusStable .
 

@@ -13,7 +13,7 @@ frapo:ProjectBudget a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "A budget for a research project."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Budget ;
     vs:term_status reg:statusStable .
 

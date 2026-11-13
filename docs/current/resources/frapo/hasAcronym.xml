@@ -6,14 +6,14 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/hasAcronym">
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:comment xml:lang="en">An acronym used to identify an entity, based on its full name or title. For example, this ontology has the full name "Funding, Research Administration and Projects Ontology" and the acronym "FRAPO".</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
+    <rdfs:label xml:lang="en">has acronym</rdfs:label>
     <vann:example>
     :my-project 
         frapo:hasAcronym "OPEN-KGP" .
     </vann:example>
-    <rdfs:label xml:lang="en">has acronym</rdfs:label>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">An acronym used to identify an entity, based on its full name or title. For example, this ontology has the full name "Funding, Research Administration and Projects Ontology" and the acronym "FRAPO".</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>

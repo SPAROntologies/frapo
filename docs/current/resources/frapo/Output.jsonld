@@ -17,7 +17,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.org/cerif/frapo/"
+        "@id": "http://purl.org/cerif/frapo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -28,10 +28,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
+        "@id": "http://purl.org/cerif/frapo/Equipment"
       },
       {
-        "@id": "http://purl.org/cerif/frapo/Equipment"
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [

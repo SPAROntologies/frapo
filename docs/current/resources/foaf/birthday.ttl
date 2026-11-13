@@ -7,7 +7,7 @@
 foaf:birthday a owl:DatatypeProperty ;
     rdfs:label "has birthday"@en ;
     rdfs:comment "The date of birth of an agent."@en ;
-    rdfs:isDefinedBy foaf: ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
     rdfs:range xsd:date ;
     rdfs:subPropertyOf dcterms:date .
 

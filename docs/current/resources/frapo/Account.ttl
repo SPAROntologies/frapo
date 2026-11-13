@@ -12,7 +12,7 @@ frapo:Account a owl:Class ;
         frapo:hasAccountNumber "ACC-987654" .
     """ ;
     rdfs:comment "A mechanism for administering money, typically owned by an agent and dedicated to a particular purpose, for example the equipment account of a university department, to be used only for the purchase or maintenance of items of equipment. "@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

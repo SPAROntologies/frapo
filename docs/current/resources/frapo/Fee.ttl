@@ -13,7 +13,7 @@ frapo:Fee a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "An amount of money paid for something that is not purchased."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

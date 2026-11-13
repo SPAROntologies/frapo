@@ -17,7 +17,7 @@ frapo:isSupportedBy a owl:ObjectProperty ;
     :my-funding a frapo:Funding .
     """ ;
     rdfs:comment "The relation between something and an agent that provides funding or other support for it."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range [ a owl:Class ;
             owl:unionOf ( frapo:Funding foaf:Agent ) ] ;
     owl:inverseOf frapo:supports ;

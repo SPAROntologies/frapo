@@ -18,7 +18,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.org/cerif/frapo/"
+        "@id": "http://purl.org/cerif/frapo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -34,10 +34,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
       {
-        "@id": "http://purl.org/spar/fabio/hasDecisionDate"
+        "@id": "http://purl.org/cerif/frapo/hasAwardDate"
       },
       {
-        "@id": "http://purl.org/cerif/frapo/hasAwardDate"
+        "@id": "http://purl.org/spar/fabio/hasDecisionDate"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [

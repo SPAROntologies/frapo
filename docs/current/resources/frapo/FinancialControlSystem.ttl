@@ -12,7 +12,7 @@ frapo:FinancialControlSystem a owl:Class ;
         foaf:name "Quipu Accounting System" .
     """ ;
     rdfs:comment "A software system controlling the financial activities of an organization, for example determining full economic cost budgets for grant applications, and managing the funding of funded projects."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:ComputationalService ;
     vs:term_status reg:statusStable .
 

@@ -12,6 +12,6 @@ frapo:hasLocation a owl:DatatypeProperty ;
         frapo:hasLocation "Campus Navile, Bologna" .
     """ ;
     rdfs:comment "The relevant location for an entity, which might be geographical (e.g. New York City) or local (e.g. Freezer B, second shelf)."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

@@ -14,7 +14,7 @@ frapo:hasFundingAgency a owl:ObjectProperty ;
     :my-funding-agency a frapo:FundingAgency .
     """ ;
     rdfs:comment "The relation between something and a funding agency that provides funding for it."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range frapo:FundingAgency ;
     rdfs:subPropertyOf frapo:isSupportedBy ;
     owl:inverseOf frapo:isFundingAgencyFor ;

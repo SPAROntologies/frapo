@@ -14,7 +14,7 @@ frapo:hasDeliveryDate a owl:DatatypeProperty ;
         frapo:hasDeliveryDate "2026-09-15T10:00:00"^^xsd:dateTime .
     """ ;
     rdfs:comment "The date on which something is delivered, or is due to be delivered."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf dcterms:date ;
     vs:term_status reg:statusStable .

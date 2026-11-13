@@ -4,10 +4,10 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://purl.org/spar/scoro/hasPersonalIdentifier">
-    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     <rdfs:comment xml:lang="en">A unique and unambiguous identifier for an individual person within a given context.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/scoro/"/>
     <rdfs:label xml:lang="en">has personal identifier</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/scoro"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
   </rdf:Description>
 </rdf:RDF>

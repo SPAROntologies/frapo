@@ -13,7 +13,7 @@ frapo:Investment a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "An investment of money, generally in stocks and shares, or in property, for the purpose of safeguarding the capital and yielding an income."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

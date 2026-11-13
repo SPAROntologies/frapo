@@ -14,6 +14,6 @@ frapo:providesService a owl:ObjectProperty ;
     """ ;
     rdfs:comment "An agent that provides a service."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

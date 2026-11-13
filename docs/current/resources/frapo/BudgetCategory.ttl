@@ -17,7 +17,7 @@ frapo:BudgetCategory a owl:Class ;
     frapo:facilities-costs a frapo:BudgetCategory .
     """ ;
     rdfs:comment "A category of expenditure within a budget, determining what the allocated money can be spent on, for example salaries, equipment, travel."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

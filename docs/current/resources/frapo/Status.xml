@@ -6,10 +6,8 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/Status">
-    <rdfs:comment xml:lang="en">The status of something such as an application, an investigation or a project.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:label xml:lang="en">status</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pso/Status"/>
     <vann:example>
     :my-application
         pso:holdsStatusInTime :my-status-in-time .
@@ -19,7 +17,9 @@
     
     frapo:accepted a frapo:Status .
     </vann:example>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pso/Status"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
+    <rdfs:comment xml:lang="en">The status of something such as an application, an investigation or a project.</rdfs:comment>
+    <rdfs:label xml:lang="en">status</rdfs:label>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
 </rdf:RDF>

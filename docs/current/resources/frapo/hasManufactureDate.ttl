@@ -15,7 +15,7 @@ frapo:hasManufactureDate a owl:DatatypeProperty,
         frapo:hasManufactureDate "2025-11-20T00:00:00"^^xsd:dateTime .
     """ ;
     rdfs:comment "The date of manufacture of something."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf dcterms:date ;
     vs:term_status reg:statusStable .

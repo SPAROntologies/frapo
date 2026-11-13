@@ -15,7 +15,7 @@ frapo:hasIPROwner a owl:ObjectProperty ;
     :my-university a frapo:University .
     """ ;
     rdfs:comment "The relation between an entity such as a project, an endeavour or an output and an agent who owns the IPR arising from or related to that entity."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     rdfs:subPropertyOf frapo:isOwnedBy ;
     owl:inverseOf frapo:ownsIRPOf ;

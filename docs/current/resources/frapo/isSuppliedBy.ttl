@@ -14,7 +14,7 @@ frapo:isSuppliedBy a owl:ObjectProperty ;
     :my-supplier a frapo:Supplier .
     """ ;
     rdfs:comment "The relation between an entity that is supplied, or an agent to whom an entity is supplied, and the supplier."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range frapo:Supplier ;
     owl:inverseOf frapo:supplies ;
     vs:term_status reg:statusStable .

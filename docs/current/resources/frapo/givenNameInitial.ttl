@@ -12,7 +12,7 @@ frapo:givenNameInitial a owl:DatatypeProperty ;
         frapo:givenNameInitial "S" .
     """ ;
     rdfs:comment "The initial(s) of a person's given name(s)."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:initial ;
     vs:term_status reg:statusStable .
 

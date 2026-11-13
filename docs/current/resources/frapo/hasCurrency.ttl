@@ -12,7 +12,7 @@ frapo:hasCurrency a owl:DatatypeProperty ;
         frapo:hasCurrency "euro" .
     """ ;
     rdfs:comment "The currency used to specify a financial entity."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:seeAlso frapo:hasMonetaryValue ;
     vs:term_status reg:statusStable .
 

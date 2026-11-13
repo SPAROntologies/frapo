@@ -16,6 +16,6 @@ frapo:travel-and-subsistence-costs a frapo:BudgetCategory,
         frapo:hasBudgetCategory frapo:travel-and-substinence-costs .
     """ ;
     rdfs:comment "A budget category to cover the costs of travel and subsistence incurred on behalf of the project."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

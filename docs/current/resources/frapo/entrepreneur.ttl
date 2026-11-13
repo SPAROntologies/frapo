@@ -17,6 +17,6 @@ frapo:entrepreneur a scoro:FinancialRole,
         pro:withRole frapo:entrepreneur .
     """ ;
     rdfs:comment "The role of a person who invests in novel enterprises."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

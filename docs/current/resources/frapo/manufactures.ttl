@@ -13,6 +13,6 @@ frapo:manufactures a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between a manufacturer and a manufactured entity."@en ;
     rdfs:domain frapo:Manufacturer ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

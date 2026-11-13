@@ -13,7 +13,7 @@ frapo:hasORCID a owl:DatatypeProperty ;
         frapo:hasORCID "0000-0003-0530-4305" .
     """ ;
     rdfs:comment "An individual's Open Researcher and Contributor ID (ORCID), an alphanumeric identifier for individual scholars."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:hasPersonalIdentifier ;
     owl:equivalentProperty scoro:hasORCID ;
     vs:term_status reg:statusStable .

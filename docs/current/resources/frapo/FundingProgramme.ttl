@@ -16,7 +16,7 @@ frapo:FundingProgramme a owl:Class ;
     :my-call-for-applications a fabio:CallForApplications .
     """ ;
     rdfs:comment "A programme of related funded activities or projects, typically established by a funding agency."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf owl:Thing ;
     vs:term_status reg:statusStable ;
     skos:note "Often associated with publication of a call for applications (`fabio:CallForApplications`)."@en .

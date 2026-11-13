@@ -17,7 +17,7 @@ frapo:supports a owl:ObjectProperty ;
     rdfs:comment "The relation between an agent and something that the agent supports by financial or other means."@en ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( frapo:Funding foaf:Agent ) ] ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable ;
     skos:note "This property is not intended for use to describe mechanical or physical support, as in \"The plinth supports the statue\". "@en .
 

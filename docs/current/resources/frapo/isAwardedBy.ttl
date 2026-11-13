@@ -16,7 +16,7 @@ frapo:isAwardedBy a owl:FunctionalProperty,
     :my-funding-agency a frapo:FundingAgency .
     """ ;
     rdfs:comment "The relation between something awarded and the agent making the award, for example linking a grant to a funding agency, a degree to a university, or a prize to the awarding organization."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     vs:term_status reg:statusStable .
 

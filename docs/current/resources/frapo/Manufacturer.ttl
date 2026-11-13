@@ -13,7 +13,7 @@ frapo:Manufacturer a owl:Class ;
         foaf:name "Quipu Manufacturing" .
     """ ;
     rdfs:comment "An agent who manufactures goods or equipment."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Agent ;
     vs:term_status reg:statusStable .
 

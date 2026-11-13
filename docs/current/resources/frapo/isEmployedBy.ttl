@@ -17,7 +17,7 @@ frapo:isEmployedBy a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between an employed agent, typically a person or an organization, and an employing agent."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     vs:term_status reg:statusStable ;
     skos:note "This property should not be used for the other meaning of \"employ\", meaning to use something, e.g. \"Great skill is employed by master craftsmen . . .\"/"@en .

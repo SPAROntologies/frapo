@@ -14,7 +14,7 @@ frapo:usesService a owl:ObjectProperty ;
     :my-service a frapo:Service .
     """ ;
     rdfs:comment "The relation between an activity such as an expedition, a research project or an investigation, and a service employed in that activity."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range frapo:Service ;
     vs:term_status reg:statusStable .
 

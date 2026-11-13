@@ -12,7 +12,7 @@ frapo:PurchaseOrder a owl:Class ;
         frapo:hasPurchaseOrderNumber "PO-2026-0045" .
     """ ;
     rdfs:comment "An official order from a purchasing institution to a supplier for the purchase of goods or services, often issued in response to the receipt of a quotation from the supplier."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

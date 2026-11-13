@@ -15,7 +15,7 @@ frapo:hasCompletionDate a owl:DatatypeProperty,
         frapo:hasCompletionDate "2029-12-31T23:59:59"^^xsd:dateTime .
     """ ;
     rdfs:comment "The date of completion for something, such as a building or a contract."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf dcterms:date ;
     vs:term_status reg:statusStable .

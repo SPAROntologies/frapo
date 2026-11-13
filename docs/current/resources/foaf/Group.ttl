@@ -5,5 +5,5 @@
 foaf:Group a owl:Class ;
     rdfs:label "group"@en ;
     rdfs:comment "A group of people."@en ;
-    rdfs:isDefinedBy foaf: .
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
 

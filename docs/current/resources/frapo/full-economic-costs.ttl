@@ -17,7 +17,7 @@ frapo:full-economic-costs a frapo:BudgetCategory,
         frapo:hasBudgetCategory frapo:full-economic-costs .
     """ ;
     rdfs:comment "A budget category to cover all the direct and indirect costs of a project. "@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable ;
     skos:note "Frequently abbreviated \"FEC\"."@en .
 

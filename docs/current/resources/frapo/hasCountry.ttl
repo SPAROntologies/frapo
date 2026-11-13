@@ -12,6 +12,6 @@ frapo:hasCountry a owl:DatatypeProperty ;
         frapo:hasCountry "Italy" .
     """ ;
     rdfs:comment "A country, for example as the location of an event."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

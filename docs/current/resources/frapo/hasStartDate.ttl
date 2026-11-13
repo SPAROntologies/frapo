@@ -15,7 +15,7 @@ frapo:hasStartDate a owl:DatatypeProperty,
         frapo:hasStartDate "2026-01-01T00:00:00"^^xsd:dateTime .
     """ ;
     rdfs:comment "The start date of something, such as a project."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf dcterms:date ;
     vs:term_status reg:statusStable .

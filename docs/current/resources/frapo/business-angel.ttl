@@ -17,6 +17,6 @@ frapo:business-angel a scoro:FinancialRole,
         pro:withRole frapo:business-angel .
     """ ;
     rdfs:comment "The role of a person willing to invest in start-up companies."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

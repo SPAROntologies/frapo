@@ -12,7 +12,7 @@ frapo:hasOutput a owl:ObjectProperty ;
         frapo:hasOutput :my-output .
     """ ;
     rdfs:comment "The relation between an activity such as a project or endeavour and something that is created or produced as a result of that activity. Examples include a building created as a result of a building project, and a journal article published to describe the results of a research investigation."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     owl:inverseOf frapo:isOutputOf ;
     vs:term_status reg:statusStable .
 

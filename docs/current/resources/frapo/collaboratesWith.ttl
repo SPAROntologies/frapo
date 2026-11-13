@@ -16,7 +16,7 @@ frapo:collaboratesWith a owl:ObjectProperty,
     """ ;
     rdfs:comment "The relation between agents, for example different organizations, or people typically from different groups or organizations, that work together on a common task, project or endeavour, or towards a common goal."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     vs:term_status reg:statusStable .
 

@@ -12,7 +12,7 @@ frapo:SpinOffCompany a owl:Class ;
         foaf:name "Quipu Inc." .
     """ ;
     rdfs:comment "A company that has been established by a university or research institute to mature and market the results of research conducted at that research institution."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Company ;
     vs:term_status reg:statusStable .
 

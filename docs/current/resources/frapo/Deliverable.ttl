@@ -13,7 +13,7 @@ frapo:Deliverable a owl:Class ;
         frapo:isOutputOf :my-project .
     """ ;
     rdfs:comment "A class defining a \"deliverable\" of a project, i.e. something that the project set out to deliver, or succeeds in delivering."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Output ;
     vs:term_status reg:statusStable .
 

@@ -2,8 +2,8 @@
   {
     "@id": "http://purl.org/cerif/frapo/awards",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#InverseFunctionalProperty"
+      "http://www.w3.org/2002/07/owl#InverseFunctionalProperty",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://purl.org/vocab/vann/example": [
       {
@@ -23,7 +23,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.org/cerif/frapo/"
+        "@id": "http://purl.org/cerif/frapo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [

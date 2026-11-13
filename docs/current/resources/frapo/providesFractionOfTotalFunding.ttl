@@ -15,7 +15,7 @@ frapo:providesFractionOfTotalFunding a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between funding and a budget, specifying what fraction of the total budget is provided by that source of funding."@en ;
     rdfs:domain frapo:Funding ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range frapo:Budget ;
     vs:term_status reg:statusStable .
 

@@ -13,7 +13,7 @@ frapo:Legacy a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "A gift of money or property specified in the will of a person, that is made after that person's death."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Gift ;
     vs:term_status reg:statusStable .
 

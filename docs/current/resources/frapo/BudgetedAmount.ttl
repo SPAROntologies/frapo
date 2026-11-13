@@ -15,7 +15,7 @@ frapo:BudgetedAmount a owl:Class ;
         frapo:hasBudgetCategory frapo:travel-and-subsistence-costs .
     """ ;
     rdfs:comment "The amount of money originally available to spend in a particular budget category."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:BudgetInformation ;
     vs:term_status reg:statusStable .
 

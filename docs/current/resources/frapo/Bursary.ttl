@@ -13,7 +13,7 @@ frapo:Bursary a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "An amount of money given to a person by an organization, for example by a university to a university student in need to enable that student to continue his/her studies."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Funding ;
     vs:term_status reg:statusStable .
 

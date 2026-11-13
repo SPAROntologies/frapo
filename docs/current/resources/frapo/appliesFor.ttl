@@ -14,7 +14,7 @@ frapo:appliesFor a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between an agent and something for which that agent applies, for example a job, membership of an organization, or a grant from a funding agency."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     owl:inverseOf frapo:isAppliedForBy ;
     vs:term_status reg:statusStable .
 

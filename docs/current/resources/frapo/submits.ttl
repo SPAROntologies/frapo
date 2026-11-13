@@ -14,6 +14,6 @@ frapo:submits a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between an agent and an entity that is submitted to some third party, for example a grant application submitted to a funding agency, a manuscript submitted to a publisher, a quotation submitted by a vendor, or a dataset submitted by a researcher to a data repository."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

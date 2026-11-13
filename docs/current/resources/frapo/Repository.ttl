@@ -13,7 +13,7 @@ frapo:Repository a owl:Class ;
         foaf:name "Zenodo" .
     """ ;
     rdfs:comment "A facility in which entities can be deposited for long-term preservation."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Facility ;
     vs:term_status reg:statusStable ;
     skos:note "May also be described as an archive, or as a database."@en .

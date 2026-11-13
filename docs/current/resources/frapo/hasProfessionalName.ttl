@@ -12,7 +12,7 @@ frapo:hasProfessionalName a owl:DatatypeProperty ;
         frapo:hasProfessionalName "J. D. Smith" .
     """ ;
     rdfs:comment "An alternative name that a person uses for professional purposes, for example the pen name of an author, or a married woman's maiden name used as her professional name."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:hasPersonalInformation ;
     vs:term_status reg:statusStable .
 

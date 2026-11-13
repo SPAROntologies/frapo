@@ -13,7 +13,7 @@ frapo:Output a owl:Class ;
         dcterms:title "Bibliographic References Dataset"@en .
     """ ;
     rdfs:comment "Something that is created or produced as a result of a project or an endeavour. Examples include a building resulting from a building project, educated students graduating from an educational programme, and a journal article published as a result of a research project. Research outputs can also include reports, datasets, experimental protocols, workflows and mathematical models, and material outputs such as a cell line, a mouse mutant or a new form of microscope."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Equipment,
         owl:Thing ;
     vs:term_status reg:statusStable ;

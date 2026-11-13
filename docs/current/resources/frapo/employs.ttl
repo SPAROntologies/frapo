@@ -17,7 +17,7 @@ frapo:employs a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between an employing agent and an employed agent, for example a person or an organization, who is typically employed to undertaking specified work in exchange for payment."@en ;
     rdfs:domain foaf:Agent ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     owl:inverseOf frapo:isEmployedBy ;
     vs:term_status reg:statusStable ;

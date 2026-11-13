@@ -7,18 +7,18 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/awards">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:comment xml:lang="en">The relation between an agent and something the agent awards, for example linking a funding agency to a grant, a university to a degree, or an organization to a prize.</rdfs:comment>
-    <owl:inverseOf rdf:resource="http://purl.org/cerif/frapo/isAwardedBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">awards</rdfs:label>
+    <owl:inverseOf rdf:resource="http://purl.org/cerif/frapo/isAwardedBy"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:comment xml:lang="en">The relation between an agent and something the agent awards, for example linking a funding agency to a grant, a university to a degree, or an organization to a prize.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
     <vann:example>
     :my-university a frapo:University ;
         foaf:name "Free University Amsterdam"@en ;
         frapo:awards :phd-scholarship-2004 .
     </vann:example>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
   </rdf:Description>
 </rdf:RDF>

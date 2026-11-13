@@ -13,7 +13,7 @@ frapo:EmploymentContract a owl:Class ;
         frapo:hasEndDate "2029-01-31"^^xsd:date .
     """ ;
     rdfs:comment "A contract of employment between a person and an organization."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Contract ;
     vs:term_status reg:statusStable .
 

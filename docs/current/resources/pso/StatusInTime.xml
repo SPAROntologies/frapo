@@ -4,9 +4,9 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://purl.org/spar/pso/StatusInTime">
-    <rdfs:label xml:lang="en">status in time</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">A particular situation that describe a state or condition some documents may have at a particular time as consequence of one or more events.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pso/"/>
+    <rdfs:label xml:lang="en">status in time</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pso"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
 </rdf:RDF>

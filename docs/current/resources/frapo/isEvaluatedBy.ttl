@@ -15,7 +15,7 @@ frapo:isEvaluatedBy a owl:ObjectProperty ;
     :my-funding-agency a frapo:FundingAgency .
     """ ;
     rdfs:comment "The relation between an entity and an agent that evaluates it."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     vs:term_status reg:statusStable .
 

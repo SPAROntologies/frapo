@@ -16,6 +16,6 @@ frapo:accepted a frapo:Status,
         pso:withStatus frapo:accepted .
     """ ;
     rdfs:comment "The status of something such as an application as having been accepted."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

@@ -7,17 +7,17 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/isBudgetInformationOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
+    <rdfs:comment xml:lang="en">The relation between some budget information and the budget described by it.</rdfs:comment>
     <vann:example xml:lang="en">
     :travel-budgeted a frapo:BudgetInformation ;
         frapo:isBudgetInformationOf :my-budget .
     
     :my-budget a frapo:Budget .
     </vann:example>
-    <owl:inverseOf rdf:resource="http://purl.org/cerif/frapo/hasBudgetInformation"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:comment xml:lang="en">The relation between some budget information and the budget described by it.</rdfs:comment>
+    <owl:inverseOf rdf:resource="http://purl.org/cerif/frapo/hasBudgetInformation"/>
     <rdfs:label xml:lang="en">is budget information of</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
   </rdf:Description>
 </rdf:RDF>

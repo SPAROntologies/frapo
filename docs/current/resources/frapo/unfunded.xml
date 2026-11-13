@@ -7,11 +7,9 @@
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/unfunded">
     <rdfs:label xml:lang="en">unfunded</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://purl.org/cerif/frapo/Status"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:comment xml:lang="en">The status of something such as an investigation or a project as being unfunded.</rdfs:comment>
     <vann:example>
     :my-application
         pso:holdsStatusInTime :my-status-in-time .
@@ -19,5 +17,7 @@
     :my-status-in-time a pso:StatusInTime ;
         pso:withStatus frapo:unfunded .
     </vann:example>
+    <rdfs:comment xml:lang="en">The status of something such as an investigation or a project as being unfunded.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
   </rdf:Description>
 </rdf:RDF>

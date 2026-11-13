@@ -13,7 +13,7 @@ frapo:Laboratory a owl:Class ;
         frapo:hasPostalAddress "Via Zamboni 32, Bologna (BO), Italy" .
     """ ;
     rdfs:comment "A facility in which research can be conducted."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Facility ;
     vs:term_status reg:statusStable .
 

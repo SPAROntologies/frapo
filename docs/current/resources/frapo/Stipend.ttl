@@ -13,7 +13,7 @@ frapo:Stipend a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "A sum of money allotted on a regular basis, usually for some specific purpose."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Funding ;
     vs:term_status reg:statusStable .
 

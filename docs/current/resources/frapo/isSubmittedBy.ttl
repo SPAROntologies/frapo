@@ -15,7 +15,7 @@ frapo:isSubmittedBy a owl:ObjectProperty ;
     :my-person a foaf:Person .
     """ ;
     rdfs:comment "The relation between an entity that is submitted (to some third party) and the agent who submits it."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     owl:inverseOf frapo:submits ;
     vs:term_status reg:statusStable .

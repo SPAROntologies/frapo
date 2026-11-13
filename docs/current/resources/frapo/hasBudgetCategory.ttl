@@ -18,7 +18,7 @@ frapo:hasBudgetCategory a owl:ObjectProperty ;
     """@en ;
     rdfs:comment "The relation between some budget information and its category."@en ;
     rdfs:domain frapo:BudgetInformation ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range frapo:BudgetCategory ;
     vs:term_status reg:statusStable .
 

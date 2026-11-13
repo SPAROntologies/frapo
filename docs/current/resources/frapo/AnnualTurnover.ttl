@@ -13,7 +13,7 @@ frapo:AnnualTurnover a owl:Class ;
         frapo:hasValue "500000"^^xsd:decimal .
     """ ;
     rdfs:comment "The annual financial turnover of an organization (in a specified currency)."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

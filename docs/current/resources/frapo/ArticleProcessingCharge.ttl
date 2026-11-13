@@ -13,7 +13,7 @@ frapo:ArticleProcessingCharge a owl:Class ;
         frapo:hasValue "2500"^^xsd:decimal .
     """ ;
     rdfs:comment "A fee levied by a publisher on an author or an institution to cover the cost of publishing an Open Access journal article.  Also knows as Article Processing Fee, Article Publication Charge, Author Processing Charge or Author Publishing Charge."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Fee ;
     vs:term_status reg:statusStable .
 

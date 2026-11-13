@@ -14,7 +14,7 @@ frapo:DataRepository a owl:Class ;
         frapo:isOutputOf :my-project .
     """ ;
     rdfs:comment "A facility in which digital data are deposited for long-term preservation and (optional) publication."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Repository ;
     vs:term_status reg:statusStable ;
     skos:note "May also be described as a data archive, or as a database."@en .

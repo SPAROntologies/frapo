@@ -13,7 +13,7 @@ frapo:Division a owl:Class ;
         foaf:name "Humanities Division" .
     """ ;
     rdfs:comment "A grouping of similar departments within a larger organization.  In the university context, also known as a school or a faculty, for example the Humanities Division, the Mathematics Faculty, or the School of Medicine."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf foaf:Organization ;
     vs:term_status reg:statusStable .
 

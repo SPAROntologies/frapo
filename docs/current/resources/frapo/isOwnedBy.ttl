@@ -15,7 +15,7 @@ frapo:isOwnedBy a owl:ObjectProperty ;
     :my-organization a foaf:Organization .
     """ ;
     rdfs:comment "The relation between an entity and the agent that owns it."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:range foaf:Agent ;
     owl:inverseOf frapo:owns ;
     vs:term_status reg:statusStable .

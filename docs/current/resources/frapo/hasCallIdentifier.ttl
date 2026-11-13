@@ -13,7 +13,7 @@ frapo:hasCallIdentifier a owl:DatatypeProperty ;
         frapo:hasCallIdentifier "ERC-2026-STG" .
     """ ;
     rdfs:comment "The identifying number of a call for applications issued by a funding agency."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf dcterms:identifier ;
     vs:term_status reg:statusStable .
 

@@ -6,11 +6,11 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/consultancy-costs">
-    <rdfs:comment xml:lang="en">A budget category to cover the costs of consultancy fees.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
-    <rdfs:label xml:lang="en">consultancy costs</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
     <rdf:type rdf:resource="http://purl.org/cerif/frapo/BudgetCategory"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="en">consultancy costs</rdfs:label>
+    <rdfs:comment xml:lang="en">A budget category to cover the costs of consultancy fees.</rdfs:comment>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <vann:example>
     :my-budget a frapo:Budget ;

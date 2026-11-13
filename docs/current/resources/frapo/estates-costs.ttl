@@ -16,6 +16,6 @@ frapo:estates-costs a frapo:BudgetCategory,
         frapo:hasBudgetCategory frapo:estates-costs .
     """ ;
     rdfs:comment "A budget category to cover the \"overhead\" costs of maintaining the premises in which work is undertaken."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

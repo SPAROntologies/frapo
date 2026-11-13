@@ -1,0 +1,3220 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix pso: <http://purl.org/spar/pso/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix schema: <https://schema.org/> .
+@prefix scoro: <http://purl.org/spar/scoro/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tz: <http://www.w3.org/2006/timezone#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/cerif/frapo> a owl:Ontology ;
+    dc:contributor "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"^^xsd:string,
+        "Silvio Peroni (https://orcid.org/0000-0003-0530-4305)"^^xsd:string ;
+    dc:creator "David Shotton (https://orcid.org/0000-0001-5506-523X)"^^xsd:string ;
+    dc:date "2026-11-13"^^xsd:string ;
+    dc:description """
+The **_Funding, Research Administration and Projects Ontology (FRAPO)_** is a [CERIF-compliant](http://www.eurocris.org/cerif/main-features-cerif) ontology for describing administrative information relating to grant funding and research projects. 
+It can be used for the characterization of grant applications (e.g., `frapo:Grant`), funding bodies (e.g., `frapo:University`), research projects, project partners, etc.; in other words, the sort of information stored in Current Research Information Systems (CRIS). 
+It can also be used to describe other types of projects, for example building projects and educational projects.
+
+FRAPO, which is written in OWL 2 DL, imports [FOAF](http://xmlns.com/foaf/spec/) for characterizing people. 
+FRAPO is designed to be used in conjunction with [SCoRO](https://www.sparontologies.net/ontologies/scoro) that provides structured vocabulary terms to describe the contributions (`scoro:Contribution`) and roles of scholars (`pro:Role`), and the organizations of which they are members, with respect to projects, research investigations and other academic activities describable using FRAPO, and to the scholarly journal articles and other outputs that result from them.
+
+![The main architecture of FRAPO.](frapo.png)
+
+Terms for documents of relevance to the scholarly domain covered by FRAPO, including grant applications, project plans, project reports, datasets and journal articles, are already provided by [FaBiO](https://www.sparontologies.net/ontologies/fabio) and are therefore not included within FRAPO.
+
+FRAPO also permits descriptions of various types of applications, funding programs, infrastructure entities (e.g., services and research facilities), and a wide range of financial entities (e.g., accounts, contracts, quotations, purchases, invoices and payments), and the relationships between them (e.g., has application outcome, is manufactured by, is purchased by, has dispatch date, has purchase order number, has acronym) not shown in the diagram above.
+
+## Examples of use
+
+In the following subsections, we introduce some examples to showcase how to use FRAPO. 
+
+The prefixes that are used in all the examples provided below are defined as follows:
+
+    @prefix : <http://www.sparontologies.net/example/> .
+    @prefix fabio: <http://purl.org/spar/fabio/> .
+    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+    @prefix frapo: <http://purl.org/cerif/frapo/> .
+    @prefix person: <http://data.semanticweb.org/person/> .
+    @prefix org: <http://data.semanticweb.org/organization/> .
+    @prefix pro: <http://purl.org/spar/pro/> .
+    @prefix scoro: <http://purl.org/spar/scoro/> .
+
+### Describing fundings, investigations and research outputs 
+
+The specification of the connection between a research paper, the investigation done and discussed in it and the funds that allowed such investigation are important aspects to describe in the paper itself. Usually, such aspects are introduced in a footnote or, even better, in an appropriate acknowledgement section that describe them in natural language.
+
+The use of FRAPO in combination with other SPAR Ontologies such as FaBiO and SCoRO permits the description of the aforementioned aspects in RDF. For instance, the well-known paper published by a young Peter Mika and entitled "Ontologies are us: a unified model of social networks and semantics" has been one of the outcomes of Mika's investigation founded by his Ph.D. scholarship. 
+FRAPO allows one to explicitly describe all of this by means of its several classes and properties.
+
+    org:vrije-universiteit-amsterdam a frapo:University ;
+        foaf:name "Free University Amsterdam"@en ;
+        frapo:awards :phd-scholarship-2004 .
+
+    :investigation a frapo:Investigation ;
+        frapo:hasOutput
+            <http://dx.doi.org/10.1016/j.websem.2006.11.002> .
+
+    :phd-scholarship-2004 a frapo:Scholarship ;
+        foaf:name "Ph.D. Scholarship 2004" ;
+        frapo:funds :investigation .
+
+    person:peter-mika a foaf:Person ;
+        foaf:name "Peter Mika" ;
+        pro:holdsRoleInTime :affiliation-vua ;
+        scoro:makesContribution
+            :mika-writes-draft ,
+            :mika-revises-manuscript .
+
+    :mika-writes-draft a scoro:ContributionSituation ;
+        scoro:withContribution scoro:writes-manuscript-draft ;
+        scoro:withContributionEffort scoro:solo-effort ;
+        scoro:relatesToEntity
+            <http://dx.doi.org/10.1016/j.websem.2006.11.002> .
+
+    :mika-revises-manuscript a scoro:ContributionSituation ;
+        scoro:withContribution scoro:revises-manuscript ;
+        scoro:withContributionEffort scoro:solo-effort ;
+        scoro:relatesToEntity
+            <http://dx.doi.org/10.1016/j.websem.2006.11.002> .
+
+    :affiliation-vua a pro:RoleInTime ;
+        pro:withRole scoro:affiliate ;
+        pro:relatesToOrganization org:vrije-universiteit-amsterdam ;
+        pro:relatesToDocument
+            <http://dx.doi.org/10.1016/j.websem.2006.11.002> .
+
+## Competency Questions
+
+FRAPO can be used for answering several questions related to administrative information about grant funding and research projects.
+In the following subsections, some of them are introduced together with their respective SPARQL queries. 
+
+The prefixes that are used in all the SPARQL queries provided below are defined as follows:
+
+    PREFIX frapo: <http://purl.org/cerif/frapo/>
+    PREFIX scoro: <http://purl.org/spar/scoro/>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX pro: <http://purl.org/spar/pro/>
+
+### CQ1
+
+Which funding awards or scholarships are granted by a university?
+
+    SELECT ?university ?universityName ?award ?awardName
+    WHERE {
+        ?university a frapo:University ;
+            frapo:awards ?award .
+        OPTIONAL { ?university foaf:name ?universityName . }
+        OPTIONAL { ?award foaf:name ?awardName . }
+    }
+
+### CQ2
+
+Which investigation is funded by a specific scholarship?
+
+    SELECT ?fundingAward ?awardName ?investigation
+    WHERE {
+        ?fundingAward a frapo:Scholarship ;
+            frapo:funds ?investigation .
+        ?investigation a frapo:Investigation .
+        OPTIONAL { ?fundingAward foaf:name ?awardName . }
+    }
+
+### CQ3
+
+What outputs are produced by an investigation?
+
+    SELECT ?investigation ?outputDocument
+    WHERE {
+        ?investigation a frapo:Investigation ;
+            frapo:hasOutput ?outputDocument .
+    }
+
+### CQ4
+
+Which funding awards granted by a university finance an investigation that produced a document to which an author is affiliated?
+
+    SELECT ?person ?university ?award ?investigation ?document
+    WHERE {
+        ?person a foaf:Person ;
+            pro:holdsRoleInTime ?roleInTime .
+        ?roleInTime pro:relatesToOrganization ?university ;
+            pro:relatesToDocument ?document .
+        ?university a frapo:University ;
+            frapo:awards ?award .
+        ?award frapo:funds ?investigation .
+        ?investigation frapo:hasOutput ?document .
+    }
+
+### CQ5
+
+What specific contributions are made by a person toward an output document resulting from a funded investigation?
+
+    SELECT ?person ?contributionType ?effort ?document ?investigation
+    WHERE {
+        ?person a foaf:Person ;
+            scoro:makesContribution ?situation .
+        ?situation a scoro:ContributionSituation ;
+            scoro:withContribution ?contributionType ;
+            scoro:relatesToEntity ?document .
+        ?investigation a frapo:Investigation ;
+            frapo:hasOutput ?document .
+        OPTIONAL { ?situation scoro:withContributionEffort ?effort . }
+    }
+
+"""^^xsd:string ;
+    dc:title "The Funding, Research Administration and Projects Ontology (FRAPO)"^^xsd:string ;
+    dcterms:bibliographicCitation "David Shotton. The Funding, Research Administration and Projects Ontology. Revision: 1.2.0. http://purl.org/spar/frapo." ;
+    dcterms:created "2014-01-31" ;
+    dcterms:issued "2017-09-04" ;
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-11-13" ;
+    dcterms:publisher <https://ror.org/00wb4mk85> ;
+    dcterms:source <https://github.com/sparontologies/frapo/docs/cq.md> ;
+    bibo:doi "https://doi.org/10.25504/FAIRsharing.0a2576" ;
+    bibo:status <http://purl.org/ontology/bibo/status/published> ;
+    vann:preferredNamespacePrefix "frapo"@en ;
+    vann:preferredNamespaceUri "http://purl.org/spar/frapo"@en ;
+    rdfs:seeAlso <http://www.sparontologies.net/ontologies/frapo> ;
+    owl:backwardCompatibleWith frapo:2026-10-05 ;
+    owl:imports <https://w3id.org/spar/foaf> ;
+    owl:priorVersion frapo:2026-10-05 ;
+    owl:versionIRI frapo:2026-11-13 ;
+    owl:versionInfo "1.2.2"^^xsd:string ;
+    vann:changes <https://github.com/SPAROntologies/frapo/blob/master/CHANGELOG.md> ;
+    foaf:logo <https://github.com/SPAROntologies/sparontologies.github.io/blob/master/static/img/spar/spar-logo.png> ;
+    schema:codeRepository <https://github.com/SPAROntologies/frapo> ;
+    schema:image <https://github.com/SPAROntologies/frapo/blob/master/docs/current/frapo.png> ;
+    schema:includedInDataCatalog <https://fairsharing.org/> ;
+    dc:language <http://id.loc.gov/vocabulary/iso639-2/eng> ;
+    schema:keywords 
+        "SPAR Ontologies"@en ,
+        "OWL ontology"@en ,
+        "bibliometrics"@en ,
+        "research funding"@en ,
+        "research administration"@en ,
+        "research projects"@en ,
+        "scholarly communication"@en ,
+        "scientometrics"@en ,
+        "semantic publishing"@en .
+
+frapo:AccountStatement a owl:Class ;
+    rdfs:label "account statement"@en ;
+    vann:example """
+	:my-account-statement a frapo:AccountStatement ;
+        frapo:hasMonetaryValue "5000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A statement of income and expenditure for an account, typically presented as dated income receipts and outgoings against categories in a budget for that account."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:AdmissionApplication a owl:Class ;
+    rdfs:label "admission application"@en ;
+    vann:example """
+    :my-admission-application a frapo:AdmissionApplication ;
+        frapo:isSubmittedBy :my-person .
+    """ ;
+    rdfs:comment "The activity of applying for admission to some group or institution, for example a learned society or a university."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Application ;
+    vs:term_status reg:statusStable .
+
+frapo:AnnualTurnover a owl:Class ;
+    rdfs:label "annual turnover"@en ;
+    vann:example """
+    :my-annual-turnover a frapo:AnnualTurnover ;
+        frapo:hasCurrency "EUR" ; 
+        frapo:hasValue "500000"^^xsd:decimal .
+    """ ;
+    rdfs:comment "The annual financial turnover of an organization (in a specified currency)."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:ArticleProcessingCharge a owl:Class ;
+    rdfs:label "article processing charge"@en ;
+    vann:example """
+    :my-article-processing-charge a frapo:ArticleProcessingCharge ;
+        frapo:hasCurrency "USD" ; 
+        frapo:hasValue "2500"^^xsd:decimal .
+    """ ;
+    rdfs:comment "A fee levied by a publisher on an author or an institution to cover the cost of publishing an Open Access journal article.  Also knows as Article Processing Fee, Article Publication Charge, Author Processing Charge or Author Publishing Charge."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Fee ;
+    vs:term_status reg:statusStable .
+
+frapo:AvailableFunds a owl:Class ;
+    rdfs:label "available funds"@en ;
+    vann:example """
+    :my-available-funds a frapo:AvailableFunds ;
+        frapo:hasCurrency "GBP" ; 
+        frapo:hasValue "12500"^^xsd:decimal .
+    """ ;
+    rdfs:comment "The amount available to spend in a budget category, equalling the income minus the expenditure to date plus future expenditure commitments. "@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:BudgetInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:BudgetedAmount a owl:Class ;
+    rdfs:label "budgeted amount"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:travel-and-subsistence-costs .
+    """ ;
+    rdfs:comment "The amount of money originally available to spend in a particular budget category."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:BudgetInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:Bursary a owl:Class ;
+    rdfs:label "bursary"@en ;
+    vann:example """
+    :my-bursary a frapo:Bursary ;
+        frapo:hasValue "5000"^^xsd:decimal ;
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "An amount of money given to a person by an organization, for example by a university to a university student in need to enable that student to continue his/her studies."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Funding ;
+    vs:term_status reg:statusStable .
+
+frapo:College a owl:Class ;
+    rdfs:label "college"@en ;
+    vann:example """
+    :my-college a frapo:College ;
+        foaf:name "Trinity College" ;
+        frapo:collaboratesWith :my-university .
+    """ ;
+    rdfs:comment "An academic organization that is either a small degree-giving university, or (in the OxBridge sense) an independent corporation of scholars within a larger university, providing undergraduate tuition and a social environment for its students and fellows."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:Commitments a owl:Class ;
+    rdfs:label "commitments"@en ;
+    vann:example """
+    :my-commitments a frapo:Commitments ;
+        frapo:hasCurrency "EUR" ; 
+        frapo:hasValue "45000"^^xsd:decimal .
+    """ ;
+    rdfs:comment "Money set aside to honour expenditures already made but for which no invoices have yet been received, or expenditures planned for the future, for example for salaries."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:BudgetInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:ComputationalAgent a owl:Class ;
+    rdfs:label "computational agent"@en ;
+    vann:example """
+    :my-computational-agent a frapo:ComputationalAgent ;
+        foaf:name "Backup Bot" ; 
+        frapo:isEmployedBy :my-organization .
+    """ ;
+    rdfs:comment "A computer system or software program whose action has an effect on external events, for example a laboratory robot that undertakes your experiments, or the financial control system that controls an institution's payrole, or that, following programmed business rules, prevents the principal investigator from placing an order for research equipment because there is insufficient money left in the project budget."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:ConferenceFee a owl:Class ;
+    rdfs:label "conference fee"@en ;
+    vann:example """
+    :my-conference-fee a frapo:ConferenceFee ;
+        frapo:hasCurrency "EUR" ; 
+        frapo:hasValue "350"^^xsd:decimal .
+    """ ;
+    rdfs:comment "A fee paid to attend a conference."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Fee ;
+    vs:term_status reg:statusStable .
+
+frapo:ConsortiumAgreement a owl:Class ;
+    rdfs:label "consortium agreement"@en ;
+    vann:example """
+    :my-consortium-agreement a frapo:ConsortiumAgreement ;
+        frapo:hasStartDate "2026-01-01"^^xsd:date ; 
+        frapo:hasEndDate "2029-12-31"^^xsd:date .
+    """ ;
+    rdfs:comment "A formal agreement between members of a consortium, for example between research groups at different universities engaged in a multi-partner research project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Contract ;
+    vs:term_status reg:statusStable .
+
+frapo:ConsultancyAgreement a owl:Class ;
+    rdfs:label "consultancy agreement"@en ;
+    vann:example """
+    :my-consultancy-agreement a frapo:ConsultancyAgreement ;
+        frapo:hasStartDate "2026-05-01"^^xsd:date .
+    """ ;
+    rdfs:comment "A contract between an employer and a consultant, detailing the terms of the consultancy."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Contract ;
+    vs:term_status reg:statusStable .
+
+frapo:DataRepository a owl:Class ;
+    rdfs:label "data repository"@en ;
+    vann:example """
+    :my-data-repository a frapo:DataRepository ;
+        foaf:name "Zenodo" ; 
+        frapo:isOutputOf :my-project .
+    """ ;
+    rdfs:comment "A facility in which digital data are deposited for long-term preservation and (optional) publication."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Repository ;
+    vs:term_status reg:statusStable ;
+    skos:note "May also be described as a data archive, or as a database."@en .
+
+frapo:Deliverable a owl:Class ;
+    rdfs:label "deliverable"@en ;
+    vann:example """
+    :my-deliverable a frapo:Deliverable ;
+        dcterms:title "Final Report" ; 
+        frapo:isOutputOf :my-project .
+    """ ;
+    rdfs:comment "A class defining a \"deliverable\" of a project, i.e. something that the project set out to deliver, or succeeds in delivering."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Output ;
+    vs:term_status reg:statusStable .
+
+frapo:Department a owl:Class ;
+    rdfs:label "department"@en ;
+    vann:example """
+    :my-department a frapo:Department ;
+        foaf:name "Computer Science Department" .
+    """ ;
+    rdfs:comment "A department or sub-section within a larger organization, for example a university academic department."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:DocumentRepository a owl:Class ;
+    rdfs:label "document repository"@en ;
+    vann:example """
+    :my-document-repository a frapo:DocumentRepository ;
+        foaf:name "arXiv" .
+    """ ;
+    rdfs:comment "A facility in which digital documents are deposited for long-term preservation and (optional) publication."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Repository ;
+    vs:term_status reg:statusStable ;
+    skos:note "May also be described as a document archive, or a digital library."@en .
+
+frapo:EmploymentApplication a owl:Class ;
+    rdfs:label "employment application"@en ;
+    vann:example """
+    :my-employment-application a frapo:EmploymentApplication ;
+        frapo:isSubmittedBy :my-person .
+    """ ;
+    rdfs:comment "The activity of applying for a job."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Application ;
+    vs:term_status reg:statusStable .
+
+frapo:EmploymentContract a owl:Class ;
+    rdfs:label "employment contract"@en ;
+    vann:example """
+    :my-employment-contract a frapo:EmploymentContract ;
+        frapo:hasStartDate "2026-02-01"^^xsd:date ; 
+        frapo:hasEndDate "2029-01-31"^^xsd:date .
+    """ ;
+    rdfs:comment "A contract of employment between a person and an organization."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Contract ;
+    vs:term_status reg:statusStable .
+
+frapo:Endowment a owl:Class ;
+    rdfs:label "endowment"@en ;
+    vann:example """
+    :my-endowment a frapo:Endowment ;
+        frapo:hasMonetaryValue "500000"^^xsd:decimal ; 
+        frapo:hasCurrency "USD" .
+    """ ;
+    rdfs:comment "A transfer, generally as a gift, of money or property to an institution to provide a permanent fund, the income from which is to be used for a particular purpose."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Gift ;
+    vs:term_status reg:statusStable .
+
+frapo:ExpenditureToDate a owl:Class ;
+    rdfs:label "expenditure to date"@en ;
+    vann:example """
+    :my-expenditure-to-date a frapo:ExpenditureToDate ;
+        frapo:hasMonetaryValue "42000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "Total money expended to date from an an account, or from a particular budget category."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Expenditure ;
+    vs:term_status reg:statusStable .
+
+frapo:Faculty a owl:Class ;
+    rdfs:label "faculty"@en ;
+    vann:example """
+    :my-faculty a frapo:Faculty ;
+        foaf:name "Faculty of Engineering" .
+    """ ;
+    rdfs:comment "A grouping of similar departments within a university context, also known as a school or a division, for example the Humanities Division, the Mathematics Faculty, or the School of Medicine."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Division ;
+    vs:term_status reg:statusStable .
+
+frapo:FeeOrFree a owl:DatatypeProperty ;
+    rdfs:label "is fee or free"@en ;
+    vann:example """
+    :my-conference
+        frapo:feeOrFree "fee" .
+    """ ;
+    rdfs:comment "The specification whether participation in an event is free, or requires payment of a fee."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:Fellowship a owl:Class ;
+    rdfs:label "fellowship"@en ;
+    vann:example """
+    :my-fellowship a frapo:Fellowship ;
+        frapo:hasMonetaryValue "35000"^^xsd:decimal ; 
+        frapo:isFundedBy :my-funding-agency .
+    """ ;
+    rdfs:comment "The stipend paid to a fellow in a college or university."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Stipend ;
+    vs:term_status reg:statusStable .
+
+frapo:FinancialControlSystem a owl:Class ;
+    rdfs:label "financial control system"@en ;
+    vann:example """
+    :my-financial-control-system a frapo:FinancialControlSystem ;
+        foaf:name "Quipu Accounting System" .
+    """ ;
+    rdfs:comment "A software system controlling the financial activities of an organization, for example determining full economic cost budgets for grant applications, and managing the funding of funded projects."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:ComputationalService ;
+    vs:term_status reg:statusStable .
+
+frapo:FundingApplication a owl:Class ;
+    rdfs:label "funding application"@en ;
+    vann:example """
+    :my-funding-application a frapo:FundingApplication ;
+        frapo:isSubmittedBy :my-person .
+    """ ;
+    rdfs:comment "The activity of applying for funding."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Application ;
+    vs:term_status reg:statusStable ;
+    skos:note "For the documents supporting a funding application, use `fabio:GrantApplicationDocument` and `fabio:CaseForSupportDocument`."@en .
+
+frapo:FundingProgramme a owl:Class ;
+    rdfs:label "funding programme"@en ;
+    vann:example """
+    :my-funding-programme a frapo:FundingProgramme ;
+        dcterms:title "Horizon Europe" ;
+        dcterms:relation :my-call-for-applications .
+
+    :my-call-for-applications a fabio:CallForApplications .
+    """ ;
+    rdfs:comment "A programme of related funded activities or projects, typically established by a funding agency."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable ;
+    skos:note "Often associated with publication of a call for applications (`fabio:CallForApplications`)."@en .
+
+frapo:GovernmentOrganization a owl:Class ;
+    rdfs:label "government organization"@en ;
+    vann:example """
+    :my-government-organization a frapo:GovernmentOrganization ;
+        foaf:name "Ministry of Research" .
+    """ ;
+    rdfs:comment "An organization that is part of, or funded by, central or local government."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:HostInstitution a owl:Class ;
+    rdfs:label "host institution"@en ;
+    vann:example """
+    :my-host-institution a frapo:HostInstitution ;
+        foaf:name "University of Bologna" ; 
+        frapo:hasPostalAddress "Via Zamboni 33, Bologna (BO), Italy" .
+    """ ;
+    rdfs:comment "An institution that acts as a host, for example of a project, a resource or a person, for example by providing accommodation, services, operational support and/or funding."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:Income a owl:Class ;
+    rdfs:label "income"@en ;
+    vann:example """
+    :my-income a frapo:Income ;
+        frapo:hasMonetaryValue "120000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "Money coming into an account."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:BudgetInformation ;
+    vs:term_status reg:statusStable ;
+    skos:note "May be associated with a particular budget category."@en .
+
+frapo:Investigation a owl:Class ;
+    rdfs:label "investigation"@en ;
+    vann:example """
+    :my-investigation a frapo:Investigation ;
+        frapo:hasOutput <http://doi.org/10.1016/j.websem.2006.11.002> .
+    """ ;
+    rdfs:comment """
+An investigation is an endeavour that involves research, enabled by a project.  
+"""@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Endeavour ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+The investigation relate to the scholarly and practical aspects of conducting the research itself, including the hypotheses being investigated, the experiments being undertaken, the data being gathered and analysed, the interpretations being drawn from the data, and the results obtained.  
+In contrast, the project that enables it encompasses the administrative aspects of undertaking the endeavour, including the funding obtained, the people employed, and the management of the project in terms of deadlines and deliverables.
+    """@en .
+
+frapo:Investment a owl:Class ;
+    rdfs:label "investment"@en ;
+    vann:example """
+    :my-investment a frapo:Investment ;
+        frapo:hasMonetaryValue "10000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "An investment of money, generally in stocks and shares, or in property, for the purpose of safeguarding the capital and yielding an income."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:Laboratory a owl:Class ;
+    rdfs:label "laboratory"@en ;
+    vann:example """
+    :my-laboratory a frapo:Laboratory ;
+        foaf:name "Research Centre for Open Scholarly Metadata" ; 
+        frapo:hasPostalAddress "Via Zamboni 32, Bologna (BO), Italy" .
+    """ ;
+    rdfs:comment "A facility in which research can be conducted."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Facility ;
+    vs:term_status reg:statusStable .
+
+frapo:Legacy a owl:Class ;
+    rdfs:label "legacy"@en ;
+    vann:example """
+    :my-legacy a frapo:Legacy ;
+        frapo:hasMonetaryValue "10000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A gift of money or property specified in the will of a person, that is made after that person's death."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Gift ;
+    vs:term_status reg:statusStable .
+
+frapo:Library a owl:Class ;
+    rdfs:label "library"@en ;
+    vann:example """
+    :my-library a frapo:Library ;
+        foaf:name "Biblioteca Umanistica "Ezio Raimondi"" .
+    """ ;
+    rdfs:comment "A facility in which printed documents (for example books and journals) are deposited for long-term preservation and access."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Repository ;
+    vs:term_status reg:statusStable .
+
+frapo:MaterialOutput a owl:Class ;
+    rdfs:label "material output"@en ;
+    vann:example """
+    :my-material-output a frapo:MaterialOutput .
+    """ ;
+    rdfs:comment "A material or physical output created or produced as a result of a project or an endeavour such as a research investigation. Examples include a building constructed as a result of a building project, and research outputs such as a cell line, a mouse mutant or a new form of microscope."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Output ;
+    vs:term_status reg:statusStable .
+
+frapo:NotForProfitOrganization a owl:Class ;
+    rdfs:label "not-for-profit organization"@en ;
+    vann:example """
+    :my-not-for-profit-organization a frapo:NotForProfitOrganization ;
+        foaf:name "OpenCitations" .
+    """ ;
+    rdfs:comment "An organization that does not primarily exist to make profit, for example a charity or charitable foundation, a learned society, or a standards body such as the World Wide Web Consortium."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:Owner a owl:Class ;
+    rdfs:label "owner"@en ;
+    vann:example """
+    :my-owner a frapo:Owner ;
+        foaf:name "John Doe" .
+    """ ;
+    rdfs:comment "The agent who owns an entity."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:Payment a owl:Class ;
+    rdfs:label "payment"@en ;
+    vann:example """
+    :my-payment a frapo:Payment ;
+        frapo:hasMonetaryValue "2000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A financial payment made, for example in exchange for something purchased such as property, goods or services, or to refund expenses incurred."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:ProjectBudget a owl:Class ;
+    rdfs:label "project budget"@en ;
+    vann:example """
+    :my-project-budget a frapo:ProjectBudget ;
+        frapo:hasMonetaryValue "300000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A budget for a research project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Budget ;
+    vs:term_status reg:statusStable .
+
+frapo:Purchase a owl:Class ;
+    rdfs:label "purchase"@en ;
+    vann:example """
+    :my-purchase a frapo:Purchase ;
+        frapo:hasMonetaryValue "1000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "The payment for obtaining something, for example property, goods or services."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:Quotation a owl:Class ;
+    rdfs:label "quotation"@en ;
+    vann:example """
+    :my-quotation a frapo:Quotation ;
+        frapo:hasMonetaryValue "10000000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment """
+A formal statement of promise (usually provided in response to a request for quotation) by potential supplier to supply goods or services at specified prices and within a specified period. Acceptance of the quotation by the buyer constitutes an agreement binding on both parties.
+"""@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:seeAlso <http://www.businessdictionary.com/definition/quotation.html> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:RegistrationAgency a owl:Class ;
+    rdfs:label "registration agency"@en ;
+    vann:example """
+    :my-registration-agency a frapo:RegistrationAgency ;
+        foaf:name "CrossRef" .
+    """ ;
+    rdfs:comment "An institution or organization officially appointed by a Registration Authority that acts to register things. For example, CrossRef is a registration agency for DOIs relating to documents, while DataCite is a registration agency for DOIs relating to datasets, acting for the Registration Authority for DOIs, namely the International DOI Foundation (IDF)."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:RegistrationAuthority a owl:Class ;
+    rdfs:label "registration authority"@en ;
+    vann:example """
+    :my-registration-authority a frapo:RegistrationAuthority ;
+        foaf:name "International DOI Foundation" .
+    """ ;
+    rdfs:comment "An agent with responsibility for registering and maintaining international standards, internet domain names, patents, controlled vocabularies and other similar entities required for reliable international cooperatative activities. For example, the International DOI Foundation (IDF) is the Registration Authority for DOIs."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:ResearchGroup a owl:Class ;
+    rdfs:label "research group"@en ;
+    vann:example """
+    :my-research-group a frapo:ResearchGroup ;
+        foaf:name "OpenCitations Research Unit" .
+    """ ;
+    rdfs:comment "A group of people, usually within a university department or a research institute, and typically under a single group leader, dedicated to working together to undertake research on one or more topics. May also be called a research unit."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Group ;
+    vs:term_status reg:statusStable .
+
+frapo:ResearchInformationSystem a owl:Class ;
+    rdfs:label "research information system"@en ;
+    vann:example """
+    :my-research-information-system a frapo:ResearchInformationSystem ;
+        foaf:name "Quipu Research DB" .
+    """ ;
+    rdfs:comment "A database containing administrative information about the research undertaken in an institution, and the publications and other outputs from such research."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:ComputationalService ;
+    vs:term_status reg:statusStable .
+
+frapo:ResearchInstitute a owl:Class ;
+    rdfs:label "research institute"@en ;
+    vann:example """
+    :my-research-institute a frapo:ResearchInstitute ;
+        foaf:name "CNR" .
+    """ ;
+    rdfs:comment "An organization primarily dedicated to undertaking research, that might be part of a university or of a commercial company, or might be independently funded by a research funding agency."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:SME a owl:Class ;
+    rdfs:label "small to medium enterprise"@en,
+        "sme"@en ;
+    vann:example """
+    :my-sme a frapo:SME ;
+        foaf:name "Quipu Inc." .
+    """ ;
+    rdfs:comment "A small to medium enterprise, having up to 250 employees."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Company ;
+    vs:term_status reg:statusStable .
+
+frapo:Scholarship a owl:Class ;
+    rdfs:label "scholarship"@en ;
+    vann:example """
+    :my-scholarship a frapo:Scholarship ;
+        frapo:hasMonetaryValue "19000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A financial grant to a scholar to enable them to undertake advanced academic study."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Stipend ;
+    vs:term_status reg:statusStable .
+
+frapo:ScholarshipApplication a owl:Class ;
+    rdfs:label "scholarship application"@en ;
+    vann:example """
+    :my-scholarship-application a frapo:ScholarshipApplication ;
+        frapo:isSubmittedBy :my-person .
+    """ ;
+    rdfs:comment "The activity of applying for an educational scholarship."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Application ;
+    vs:term_status reg:statusStable .
+
+frapo:ServiceContract a owl:Class ;
+    rdfs:label "service contract"@en ;
+    vann:example """
+    :my-service-contract a frapo:ServiceContract ;
+        frapo:hasStartDate "2026-02-01"^^xsd:date ; 
+        frapo:hasEndDate "2029-01-31"^^xsd:date .
+    """ ;
+    rdfs:comment "A contract for the provision of a service such as a cleaning service, or for the regular servicing, maintenance and repair of some item of equipment or infrastructure."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Contract ;
+    vs:term_status reg:statusStable .
+
+frapo:ServiceContractFee a owl:Class ;
+    rdfs:label "service contract fee"@en ;
+    vann:example """
+    :my-service-contract-fee a frapo:ServiceContractFee ;
+        frapo:hasMonetaryValue "8000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A fee paid periodically, typically annually, to obtain access when required to a service such as an equipment maintenance contract.\""@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Fee ;
+    vs:term_status reg:statusStable .
+
+frapo:SpinOffCompany a owl:Class ;
+    rdfs:label "spin-off company"@en ;
+    vann:example """
+    :my-spin-off-company a frapo:SpinOffCompany ;
+        foaf:name "Quipu Inc." .
+    """ ;
+    rdfs:comment "A company that has been established by a university or research institute to mature and market the results of research conducted at that research institution."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Company ;
+    vs:term_status reg:statusStable .
+
+frapo:Studentship a owl:Class ;
+    rdfs:label "studentship"@en ;
+    vann:example """
+    :my-studentship a frapo:Studentship ;
+        frapo:hasMonetaryValue "7000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A financial grant to a student to enable them to undertake advanced academic study."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Stipend ;
+    vs:term_status reg:statusStable .
+
+frapo:Subscription a owl:Class ;
+    rdfs:label "subscription"@en ;
+    vann:example """
+    :my-subscription a frapo:Subscription ;
+        frapo:hasMonetaryValue "200"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "Payment, commonly made annually, to obtain access to something on a periodic or continuing basis, such as a journal."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Fee ;
+    vs:term_status reg:statusStable .
+
+frapo:Tender a owl:Class ;
+    rdfs:label "tender"@en ;
+    vann:example """
+    :my-tender a frapo:Tender .
+    """ ;
+    rdfs:comment "Sealed bid or offer document submitted in response to a request for tenders, containing detailed information on costs, requirements and terms associated with a potential contract."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:seeAlso <http://www.businessdictionary.com/definition/tender.html> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:University a owl:Class ;
+    rdfs:label "university"@en ;
+    vann:example """
+    :my-university a frapo:University ;
+        foaf:name "Free University Amsterdam"@en ;
+        frapo:awards :phd-scholarship-2004 .
+    """ ;
+    rdfs:comment "A university at which higher education and research is conducted."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:Vendor a owl:Class ;
+    rdfs:label "vendor"@en ;
+    vann:example """
+    :my-vendor a frapo:Vendor ;
+        foaf:name "Quipu Inc." .
+    """ ;
+    rdfs:comment "An agent who supplies goods or services in exchange for payment, in response to receipt of payment or of an official purchase order from a purchaser that is responded to by submission of an invoice for what is supplied."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Supplier ;
+    vs:term_status reg:statusStable .
+
+frapo:academic a scoro:OrganizationRole,
+        owl:NamedIndividual ;
+    rdfs:label "academic"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole frapo:academic .    
+    """ ;
+    rdfs:comment "The role of a member of the academic staff of an academic institution, such as a university."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:accepted a frapo:Status,
+        owl:NamedIndividual ;
+    rdfs:label "accepted"@en ;
+    vann:example """
+    :my-application
+        pso:holdsStatusInTime :my-status-in-time .
+    
+    :my-status-in-time a pso:StatusInTime ;
+        pso:withStatus frapo:accepted .
+    """ ;
+    rdfs:comment "The status of something such as an application as having been accepted."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:appliesFor a owl:ObjectProperty ;
+    rdfs:label "applies for"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:appliesFor :my-grant .
+    """ ;
+    rdfs:comment "The relation between an agent and something for which that agent applies, for example a job, membership of an organization, or a grant from a funding agency."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    owl:inverseOf frapo:isAppliedForBy ;
+    vs:term_status reg:statusStable .
+
+frapo:awards a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "awards"@en ;
+    vann:example """
+    :my-university a frapo:University ;
+        foaf:name "Free University Amsterdam"@en ;
+        frapo:awards :phd-scholarship-2004 .
+    """ ;
+    rdfs:comment "The relation between an agent and something the agent awards, for example linking a funding agency to a grant, a university to a degree, or an organization to a prize."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    owl:inverseOf frapo:isAwardedBy ;
+    vs:term_status reg:statusStable .
+
+frapo:benefactor a scoro:FinancialRole,
+        owl:NamedIndividual ;
+    rdfs:label "benefactor"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole frapo:benefactor .
+    """ ;
+    rdfs:comment "The role of a person who gives a gift."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:building-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "building costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:building-costs .
+    """ ;
+    rdfs:comment "A budget category to cover the costs of constructing, renovating or modifying a physical building."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:business-angel a scoro:FinancialRole,
+        owl:NamedIndividual ;
+    rdfs:label "business angel"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole frapo:business-angel .
+    """ ;
+    rdfs:comment "The role of a person willing to invest in start-up companies."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:collaboratesWith a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "collaborates with"@en ;
+    vann:example """
+    :my-college a frapo:College ;
+        foaf:name "Trinity College" ;
+        frapo:collaboratesWith :my-university .
+    """ ;
+    rdfs:comment "The relation between agents, for example different organizations, or people typically from different groups or organizations, that work together on a common task, project or endeavour, or towards a common goal."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:consultancy-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "consultancy costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:consultancy-costs .
+    """ ;
+    rdfs:comment "A budget category to cover the costs of consultancy fees."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:consumables-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "consumables costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:consumables-costs .
+    """ ;
+    rdfs:comment "A budget category to cover the costs of purchasing consumables."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:contributions-in-kind a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "contributions in kind"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:contributions-in-kind .
+    """ ;
+    rdfs:comment "A budget category to categorize the financial worth of contributions in kind (e.g. staff effort, access to facilities, sharing of know-how) given to a project by an agent, for example by the host institution or by a commercial partner in an academic project. "@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:directly-allocated-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "directly allocated costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:directly-allocated-costs .
+    """ ;
+    rdfs:comment "A budget category to cover those costs normally borne by an institution, that are assigned to the budget of an externally funded project to cover the value of contributions to that project, for example to pay for the salary of a permanent member of staff seconded to work on the project, to compensate the employing organization for the loss of that person's efforts on other activities that he or she would otherwise be undertaking were it not for that secondment."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:directly-incurred-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "directly incurred costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:directly-incurred-costs .
+    """ ;
+    rdfs:comment "A budget category to cover all costs directly incurred because of a legitimate expenditure on a project, for example the purchase of reagents or the employment of a post-doctoral researcher."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable ;
+    skos:note "Also known as the \"direct costs\" of the project."@en .
+
+frapo:donates a owl:ObjectProperty ;
+    rdfs:label "donates"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:donates :my-gift .
+    """ ;
+    rdfs:comment "The relation between a benefactor and a gift."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    owl:inverseOf frapo:isDonatedBy ;
+    vs:term_status reg:statusStable .
+
+frapo:employs a owl:ObjectProperty ;
+    rdfs:label "employs"@en ;
+    vann:example """
+    :my-organization a foaf:Organization ;
+        frapo:employs :my-person .
+    
+    :my-person a foaf:Person .
+    """ ;
+    rdfs:comment "The relation between an employing agent and an employed agent, for example a person or an organization, who is typically employed to undertaking specified work in exchange for payment."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    owl:inverseOf frapo:isEmployedBy ;
+    vs:term_status reg:statusStable ;
+    skos:note "This property should not be used for the other meaning of \"employ\", meaning to use something, e.g. \"He employed great skill . . .\"/"@en .
+
+frapo:enables a owl:ObjectProperty ;
+    rdfs:label "enables"@en ;
+    vann:example """
+    :my-project a foaf:Project ;
+        frapo:enables :my-endeavour .
+
+    :my-endeavour a frapo:Endeavour .
+    """ ;
+    rdfs:comment "The relation between an entity and another entity that it enables, e.g. linking a project to an endeavour that the project enables."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    owl:inverseOf frapo:isEnabledBy ;
+    vs:term_status reg:statusStable .
+
+frapo:entrepreneur a scoro:FinancialRole,
+        owl:NamedIndividual ;
+    rdfs:label "entrepreneur"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        pro:holdsRoleInTime :my-person-role .
+
+    :my-person-role a pro:RoleInTime ;
+        pro:withRole frapo:entrepreneur .
+    """ ;
+    rdfs:comment "The role of a person who invests in novel enterprises."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:estates-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "estates costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:estates-costs .
+    """ ;
+    rdfs:comment "A budget category to cover the \"overhead\" costs of maintaining the premises in which work is undertaken."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:evaluates a owl:ObjectProperty ;
+    rdfs:label "evaluates"@en ;
+    vann:example """
+    :my-funding-agency a frapo:FundingAgency ;
+        frapo:evaluates :my-funding-application .
+    
+    :my-funding-application a frapo:FundingApplication .
+    """ ;
+    rdfs:comment "The relation between an agent and an entity which that agent evaluates, for example a funding agency that is evaluating a grant application to determine whether the proposed project is worthy of funding, or a publisher evaluating a manuscript to determine whether it is suitable for publication."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    owl:inverseOf frapo:isEvaluatedBy ;
+    vs:term_status reg:statusStable .
+
+frapo:facilities-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "facilities costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:facilities-costs .
+    """ ;
+    rdfs:comment "A budget category to cover the costs of maintaining facilities used by a project, for example an electron microscopy facility."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:familyNameInitial a owl:DatatypeProperty ;
+    rdfs:label "has family name initial"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:familyNameInitial "B" .
+    """ ;
+    rdfs:comment "The initial(s) of a person's family name."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:initial ;
+    vs:term_status reg:statusStable .
+
+frapo:full-economic-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "full economic costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:full-economic-costs .
+    """ ;
+    rdfs:comment "A budget category to cover all the direct and indirect costs of a project. "@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable ;
+    skos:note "Frequently abbreviated \"FEC\"."@en .
+
+frapo:funded a frapo:Status,
+        owl:NamedIndividual ;
+    rdfs:label "funded"@en ;
+    vann:example """
+    :my-application
+        pso:holdsStatusInTime :my-status-in-time .
+    
+    :my-status-in-time a pso:StatusInTime ;
+        pso:withStatus frapo:funded .
+    """ ;
+    rdfs:comment "The status of something such as an investigation or a project as being funded."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:funds a owl:ObjectProperty ;
+    rdfs:label "funds"@en ;
+    vann:example """
+    :my-grant
+        frapo:funds :my-project .
+    """ ;
+    rdfs:comment "The relation between a grant and something that it funds (i.e. that it finances or pays for), or that links an agent providing funding to something that it funds.  This flexibility is given because of alternative usages of the English word \"funds\".  [See also frapo:awards and frapo:supports.]"@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:supports ;
+    owl:inverseOf frapo:isFundedBy ;
+    vs:term_status reg:statusStable .
+
+frapo:givenNameInitial a owl:DatatypeProperty ;
+    rdfs:label "given name initial"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:givenNameInitial "S" .
+    """ ;
+    rdfs:comment "The initial(s) of a person's given name(s)."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:initial ;
+    vs:term_status reg:statusStable .
+
+frapo:hasAccountNumber a owl:DatatypeProperty ;
+    rdfs:label "has account number"@en ;
+    vann:example """
+    :my-account a frapo:Account ;
+        frapo:hasAccountNumber "ACC-987654" .
+    """ ;
+    rdfs:comment "An identifying number for a financial account."@en ;
+    rdfs:domain frapo:Account ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasAcronym a owl:DatatypeProperty ;
+    rdfs:label "has acronym"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasAcronym "OPEN-KGP" .
+    """ ;
+    rdfs:comment "An acronym used to identify an entity, based on its full name or title. For example, this ontology has the full name \"Funding, Research Administration and Projects Ontology\" and the acronym \"FRAPO\"."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:hasApplicationDeadline a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has application deadline"@en ;
+    vann:example """
+    :my-application a frapo:Application ;
+        frapo:hasApplicationDeadline "2026-10-31T23:59:59"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The date by which an application, for example a job application, a fellowship application or a grant application, has to be submitted if it is to be considered for acceptance or funding."@en ;
+    rdfs:domain frapo:Application ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasApplicationOutcome a owl:DatatypeProperty ;
+    rdfs:label "has application outcome"@en ;
+    vann:example """
+    :my-application 
+        frapo:hasApplicationOutcome "Funded" .
+    """ ;
+    rdfs:comment "The description of an outcome of an application, for example that a job has been offered or that a grant has been awarded."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    vs:term_status reg:statusStable .
+
+frapo:hasBatchNumber a owl:DatatypeProperty ;
+    rdfs:label "has batch number"@en ;
+    vann:example """
+    :my-material-output 
+        frapo:hasBatchNumber "BATCH-2026-X" .
+    """ ;
+    rdfs:comment "The manufacturing batch number for something, for example a chemical or drug."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasBirthDate a owl:DatatypeProperty ;
+    rdfs:label "has birth date"@en ;
+    vann:example """
+    :my-person 
+        frapo:hasBirthDate "1985-04-12T00:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The birth date of a person."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf foaf:birthday ;
+    vs:term_status reg:statusStable .
+
+frapo:hasBudgetCategory a owl:ObjectProperty ;
+    rdfs:label "has budget category"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :travel-budgeted .
+    
+    :travel-budgeted a frapo:BudgetInformation ;
+        frapo:hasBudgetCategory frapo:travel-and-subsistence-costs .
+
+    frapo:travel-and-subsistence-costs a frapo:BudgetCategory .
+    """@en ;
+    rdfs:comment "The relation between some budget information and its category."@en ;
+    rdfs:domain frapo:BudgetInformation ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range frapo:BudgetCategory ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCallIdentifier a owl:DatatypeProperty ;
+    rdfs:label "has call identifier"@en ;
+    vann:example """
+    :my-call-for-application 
+        frapo:hasCallIdentifier "ERC-2026-STG" .
+    """ ;
+    rdfs:comment "The identifying number of a call for applications issued by a funding agency."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCatalogNumber a owl:DatatypeProperty ;
+    rdfs:label "has catalog number"@en ;
+    vann:example """
+    :my-equipment 
+        frapo:hasCatalogNumber "CAT-00982" .
+    """ ;
+    rdfs:comment "The catalog number of something."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCityOrTown a owl:DatatypeProperty ;
+    rdfs:label "has city or town"@en ;
+    vann:example """
+    :my-event 
+        frapo:hasCityOrTown "Bologna" .
+    """ ;
+    rdfs:comment "The specification of a city or town, for example as the location of an event."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCompletionDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has completion date"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasCompletionDate "2029-12-31T23:59:59"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The date of completion for something, such as a building or a contract."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCost a owl:DatatypeProperty ;
+    rdfs:label "has cost"@en ;
+    vann:example """
+    :my-purchase 
+        frapo:hasCost "1500"^^xsd:decimal .
+    """ ;
+    rdfs:comment "The cost of something that can be paid for to be defined."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCountry a owl:DatatypeProperty ;
+    rdfs:label "has country"@en ;
+    vann:example """
+    :my-postal-address 
+        frapo:hasCountry "Italy" .
+    """ ;
+    rdfs:comment "A country, for example as the location of an event."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCountryCode a owl:DatatypeProperty ;
+    rdfs:label "has country code"@en ;
+    vann:example """
+    :my-postal-address 
+        frapo:hasCountryCode "IT" .
+    """ ;
+    rdfs:comment "AThe two-letter or three-letter upper-case country code used to identify a country (e.g. FR/FRA for France, DE/DEU for Germany)."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:seeAlso <http://countrycode.org/> ;
+    rdfs:subPropertyOf frapo:hasCode ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCurrency a owl:DatatypeProperty ;
+    rdfs:label "has currency"@en ;
+    vann:example """
+    :my-account-statement 
+        frapo:hasCurrency "euro" .
+    """ ;
+    rdfs:comment "The currency used to specify a financial entity."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:seeAlso frapo:hasMonetaryValue ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCurrencyCode a owl:DatatypeProperty ;
+    rdfs:label "has currency code"@en ;
+    vann:example """
+    :my-payment 
+        frapo:hasCurrencyCode "EUR" .
+    """ ;
+    rdfs:comment """The three-letter currency code used to identify a currency, as defined by ISO 4217 (e.g. EUR or GBP).  
+"""@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:seeAlso <http://en.wikipedia.org/wiki/ISO_4217> ;
+    rdfs:subPropertyOf frapo:hasCode ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+Not to be confused with the symbol used with numbers to denote an amount of money in a particular currency (e.g.€500; £3.40).
+    """@en .
+
+frapo:hasCurriculumVitae a owl:ObjectProperty ;
+    rdfs:label "has curriculum vitae"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasCurriculumVitae :my-document .
+
+    :my-document a foaf:Document .
+    """ ;
+    rdfs:comment "The relation between a person and an on-line version of that person's curriculum vitae."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Document ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCustomerNumber a owl:DatatypeProperty ;
+    rdfs:label "has customer number"@en ;
+    vann:example """
+    :my-purchaser a frapo:Purchaser ;
+        frapo:hasCustomerNumber "CUST-44556" .
+    """ ;
+    rdfs:comment "An identifying number for an agent, typically used by the accounting system of the supplier when issuing quotations, fulfilling orders and submitting invoices."@en ;
+    rdfs:domain frapo:Purchaser ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasDecisionDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has decision date"@en ;
+    vann:example """
+    :my-funding-application 
+        frapo:hasDecisionDate "2026-06-30T12:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The date on which a particular action is or will be decided upon, or when an application, such as a grant application, is or will be approved or rejected."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:seeAlso frapo:hasAwardDate,
+        fabio:hasDecisionDate ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable ;
+    skos:note "This same data property appears in FaBiO, the FRBR-aligned Bibliographic Ontology (http://purl.org/spar/fabio/)."@en .
+
+frapo:hasDegreeSuffix a owl:DatatypeProperty ;
+    rdfs:label "has degrees"@en ;
+    vann:example """
+    :my-person 
+        frapo:hasDegreeSuffix "Ph.D." .
+    """ ;
+    rdfs:comment "The letters that should be displayed after a person's name to indicate an academic degree, e.g. BA, BVSc, PhD, DSc."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasNameSuffix ;
+    vs:term_status reg:statusStable .
+
+frapo:hasDeliverable a owl:DatatypeProperty ;
+    rdfs:label "has deliverable"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasDeliverable "D1.1 Technical Architecture" .
+    """ ;
+    rdfs:comment "A deliverable of a project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:hasDeliveryDate a owl:DatatypeProperty ;
+    rdfs:label "has delivery date"@en ;
+    vann:example """
+    :my-equipment 
+        frapo:hasDeliveryDate "2026-09-15T10:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The date on which something is delivered, or is due to be delivered."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasDispatchDate a owl:DatatypeProperty ;
+    rdfs:label "has dispatch date"@en ;
+    vann:example """
+    :my-purchase-order 
+        frapo:hasDispatchDate "2026-09-10T14:30:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The date on which something, for example an item of equipment, is dispatched by the supplier."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasDomainName a owl:DatatypeProperty ;
+    rdfs:label "has domain name"@en ;
+    vann:example """
+    :my-university 
+        frapo:hasDomainName "unibo.it" .
+    """ ;
+    rdfs:comment "An internet domain name that has been registered for an entity, for example http://www.miidi.org for MIIDI, the Minimal Information standard for reporting an Infectious Disease Investigation."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:hasEndDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has end date"@en ;
+    vann:example """
+    :my-employment-contract 
+        frapo:hasEndDate "2029-01-31T23:59:59"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The end date for something, such as a project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasExchangeRate a owl:DatatypeProperty ;
+    rdfs:label "has exchange rate"@en ;
+    vann:example """
+    :my-payment 
+        frapo:hasExchangeRate "1.08"^^xsd:decimal .
+    """ ;
+    rdfs:comment "he currency exchange rate between two specified currencies."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:hasExpertise a owl:DatatypeProperty ;
+    rdfs:label "has expertise"@en ;
+    vann:example """
+    :my-person 
+        frapo:hasExpertise "Knowledge Representation and Semantic Web" .
+    """ ;
+    rdfs:comment "The area(s) of expertise and skills possessed by an individual or an organization."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasAgentInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:hasExpiryDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has expiry date"@en ;
+    vann:example """
+    :my-contract 
+        frapo:hasExpiryDate "2028-12-31T23:59:59"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The expiry date of something, for example a drug, beyond which the manufacture recommends that it should not be used."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasFamilialSuffix a owl:DatatypeProperty ;
+    rdfs:label "has familiar suffix"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasFamilialSuffix "Jr." .
+    """ ;
+    rdfs:comment "The letters that may be displayed after a person's name to indicate familial status, e.g. Sn., Jn., III, 3rd."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasNameSuffix ;
+    vs:term_status reg:statusStable .
+
+frapo:hasFaxNumber a owl:DatatypeProperty ;
+    rdfs:label "has fax number"@en ;
+    vann:example """
+    :my-organization a foaf:Organization ;
+        frapo:hasFaxNumber "+39-051-123456" .
+    """ ;
+    rdfs:comment "A fax number for an agent."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasAgentInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:hasFunderIdentifier a owl:DatatypeProperty ;
+    rdfs:label "has funder identifier"@en ;
+    vann:example """
+    :my-funding-agency a frapo:FundingAgency ;
+        frapo:hasFunderIdentifier "10.13039/501100000781" .
+    """ ;
+    rdfs:comment "An identifier for a funding agency."@en ;
+    rdfs:domain frapo:FundingAgency ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasGrantNumber a owl:DatatypeProperty ;
+    rdfs:label "has grant number"@en ;
+    vann:example """
+    :my-grant a frapo:Grant ;
+        frapo:hasGrantNumber "GRANT-882201" .
+    """ ;
+    rdfs:comment "The grant number of a grant provided by a funding agency."@en ;
+    rdfs:domain frapo:Grant ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasHeadcount a owl:DatatypeProperty ;
+    rdfs:label "has headcount"@en ;
+    vann:example """
+    :my-research-group a frapo:ResearchGroup ;
+        frapo:hasHeadcount "12"^^xsd:nonNegativeInteger .
+    """ ;
+    rdfs:comment "The number of people employed by an organization."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasOrganizationalInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:hasHonorificSuffix a owl:DatatypeProperty ;
+    rdfs:label "has post-nominals"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasHonorificSuffix "OBE" .
+    """ ;
+    rdfs:comment "The letters that should be displayed after a person's name to indicate qualification, membership or fellowship in a professional society, honours or elite status, e.g. MRCVS, FRCS, FRS, OBE, Kt."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasNameSuffix ;
+    vs:term_status reg:statusStable .
+
+frapo:hasIPROwner a owl:ObjectProperty ;
+    rdfs:label "has IPR owner"@en ;
+    vann:example """
+    :my-material-output 
+        frapo:hasIPROwner :my-university .
+
+    :my-university a frapo:University .
+    """ ;
+    rdfs:comment "The relation between an entity such as a project, an endeavour or an output and an agent who owns the IPR arising from or related to that entity."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    rdfs:subPropertyOf frapo:isOwnedBy ;
+    owl:inverseOf frapo:ownsIRPOf ;
+    vs:term_status reg:statusStable .
+
+frapo:hasInvoiceDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has invoice date"@en ;
+    vann:example """
+    :my-invoice a frapo:Invoice ;
+        frapo:hasInvoiceDate "2026-07-10"^^xsd:date .
+    """ ;
+    rdfs:comment "The date of an invoice."@en ;
+    rdfs:domain frapo:Invoice ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:date ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasJobTitle a owl:DatatypeProperty ;
+    rdfs:label "has job title"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasJobTitle "Associate Professor" .
+    """ ;
+    rdfs:comment """The job title held by a person, such as might appear next to the name in a directory or on a conference name badge. For example, the person's specific job title might be "Linacre Professor of Zoology" or "Regius Professor of Moral Philosophy". 
+"""@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:seeAlso scoro:withJobTitle ;
+    rdfs:subPropertyOf frapo:hasPersonalInformation ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+This job title properly refers to the **role** held by that person (e.g. "Head of Department"), which can be separately defined using SCoRO, the Scholarly Contributions and Roles Ontology (http://purl.org/spar/scoro/).
+    """@en .
+
+frapo:hasKeyword a owl:DatatypeProperty ;
+    rdfs:label "has keyword"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasKeyword "Semantic Web" .
+    """ ;
+    rdfs:comment "A keyword relating to an entity."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:hasLanguageCode a owl:DatatypeProperty ;
+    rdfs:label "has language code"@en ;
+    vann:example """
+    :my-document 
+        frapo:hasLanguageCode "en" .
+    """ ;
+    rdfs:comment "The two-letter or three-letter lower-case code used to identify a language (e.g. fr/fra for French, de/deu for Germany) (see http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasCode ;
+    vs:term_status reg:statusStable .
+
+frapo:hasLocation a owl:DatatypeProperty ;
+    rdfs:label "has location"@en ;
+    vann:example """
+    :my-facility 
+        frapo:hasLocation "Campus Navile, Bologna" .
+    """ ;
+    rdfs:comment "The relevant location for an entity, which might be geographical (e.g. New York City) or local (e.g. Freezer B, second shelf)."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:hasManufactureDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has data of manufacture"@en ;
+    vann:example """
+    :my-equipment 
+        frapo:hasManufactureDate "2025-11-20T00:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The date of manufacture of something."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasMilestone a owl:DatatypeProperty ;
+    rdfs:label "has milestone"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasMilestone "M1: Data Integration Complete" .
+    """ ;
+    rdfs:comment "A significant event (a \"milestone\") in the progress of a project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:hasModelNumber a owl:DatatypeProperty ;
+    rdfs:label "has model number"@en ;
+    vann:example """
+    :my-equipment 
+        frapo:hasModelNumber "MDL-X500" .
+    """ ;
+    rdfs:comment "The model number of something, for example a piece of equipment."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasORCID a owl:DatatypeProperty ;
+    rdfs:label "has ORCID"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasORCID "0000-0003-0530-4305" .
+    """ ;
+    rdfs:comment "An individual's Open Researcher and Contributor ID (ORCID), an alphanumeric identifier for individual scholars."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasPersonalIdentifier ;
+    owl:equivalentProperty scoro:hasORCID ;
+    vs:term_status reg:statusStable .
+
+frapo:hasOutput a owl:ObjectProperty ;
+    rdfs:label "has output"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasOutput :my-output .
+    """ ;
+    rdfs:comment "The relation between an activity such as a project or endeavour and something that is created or produced as a result of that activity. Examples include a building created as a result of a building project, and a journal article published to describe the results of a research investigation."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    owl:inverseOf frapo:isOutputOf ;
+    vs:term_status reg:statusStable .
+
+frapo:hasPhoneNumber a owl:DatatypeProperty ;
+    rdfs:label "has phone number"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasPhoneNumber "+39 051-654-4321" .
+    """ ;
+    rdfs:comment "A telephone number for an agent."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasAgentInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:hasPostCode a owl:DatatypeProperty ;
+    rdfs:label "has post code"@en ;
+    vann:example """
+    :my-postal-address 
+        frapo:hasPostCode "40126" .
+    """ ;
+    rdfs:comment "The postal code of an address."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasCode ;
+    vs:term_status reg:statusStable .
+
+frapo:hasPostalAddress a owl:DatatypeProperty ;
+    rdfs:label "has postal address"@en ;
+    vann:example """
+    :my-organization 
+        frapo:hasPostalAddress "Via Zamboni 33, Bologna (BO), Italy" .
+    """ ;
+    rdfs:comment "A postal address for an agent."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasAgentInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:hasPostalAddressLine a owl:DatatypeProperty ;
+    rdfs:label "has postal address line"@en ;
+    vann:example """
+    :my-postal-address a frapo:PostalAddress ;
+        frapo:hasPostalAddressLine "Via Zamboni 33" .
+    """ ;
+    rdfs:comment "A single line of a postal address."@en ;
+    rdfs:domain frapo:PostalAddress ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasAgentInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:hasProfessionalName a owl:DatatypeProperty ;
+    rdfs:label "has alternate name"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasProfessionalName "J. D. Smith" .
+    """ ;
+    rdfs:comment "An alternative name that a person uses for professional purposes, for example the pen name of an author, or a married woman's maiden name used as her professional name."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasPersonalInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:hasProjectIdentifier a owl:DatatypeProperty ;
+    rdfs:label "has project identifier"@en ;
+    vann:example """
+    :my-project a foaf:Project ;
+        frapo:hasProjectIdentifier "PRJ-2026-01" .
+    """ ;
+    rdfs:comment "An identifier for a project."@en ;
+    rdfs:domain foaf:Project ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasProvenance a owl:DatatypeProperty ;
+    rdfs:label "has provenance"@en ;
+    vann:example """
+    :my-material-output 
+        frapo:hasProvenance "Generated via chemical synthesis" .
+    """ ;
+    rdfs:comment "The description of the provenance of an entity."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    vs:term_status reg:statusStable .
+
+frapo:hasPurchaseDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has purchase date"@en ;
+    vann:example """
+    :my-purchase 
+        frapo:hasPurchaseDate "2026-08-01T15:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The purchase date of something."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasPurchaseOrderNumber a owl:DatatypeProperty ;
+    rdfs:label "has purchase order number"@en ;
+    vann:example """
+    :my-purchase-order a frapo:PurchaseOrder ;
+        frapo:hasPurchaseOrderNumber "PO-2026-0045" .
+    """ ;
+    rdfs:comment "An official purchase order issued by a purchasing agent to a supplier of goods or services, and used by the supplier to identify the order when delivering goods or submitting an invoice."@en ;
+    rdfs:domain frapo:PurchaseOrder ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasQualification a owl:DatatypeProperty ;
+    rdfs:label "has qualification"@en ;
+    vann:example """
+    :my-person 
+        frapo:hasQualification "Doctor of Philosophy in Computer Science" .
+    """ ;
+    rdfs:comment "The qualification held by a person."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasPersonalInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:hasQuotationDate a owl:DatatypeProperty ;
+    rdfs:label "has quotation date"@en ;
+    vann:example """
+    :my-quotation 
+        frapo:hasQuotationDate "2026-06-15T11:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The date of a quotation."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasReferenceNumber a owl:DatatypeProperty ;
+    rdfs:label "has reference number"@en ;
+    vann:example """
+    :my-contract 
+        frapo:hasReferenceNumber "REF-998822" .
+    """ ;
+    rdfs:comment "The reference number for something."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasRegistrationDeadline a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has registration deadline"@en ;
+    vann:example """
+    :my-funding-programme 
+        frapo:hasRegistrationDeadline "2026-09-30T17:00:00"^^xsd:dateTime . 
+    """ ;
+    rdfs:comment "The date by which registration must be made, for example renewal of an internet domain name."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasSerialNumber a owl:DatatypeProperty ;
+    rdfs:label "has serial number"@en ;
+    vann:example """
+    :my-equipment 
+        frapo:hasSerialNumber "SN-987654321" .
+    """ ;
+    rdfs:comment "The serial number of something, for example a piece of equipment."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasStartDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has start date"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasStartDate "2026-01-01T00:00:00"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The start date of something, such as a project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasSupplierNumber a owl:DatatypeProperty ;
+    rdfs:label "has supplier number"@en ;
+    vann:example """
+    :my-supplier a frapo:Supplier ;
+        frapo:hasSupplierNumber "SUP-10293" .
+    """ ;
+    rdfs:comment "An identifying number for a supplier, typically used by the accounting system of the purchasing institution when placing and tracking orders."@en ;
+    rdfs:domain frapo:Supplier ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    vs:term_status reg:statusStable .
+
+frapo:hasTemporalDuration a owl:DatatypeProperty ;
+    rdfs:label "has temporal duration"@en ;
+    vann:example """
+    :my-employment-contract 
+        frapo:hasTemporalDuration "2026-01-31/2029-01-31"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The temporal duration of some entity such as an event or a project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:dateTime ;
+    vs:term_status reg:statusStable .
+
+frapo:indirect-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "indirect costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:indirect-costs .
+    """ ;
+    rdfs:comment "A budget category to cover the indirect costs of running a project, for example heating and lighting, and the employment of non-project staff including administrators, accountants and cleaners."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:isBudgetInformationOf a owl:ObjectProperty ;
+    rdfs:label "is budget information of"@en ;
+    vann:example """
+    :travel-budgeted a frapo:BudgetInformation ;
+        frapo:isBudgetInformationOf :my-budget .
+    
+    :my-budget a frapo:Budget .
+    """@en ;
+    rdfs:comment "The relation between some budget information and the budget described by it."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    owl:inverseOf frapo:hasBudgetInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:isManufacturedBy a owl:ObjectProperty ;
+    rdfs:label "is manufactured by"@en ;
+    vann:example """
+    :my-equipment 
+        frapo:isManufacturedBy :my-manufacturer .
+    
+    :my-manufacturer a frapo:Manufacturer .
+    """ ;
+    rdfs:comment "The relation between a manufactured entity and its manufacturer."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range frapo:Manufacturer ;
+    owl:inverseOf frapo:manufactures ;
+    vs:term_status reg:statusStable .
+
+frapo:isPurchasedBy a owl:ObjectProperty ;
+    rdfs:label "was purchased by"@en ;
+    vann:example """
+    :my-equipment 
+        frapo:isPurchasedBy :my-university .
+
+    :my-university a frapo:University .
+    """ ;
+    rdfs:comment "The relation between a purchased entity and its purchaser."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    owl:inverseOf frapo:purchases ;
+    vs:term_status reg:statusStable ;
+    skos:note "Domain constraints have been removed from this object property to permit it to be used in unforeseen ways."@en .
+
+frapo:isSubmittedBy a owl:ObjectProperty ;
+    rdfs:label "is submitted by"@en ;
+    vann:example """
+    :my-funding-application 
+        frapo:isSubmittedBy :my-person .
+
+    :my-person a foaf:Person .
+    """ ;
+    rdfs:comment "The relation between an entity that is submitted (to some third party) and the agent who submits it."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    owl:inverseOf frapo:submits ;
+    vs:term_status reg:statusStable .
+
+frapo:isSuppliedBy a owl:ObjectProperty ;
+    rdfs:label "is supplied by"@en ;
+    vann:example """
+    :my-service 
+        frapo:isSuppliedBy :my-supplier .
+
+    :my-supplier a frapo:Supplier .
+    """ ;
+    rdfs:comment "The relation between an entity that is supplied, or an agent to whom an entity is supplied, and the supplier."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range frapo:Supplier ;
+    owl:inverseOf frapo:supplies ;
+    vs:term_status reg:statusStable .
+
+frapo:non-staff-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "non-staff costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:non-staff-costs .
+    """ ;
+    rdfs:comment "A budget category to cover all the costs associated with a project that do not involve the employment of staff by the institution, thus, for example, including consumables purchase, travel costs and consultancy fees, but excluding the salary, estates and indirect costs associated with the allocation of the PI's time to the project and the direct employment of a project manager."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:other-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "other costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:other-costs .
+    """ ;
+    rdfs:comment "A budget category to cover costs not covered in other budget categories."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:overhead-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "overhead costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:overhead-costs .
+    """ ;
+    rdfs:comment "A budget category to cover all the non-directly incurred costs of a project, including estates costs and indirect costs, that enable an institution to host an externally-funded project. "@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:providesFractionOfTotalFunding a owl:ObjectProperty ;
+    rdfs:label "provides fraction of total funding"@en ;
+    vann:example """
+    :my-funding a frapo:Funding ;
+        frapo:providesFractionOfTotalFunding :my-budget .
+
+    :my-budget a frapo:Budget .
+    """ ;
+    rdfs:comment "The relation between funding and a budget, specifying what fraction of the total budget is provided by that source of funding."@en ;
+    rdfs:domain frapo:Funding ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range frapo:Budget ;
+    vs:term_status reg:statusStable .
+
+frapo:providesService a owl:ObjectProperty ;
+    rdfs:label "provides service"@en ;
+    vann:example """
+    :my-organization a foaf:Organization ;
+        frapo:providesService :my-service .
+    """ ;
+    rdfs:comment "An agent that provides a service."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:publishing-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "publishing costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:publishing-costs .
+    """ ;
+    rdfs:comment "A budget category to cover the cost of publishing outpots from a project, for example author fees for journal articles in an open access journal."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:purchasesFrom a owl:ObjectProperty ;
+    rdfs:label "purchases from"@en ;
+    vann:example """
+    :my-university a frapo:University ;
+        frapo:purchasesFrom :my-vendor .
+
+    :my-vendor a frapo:Vendor .
+    """ ;
+    rdfs:comment "The relation between a purchaser and a supplier from whom the purchase is made."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    owl:inverseOf frapo:sellsTo ;
+    vs:term_status reg:statusStable .
+
+frapo:rejected a frapo:Status,
+        owl:NamedIndividual ;
+    rdfs:label "rejected"@en ;
+    vann:example """
+    :my-application
+        pso:holdsStatusInTime :my-status-in-time .
+    
+    :my-status-in-time a pso:StatusInTime ;
+        pso:withStatus frapo:rejected .
+    """ ;
+    rdfs:comment "The status of something such as an application as having been rejected."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:service-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "service costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:service-costs .
+    """ ;
+    rdfs:comment "A budget category to cover the costs of services used by a project, for example a DNA sequencing service, or an equipment maintenance service."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:software-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "software costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:software-costs .
+    """ ;
+    rdfs:comment "A budget category to cover the costs of software licenses required by a project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:specifiesExpediture a owl:ObjectProperty ;
+    rdfs:label "specifies expenditure"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:specifiesExpediture :my-expenditure .
+    """ ;
+    rdfs:comment "The relation between an agent or a budget and the expenditure specified by that agent or budget."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( frapo:Budget foaf:Agent ) ] ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:travel-and-subsistence-costs a frapo:BudgetCategory,
+        owl:NamedIndividual ;
+    rdfs:label "travel and subsistence costs"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:travel-and-substinence-costs .
+    """ ;
+    rdfs:comment "A budget category to cover the costs of travel and subsistence incurred on behalf of the project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:unfunded a frapo:Status,
+        owl:NamedIndividual ;
+    rdfs:label "unfunded"@en ;
+    vann:example """
+    :my-application
+        pso:holdsStatusInTime :my-status-in-time .
+    
+    :my-status-in-time a pso:StatusInTime ;
+        pso:withStatus frapo:unfunded .
+    """ ;
+    rdfs:comment "The status of something such as an investigation or a project as being unfunded."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:usesEquipment a owl:ObjectProperty ;
+    rdfs:label "uses equipment"@en ;
+    vann:example """
+    :my-project 
+        frapo:usesEquipment :my-equipment .
+
+    :my-equipment a frapo:Equipment .
+    """ ;
+    rdfs:comment "The relation between an activity such as an expedition, a research project or an investigation, and an item of equipment employed in that activity."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range frapo:Equipment ;
+    vs:term_status reg:statusStable .
+
+frapo:usesFacility a owl:ObjectProperty ;
+    rdfs:label "uses facility"@en ;
+    vann:example """
+    :my-project 
+        frapo:usesFacility :my-facility .
+
+    :my-facility a frapo:Facility .
+    """ ;
+    rdfs:comment "The relation between an activity such as an expedition, a research project or an investigation, and a facility employed in that activity."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range frapo:Facility ;
+    vs:term_status reg:statusStable .
+
+frapo:usesService a owl:ObjectProperty ;
+    rdfs:label "uses service"@en ;
+    vann:example """
+    :my-project 
+        frapo:usesService :my-service .
+
+    :my-service a frapo:Service .
+    """ ;
+    rdfs:comment "The relation between an activity such as an expedition, a research project or an investigation, and a service employed in that activity."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range frapo:Service ;
+    vs:term_status reg:statusStable .
+
+dc:contributor a owl:AnnotationProperty .
+
+dc:creator a owl:AnnotationProperty .
+
+dc:date a owl:AnnotationProperty .
+
+dc:description a owl:AnnotationProperty .
+
+dc:rights a owl:AnnotationProperty .
+
+dc:title a owl:AnnotationProperty .
+
+bibo:doi a owl:AnnotationProperty .
+
+bibo:status a owl:AnnotationProperty .
+
+dc:language a owl:AnnotationProperty .
+
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+
+dcterms:issued a owl:AnnotationProperty .
+
+dcterms:license a owl:AnnotationProperty .
+
+dcterms:modified a owl:AnnotationProperty .
+
+dcterms:publisher a owl:AnnotationProperty .
+
+dcterms:source a owl:AnnotationProperty .
+
+foaf:logo a owl:AnnotationProperty .
+
+schema:codeRepository a owl:AnnotationProperty .
+
+schema:image a owl:AnnotationProperty .
+
+schema:includedInDataCatalog a owl:AnnotationProperty .
+
+schema:keywords a owl:AnnotationProperty .
+
+skos:note a owl:AnnotationProperty .
+
+vann:changes a owl:AnnotationProperty .
+
+vann:example a owl:AnnotationProperty .
+
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+vs:term_status a owl:AnnotationProperty .
+
+dcterms:created a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has creation date"@en ;
+    rdfs:comment "The date of creation of a resource."@en ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dcterms:date .
+
+pro:holdsRoleInTime a owl:ObjectProperty ;
+    rdfs:label "holds role in time"@en ;
+    rdfs:comment "The relation between an agent and a role that the agent holds."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:range pro:RoleInTime .
+
+pro:withRole a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "with role"@en ;
+    rdfs:comment "The relation between an agent's role in time to a definition of the type of role held by this agent."@en ;
+    rdfs:domain pro:RoleInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> ;
+    rdfs:range pro:Role .
+
+pso:holdsStatusInTime a owl:ObjectProperty ;
+    rdfs:label "holds status in time"@en ;
+    rdfs:comment "The relation between a document, a dataset or some other thing and a status that it holds at a specific time."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pso> ;
+    rdfs:range pso:StatusInTime .
+
+pso:withStatus a owl:ObjectProperty ;
+    rdfs:label "with status"@en ;
+    rdfs:comment "The relation between the holding of a status to a document, a dataset or something else at a specific time and the definition of that status."@en ;
+    rdfs:domain pso:StatusInTime ;
+    rdfs:isDefinedBy <http://purl.org/spar/pso> ;
+    rdfs:range pso:Status .
+
+rdfs:comment a owl:AnnotationProperty .
+
+rdfs:label a owl:AnnotationProperty .
+
+rdfs:seeAlso a owl:AnnotationProperty .
+
+owl:versionInfo a owl:AnnotationProperty .
+
+tz:TimeZone a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has time zone"@en ;
+    rdfs:comment "The time zone relating to an entity."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/2006/timezone> .
+
+frapo:Account a owl:Class ;
+    rdfs:label "account"@en ;
+    vann:example """
+    :my-account a frapo:Account ;
+        frapo:hasAccountNumber "ACC-987654" .
+    """ ;
+    rdfs:comment "A mechanism for administering money, typically owned by an agent and dedicated to a particular purpose, for example the equipment account of a university department, to be used only for the purchase or maintenance of items of equipment. "@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:Division a owl:Class ;
+    rdfs:label "division"@en ;
+    vann:example """
+    :my-division a frapo:Division ;
+        foaf:name "Humanities Division" .
+    """ ;
+    rdfs:comment "A grouping of similar departments within a larger organization.  In the university context, also known as a school or a faculty, for example the Humanities Division, the Mathematics Faculty, or the School of Medicine."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:Endeavour a owl:Class ;
+    rdfs:label "endeavour"@en ;
+    vann:example """
+    :my-endeavour a frapo:Endeavour ;
+        frapo:isEnabledBy :my-project .
+    """ ;
+    rdfs:comment "An activity, such as a research investigation, that is enabled by a project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+ An endeavour relates to the academic and practical aspects of undertaking that endeavour - thus for a research investigation the research itself, including the hypotheses being investigated, the experiments being undertaken, the data being gathered and analysed, the interpretations being drawn from the data, and the results obtained. 
+ In contrast, the project relates to the administrative aspects of undertaking an endeavour, including the funding obtained, the people employed, and the management of the project in terms of deadlines and deliverables.
+    """@en .
+
+frapo:Expenditure a owl:Class ;
+    rdfs:label "expenditure"@en ;
+    vann:example """
+    :my-expenditure a frapo:Expenditure .
+    """ ;
+    rdfs:comment "Money going out of an account, because of expenditure on various entities."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:BudgetInformation ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+May be associated with a particular budget category.
+    """@en .
+
+frapo:Grant a owl:Class ;
+    rdfs:label "grant"@en ;
+    vann:example """
+    :my-grant a frapo:Grant ;
+        frapo:hasValue "50000"^^xsd:decimal;
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A financial award by a funding agency for a particular project or purpose, usually awarded on the basis of a competitive application."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Funding ;
+    vs:term_status reg:statusStable .
+
+frapo:Invoice a owl:Class ;
+    rdfs:label "invoice"@en ;
+    vann:example """
+    :my-invoice a frapo:Invoice ;
+        frapo:hasInvoiceDate "2026-07-10"^^xsd:date .
+    """ ;
+    rdfs:comment "An invoice for payment of goods or services."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:PostalAddress a owl:Class ;
+    rdfs:label "postal address"@en ;
+    vann:example """
+    :my-postal-address a frapo:PostalAddress ;
+        frapo:hasPostalAddressLine "Via Zamboni 33" .
+    """ ;
+    rdfs:comment "A postal address."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable .
+
+frapo:PurchaseOrder a owl:Class ;
+    rdfs:label "purchase order"@en ;
+    vann:example """
+    :my-purchase-order a frapo:PurchaseOrder ;
+        frapo:hasPurchaseOrderNumber "PO-2026-0045" .
+    """ ;
+    rdfs:comment "An official order from a purchasing institution to a supplier for the purchase of goods or services, often issued in response to the receipt of a quotation from the supplier."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:Purchaser a owl:Class ;
+    rdfs:label "purchaser"@en ;
+    vann:example """
+    :my-purchaser a frapo:Purchaser ;
+        frapo:hasCustomerNumber "CUST-44556" .
+    """ ;
+    rdfs:comment "An agent who purchases something from a supplier."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:hasAwardDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has award date"@en ;
+    vann:example """
+    :my-grant 
+        frapo:hasAwardDate "2026-05-15"^^xsd:date .
+    """ ;
+    rdfs:comment "The date on which notification is given or received that something, for example a scholarship or a grant, has been awarded.  [See also frapo:hasDecisionDate.]"@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range xsd:date ;
+    rdfs:subPropertyOf dcterms:date ;
+    vs:term_status reg:statusStable .
+
+frapo:hasBudgetInformation a owl:ObjectProperty ;
+    rdfs:label "has budget information"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :travel-budgeted .
+    
+    :travel-budgeted a frapo:BudgetInformation .
+    """@en ;
+    rdfs:comment "The relation between a budget and some piece of information describing it."@en ;
+    rdfs:domain frapo:Budget ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range frapo:BudgetInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:hasFundingAgency a owl:ObjectProperty ;
+    rdfs:label "has funding agency"@en ;
+    vann:example """
+    :my-project 
+        frapo:hasFundingAgency :my-funding-agency .
+
+    :my-funding-agency a frapo:FundingAgency .
+    """ ;
+    rdfs:comment "The relation between something and a funding agency that provides funding for it."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range frapo:FundingAgency ;
+    rdfs:subPropertyOf frapo:isSupportedBy ;
+    owl:inverseOf frapo:isFundingAgencyFor ;
+    vs:term_status reg:statusStable .
+
+frapo:hasMonetaryValue a owl:DatatypeProperty ;
+    rdfs:label "has value"@en ;
+    vann:example """
+    :my-payment 
+        frapo:hasMonetaryValue "3500"^^xsd:decimal .
+    """ ;
+    rdfs:comment "The monetary value of a financial entity such as a grant, a gift or a budget category."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable ;
+    skos:note """
+Use in conjunction with `frapo:hasCurrency`.
+    """@en .
+
+frapo:hasOrganizationalInformation a owl:DatatypeProperty ;
+    rdfs:label "has organizational information"@en ;
+    vann:example """
+    :my-organization a foaf:Organization ;
+        frapo:hasOrganizationalInformation "Non-profit research institute founded in 1980" .
+    """ ;
+    rdfs:comment "Some information about the organization."@en ;
+    rdfs:domain foaf:Organization ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasAgentInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:hasPersonalIdentifier a owl:DatatypeProperty ;
+    rdfs:label "has personal identifier"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasPersonalIdentifier "ID-992384" .
+    """ ;
+    rdfs:comment "A unique and unambiguous identifier for an individual person within a given context."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasPersonalInformation,
+        dcterms:identifier ;
+    owl:equivalentProperty scoro:hasPersonalIdentifier ;
+    vs:term_status reg:statusStable .
+
+frapo:isAppliedForBy a owl:ObjectProperty ;
+    rdfs:label "is applied for by"@en ;
+    vann:example """
+    :my-grant 
+        frapo:isAppliedForBy :my-person .
+
+    :my-person a foaf:Person .
+    """ ;
+    rdfs:comment "The relation between something applied for and the agent making the application."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:isDonatedBy a owl:ObjectProperty ;
+    rdfs:label "is donated by"@en ;
+    vann:example """
+    :my-gift 
+        frapo:isDonatedBy :my-person .
+
+    :my-person a foaf:Person .
+    """ ;
+    rdfs:comment "The relation between a gift and the benefactor who provided it."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:isEmployedBy a owl:ObjectProperty ;
+    rdfs:label "is employed by"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:isEmployedBy :my-university .
+
+    :my-university a frapo:University .
+    """ ;
+    rdfs:comment "The relation between an employed agent, typically a person or an organization, and an employing agent."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    vs:term_status reg:statusStable ;
+    skos:note "This property should not be used for the other meaning of \"employ\", meaning to use something, e.g. \"Great skill is employed by master craftsmen . . .\"/"@en .
+
+frapo:isEnabledBy a owl:ObjectProperty ;
+    rdfs:label "is enabled by"@en ;
+    vann:example """
+    :my-endeavour a frapo:Endeavour ;
+        frapo:isEnabledBy :my-project .
+    """ ;
+    rdfs:comment "The relation between an entity and another entity that enables it, e.g. linking an investigation to a project that enables it."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:isEvaluatedBy a owl:ObjectProperty ;
+    rdfs:label "is evaluated by"@en ;
+    vann:example """
+    :my-funding-application 
+        frapo:isEvaluatedBy :my-funding-agency .
+
+    :my-funding-agency a frapo:FundingAgency .
+    """ ;
+    rdfs:comment "The relation between an entity and an agent that evaluates it."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:isFundedBy a owl:ObjectProperty ;
+    rdfs:label "is funded by"@en ;
+    vann:example """
+    :my-project 
+        frapo:isFundedBy :my-grant .
+    """ ;
+    rdfs:comment """
+The relation between something and the funding that funds it (i.e. that finances or pays for it), or to the funding agency providing that funding.
+This flexibility is given because of alternative usages of the English word "funds".  
+"""@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:seeAlso frapo:hasFundingAgency,
+        frapo:isAwardedBy ;
+    rdfs:subPropertyOf frapo:isSupportedBy ;
+    vs:term_status reg:statusStable .
+
+frapo:isFundingAgencyFor a owl:ObjectProperty ;
+    rdfs:label "is funding agency for"@en ;
+    vann:example """
+    :my-funding-agency a frapo:FundingAgency ;
+        frapo:isFundingAgencyFor :my-project .
+    """ ;
+    rdfs:comment "The relation between a funding agency and an entity for which it provides funding."@en ;
+    rdfs:domain frapo:FundingAgency ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:supports ;
+    vs:term_status reg:statusStable .
+
+frapo:isOutputOf a owl:ObjectProperty ;
+    rdfs:label "is output of"@en ;
+    vann:example """
+    :my-output 
+        frapo:isOutputOf :my-project .
+    """ ;
+    rdfs:comment "The relation between something that is created or produced and the activity that created or produced it."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:isOwnedBy a owl:ObjectProperty ;
+    rdfs:label "is owned by"@en ;
+    vann:example """
+    :my-account 
+        frapo:isOwnedBy :my-organization .
+
+    :my-organization a foaf:Organization .
+    """ ;
+    rdfs:comment "The relation between an entity and the agent that owns it."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    owl:inverseOf frapo:owns ;
+    vs:term_status reg:statusStable .
+
+frapo:manufactures a owl:ObjectProperty ;
+    rdfs:label "manufactures"@en ;
+    vann:example """
+    :my-manufacturer a frapo:Manufacturer ;
+        frapo:manufactures :my-equipment .
+    """ ;
+    rdfs:comment "The relation between a manufacturer and a manufactured entity."@en ;
+    rdfs:domain frapo:Manufacturer ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:ownsIRPOf a owl:ObjectProperty ;
+    rdfs:label "owns IPR of"@en ;
+    vann:example """
+    :my-university a frapo:University ;
+        frapo:ownsIRPOf :my-material-output .
+    """ ;
+    rdfs:comment "The relation between an agent who owns IPR arising from or relating and an entity to that entity."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:owns ;
+    vs:term_status reg:statusStable .
+
+frapo:purchases a owl:ObjectProperty ;
+    rdfs:label "purchases"@en ;
+    vann:example """
+    :my-purchaser a frapo:Purchaser ;
+        frapo:purchases :my-equipment .
+    """ ;
+    rdfs:comment "The relation between a purchaser and a purchased entity."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:sellsTo a owl:ObjectProperty ;
+    rdfs:label "sells to"@en ;
+    vann:example """
+    :my-vendor a frapo:Vendor ;
+        frapo:sellsTo :my-organization .
+    
+    :my-organization a foaf:Organization .
+    """ ;
+    rdfs:comment "The relation between a supplier and a purchaser to whom an entity is sold."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:submits a owl:ObjectProperty ;
+    rdfs:label "submits"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:submits :my-funding-application .
+    """ ;
+    rdfs:comment "The relation between an agent and an entity that is submitted to some third party, for example a grant application submitted to a funding agency, a manuscript submitted to a publisher, a quotation submitted by a vendor, or a dataset submitted by a researcher to a data repository."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:supplies a owl:ObjectProperty ;
+    rdfs:label "supplies"@en ;
+    vann:example """
+    :my-supplier a frapo:Supplier ;
+        frapo:supplies :my-service .
+    """ ;
+    rdfs:comment "The relation between a supplier and a supplied entity, or an agent to whom the entity is supplied."@en ;
+    rdfs:domain frapo:Supplier ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+pro:Role a owl:Class ;
+    rdfs:label "role"@en ;
+    rdfs:comment "A role an agent may have. Individual members of this class or its sub-classes are used to specify particular roles."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> .
+
+scoro:OrganizationRole a owl:Class ;
+    rdfs:label "organizational role"@en ;
+    rdfs:comment "A role that an agent might hold with respect to an organization and its administration, particularly within an academic context."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/scoro> .
+
+scoro:hasORCID a owl:DatatypeProperty ;
+    rdfs:label "has ORCID"@en ;
+    rdfs:comment "A relation between an individual and their Open Researcher and Contributor ID (ORCID), an alphanumeric identifier for individual scholars."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy <http://purl.org/spar/scoro> .
+
+scoro:hasPersonalIdentifier a owl:DatatypeProperty ;
+    rdfs:label "has personal identifier"@en ;
+    rdfs:comment "A unique and unambiguous identifier for an individual person within a given context."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy <http://purl.org/spar/scoro> .
+
+foaf:Document a owl:Class ;
+    rdfs:label "document"@en ;
+    rdfs:comment "A document."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
+    skos:note """
+Ontology terms and definitions for many documents relevant to FRAPO are given as "Expression" classes in FaBiO, the FRBR-aligned Bibliographic Ontology, e.g. `fabio:CallForApplications`, `fabio:DataManagementPlan`, `fabio:GrantApplicationDocument`, `fabio:ProjectPlan`.
+Others are given as sub-classes of this class.
+"""@en .
+
+foaf:Group a owl:Class ;
+    rdfs:label "group"@en ;
+    rdfs:comment "A group of people."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
+
+foaf:Project a owl:Class ;
+    rdfs:label "project"@en ;
+    rdfs:comment "An administrative entity that enables an endeavour such as a research investigation.  A project relates to the administrative aspects of undertaking an endeavour, including the funding obtained, the people employed, and the management of the project in terms of deadlines and deliverables.  In contrast, an endeavour such as a research investigation relate to the academic and practical aspects of undertaking that endeavour - thus for a research investigation: the research itself, including the hypotheses being investigated, the experiments being undertaken, the data being gathered and analysed, the interpretations being drawn from the data, and the results obtained."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
+
+foaf:birthday a owl:DatatypeProperty ;
+    rdfs:label "has birthday"@en ;
+    rdfs:comment "The date of birth of an agent."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
+    rdfs:range xsd:date ;
+    rdfs:subPropertyOf dcterms:date .
+
+frapo:Company a owl:Class ;
+    rdfs:label "company"@en ;
+    vann:example """
+    :my-company a frapo:Company ;
+        foaf:name "Quipu Inc." .
+    """ ;
+    rdfs:comment "A commercial company or business run for profit."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:ComputationalService a owl:Class ;
+    rdfs:label "computational service"@en ;
+    vann:example """
+    :my-computational-service a frapo:ComputationalService ;
+        foaf:name "Quipu Virtual Machine" .
+    """ ;
+    rdfs:comment "A service provided by a computer system."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Service ;
+    vs:term_status reg:statusStable .
+
+frapo:Equipment a owl:Class ;
+    rdfs:label "equipment"@en ;
+    vann:example """
+    :my-equipment a frapo:Equipment ;
+        foaf:name "Refrigerated centrifuge" .
+    """ ;
+    rdfs:comment "An item of equipment or apparatus, or a laboratory instrument, for example a refrigerated centrifuge."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:InfrastructureEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:Gift a owl:Class ;
+    rdfs:label "gift"@en ;
+    vann:example """
+    :my-gift a frapo:Gift ;
+        frapo:hasMonetaryValue "1000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A gift, donation, benefaction or legacy, typically of money."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Funding ;
+    vs:term_status reg:statusStable .
+
+frapo:Manufacturer a owl:Class ;
+    rdfs:label "manufacturer"@en ;
+    vann:example """
+    :my-manufacturer a frapo:Manufacturer ;
+        foaf:name "Quipu Manufacturing" .
+    """ ;
+    rdfs:comment "An agent who manufactures goods or equipment."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:Output a owl:Class ;
+    rdfs:label "output"@en ;
+    vann:example """
+    :my-output a frapo:Output ;
+        dcterms:title "Bibliographic References Dataset"@en .
+    """ ;
+    rdfs:comment "Something that is created or produced as a result of a project or an endeavour. Examples include a building resulting from a building project, educated students graduating from an educational programme, and a journal article published as a result of a research project. Research outputs can also include reports, datasets, experimental protocols, workflows and mathematical models, and material outputs such as a cell line, a mouse mutant or a new form of microscope."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Equipment,
+        owl:Thing ;
+    vs:term_status reg:statusStable ;
+    skos:note "Ontology terms and definitions for most publishable project outputs are given as \"Expression\" classes in FaBiO, the FRBR-aligned Bibliographic Ontology, e.g. `fabio:JournalArticle`, `fabio:DataSet`. For \"deliverables\", use `frapo:Deliverable`. For material outputs, use `frapo:MaterialOutput`."@en .
+
+frapo:Service a owl:Class ;
+    rdfs:label "service"@en ;
+    vann:example """
+    :my-service a frapo:Service ;
+        foaf:name "Quipu Library Service" .
+    """ ;
+    rdfs:comment "A service of help to others, often requiring funding, employees, equipment and/or facilities for its provision, for example a library service, a transportation service, a DNA sequencing service."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:InfrastructureEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:initial a owl:DatatypeProperty ;
+    rdfs:label "has initials"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:initial "J. D." .
+    """ ;
+    rdfs:comment "The initial(s) of a person's name."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasPersonalInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:isAwardedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "is awarded by"@en ;
+    vann:example """
+    :my-grant 
+        frapo:isAwardedBy :my-funding-agency .
+    
+    :my-funding-agency a frapo:FundingAgency .
+    """ ;
+    rdfs:comment "The relation between something awarded and the agent making the award, for example linking a grant to a funding agency, a degree to a university, or a prize to the awarding organization."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:isSupportedBy a owl:ObjectProperty ;
+    rdfs:label "is supported by"@en ;
+    vann:example """
+    :my-project 
+        frapo:isSupportedBy :my-funding .
+    
+    :my-funding a frapo:Funding .
+    """ ;
+    rdfs:comment "The relation between something and an agent that provides funding or other support for it."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( frapo:Funding foaf:Agent ) ] ;
+    owl:inverseOf frapo:supports ;
+    vs:term_status reg:statusStable ;
+    skos:note "This property is not intended for use to describe mechanical or physical support, as in \"The statue is supported by the plinth\". "@en .
+
+frapo:owns a owl:ObjectProperty ;
+    rdfs:label "owns"@en ;
+    vann:example """
+    :my-organization a foaf:Organization ;
+        frapo:owns :my-facility .
+    """ ;
+    rdfs:comment "The relation between an agent and an entity owned by that agent."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+pro:RoleInTime a owl:Class ;
+    rdfs:label "role in time"@en ;
+    rdfs:comment "A particular situation that describe a role an agent may have, that can be restricted to a particular time interval."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pro> .
+
+pso:Status a owl:Class ;
+    rdfs:label "status"@en ;
+    rdfs:comment "A state or condition that a document may have."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pso> .
+
+pso:StatusInTime a owl:Class ;
+    rdfs:label "status in time"@en ;
+    rdfs:comment "A particular situation that describe a state or condition some documents may have at a particular time as consequence of one or more events."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/pso> .
+
+frapo:Facility a owl:Class ;
+    rdfs:label "facility"@en ;
+    vann:example """
+    :my-facility a frapo:Facility ;
+        foaf:name "Quipu DNA Sequencing Facility"@en .
+    """ ;
+    rdfs:comment "A place or installation built or designed to serve a specific function or provide a specific service, for example an animal breeding centre, a DNA sequencing facility or a confocal imaging laboratory."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:InfrastructureEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:FundingAgency a owl:Class ;
+    rdfs:label "funding agency"@en ;
+    vann:example """
+    :my-funding-agency a frapo:FundingAgency ;
+        foaf:name "The National Science Foundation" .
+    """ ;
+    rdfs:comment "An organization that provides funding for projects or resources, often in the form of grants awarded on the basis of competitive application."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Organization ;
+    vs:term_status reg:statusStable .
+
+frapo:InfrastructureEntity a owl:Class ;
+    rdfs:label "infrastructure entity"@en ;
+    vann:example """
+    :my-infrastructure-entity a frapo:InfrastructureEntity .
+    """ ;
+    rdfs:comment "An entity that facilitates work."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable .
+
+frapo:Repository a owl:Class ;
+    rdfs:label "repository"@en ;
+    vann:example """
+    :my-repository a frapo:Repository ;
+        foaf:name "Zenodo" .
+    """ ;
+    rdfs:comment "A facility in which entities can be deposited for long-term preservation."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Facility ;
+    vs:term_status reg:statusStable ;
+    skos:note "May also be described as an archive, or as a database."@en .
+
+frapo:Stipend a owl:Class ;
+    rdfs:label "stipend"@en ;
+    vann:example """
+    :my-stipend a frapo:Stipend ;
+        frapo:hasMonetaryValue "2800"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A sum of money allotted on a regular basis, usually for some specific purpose."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:Funding ;
+    vs:term_status reg:statusStable .
+
+frapo:Supplier a owl:Class ;
+    rdfs:label "supplier"@en ;
+    vann:example """
+    :my-supplier a frapo:Supplier ;
+        foaf:name "Quipu Supplies" .
+    """ ;
+    rdfs:comment "An agent who supplies something, such as goods or services."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf foaf:Agent ;
+    vs:term_status reg:statusStable .
+
+frapo:hasNameSuffix a owl:DatatypeProperty ;
+    rdfs:label "has name suffix"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasNameSuffix "Jr." .
+    """ ;
+    rdfs:comment "The letters that should be displayed after a person's name."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasPersonalInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:supports a owl:ObjectProperty ;
+    rdfs:label "supports"@en ;
+    vann:example """
+    :my-grant a frapo:Grant ;
+        frapo:supports :my-project .
+    """ ;
+    rdfs:comment "The relation between an agent and something that the agent supports by financial or other means."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( frapo:Funding foaf:Agent ) ] ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable ;
+    skos:note "This property is not intended for use to describe mechanical or physical support, as in \"The plinth supports the statue\". "@en .
+
+scoro:FinancialRole a owl:Class ;
+    rdfs:label "financial role"@en ;
+    rdfs:comment "A role that an agent might hold with respect to academic and project finance."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/scoro> .
+
+xsd:date a rdfs:Datatype .
+
+frapo:Budget a owl:Class ;
+    rdfs:label "has budget"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :travel-budgeted .
+    """ ;
+    rdfs:comment "A structured statement of how funds are to be used for expenditure in defined budget categories. A budget is created, for example, when applying for funding for a project, and is subsequently used to manage the expenditure from the awarded grant for that project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:Contract a owl:Class ;
+    rdfs:label "contract"@en ;
+    vann:example """
+    :my-contract a frapo:Contract ;
+        frapo:hasMonetaryValue "8000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "A legally binding agreement between parties."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:Fee a owl:Class ;
+    rdfs:label "fee"@en ;
+    vann:example """
+    :my-fee a frapo:Fee ;
+        frapo:hasMonetaryValue "100"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "An amount of money paid for something that is not purchased."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:Status a owl:Class ;
+    rdfs:label "status"@en ;
+    vann:example """
+    :my-application
+        pso:holdsStatusInTime :my-status-in-time .
+    
+    :my-status-in-time a pso:StatusInTime ;
+        pso:withStatus frapo:accepted .
+    
+    frapo:accepted a frapo:Status .
+    """ ;
+    rdfs:comment "The status of something such as an application, an investigation or a project."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf pso:Status ;
+    vs:term_status reg:statusStable .
+
+frapo:hasCode a owl:DatatypeProperty ;
+    rdfs:label "has code"@en ;
+    vann:example """
+    :my-department 
+        frapo:hasCode "DEPT-CS-01" .
+    """ ;
+    rdfs:comment "A code for something."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+frapo:Application a owl:Class ;
+    rdfs:label "application"@en ;
+    vann:example """
+    :my-application a frapo:Application ;
+        frapo:hasApplicationDeadline "2026-10-31T23:59:59"^^xsd:dateTime .
+    """ ;
+    rdfs:comment "The activity of making an application, for example for a job, or for funding."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable .
+
+frapo:hasPersonalInformation a owl:DatatypeProperty ;
+    rdfs:label "has personal information"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasPersonalInformation "Senior Researcher at the Institute" .
+    """ ;
+    rdfs:comment "Information about a person."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subPropertyOf frapo:hasAgentInformation ;
+    vs:term_status reg:statusStable .
+
+frapo:BudgetInformation a owl:Class ;
+    rdfs:label "budget information"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :travel-budgeted .
+    
+    :travel-budgeted a frapo:BudgetInformation .
+    """ ;
+    rdfs:comment "Information about an aspect of a budget."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:Funding a owl:Class ;
+    rdfs:label "funding"@en ;
+    vann:example """
+    :my-funding a frapo:Funding ;
+        frapo:hasMonetaryValue "50000"^^xsd:decimal ; 
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "An amount of money available to finance some project or activity. "@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+frapo:hasAgentInformation a owl:DatatypeProperty ;
+    rdfs:label "has agent information"@en ;
+    vann:example """
+    :my-person a foaf:Person ;
+        frapo:hasAgentInformation "Authorized representative for project negotiations" .
+    """ ;
+    rdfs:comment "Information about an agent."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    vs:term_status reg:statusStable .
+
+foaf:Person a owl:Class ;
+    rdfs:label "person"@en ;
+    rdfs:comment "A person."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
+
+foaf:Organization a owl:Class ;
+    rdfs:label "organization"@en ;
+    rdfs:comment "An organization."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
+
+dcterms:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier"@en ;
+    rdfs:comment """A unique and unambiguous reference to the resource within a given context.
+"""@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms> ;
+    skos:note "Recommended best practice is to identify the resource by means of a string conforming to a formal identification system."@en .
+
+frapo:FinancialEntity a owl:Class ;
+    rdfs:label "financial entity"@en ;
+    vann:example """
+    :my-financial-entity a frapo:FinancialEntity ;
+        frapo:hasValue "500"^^xsd:decimal ;
+        frapo:hasCurrency "EUR" .
+    """ ;
+    rdfs:comment "An entity primarily to do with money."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf owl:Thing ;
+    vs:term_status reg:statusStable .
+
+dcterms:date a owl:DatatypeProperty ;
+    rdfs:label "has date"@en ;
+    rdfs:comment "A point or period of time associated with an event in the lifecycle of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms> .
+
+frapo:BudgetCategory a owl:Class ;
+    rdfs:label "budget category"@en ;
+    vann:example """
+    :my-budget a frapo:Budget ;
+        frapo:hasBudgetInformation :my-budgeted-amout .
+    
+    :my-budgeted-amount a frapo:BudgetedAmount ;
+        frapo:hasBudgetCategory frapo:facilities-costs .
+
+    frapo:facilities-costs a frapo:BudgetCategory .
+    """ ;
+    rdfs:comment "A category of expenditure within a budget, determining what the allocated money can be spent on, for example salaries, equipment, travel."@en ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
+    rdfs:subClassOf frapo:FinancialEntity ;
+    vs:term_status reg:statusStable .
+
+foaf:Agent a owl:Class ;
+    rdfs:label "agent"@en ;
+    rdfs:comment "An agent (eg. person, group, software or physical artifact)."@en ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
+

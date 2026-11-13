@@ -13,7 +13,7 @@ frapo:AccountStatement a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "A statement of income and expenditure for an account, typically presented as dated income receipts and outgoings against categories in a budget for that account."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

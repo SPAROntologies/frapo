@@ -15,7 +15,7 @@ frapo:Investigation a owl:Class ;
     rdfs:comment """
 An investigation is an endeavour that involves research, enabled by a project.  
 """@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Endeavour ;
     vs:term_status reg:statusStable ;
     skos:note """

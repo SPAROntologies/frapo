@@ -13,7 +13,7 @@ frapo:hasBatchNumber a owl:DatatypeProperty ;
         frapo:hasBatchNumber "BATCH-2026-X" .
     """ ;
     rdfs:comment "The manufacturing batch number for something, for example a chemical or drug."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf dcterms:identifier ;
     vs:term_status reg:statusStable .
 

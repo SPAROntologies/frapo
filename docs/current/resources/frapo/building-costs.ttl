@@ -16,6 +16,6 @@ frapo:building-costs a frapo:BudgetCategory,
         frapo:hasBudgetCategory frapo:building-costs .
     """ ;
     rdfs:comment "A budget category to cover the costs of constructing, renovating or modifying a physical building."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

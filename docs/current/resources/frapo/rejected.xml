@@ -6,10 +6,12 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/rejected">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:comment xml:lang="en">The status of something such as an application as having been rejected.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://purl.org/cerif/frapo/Status"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
+    <rdfs:label xml:lang="en">rejected</rdfs:label>
     <vann:example>
     :my-application
         pso:holdsStatusInTime :my-status-in-time .
@@ -17,7 +19,5 @@
     :my-status-in-time a pso:StatusInTime ;
         pso:withStatus frapo:rejected .
     </vann:example>
-    <rdfs:label xml:lang="en">rejected</rdfs:label>
-    <rdfs:comment xml:lang="en">The status of something such as an application as having been rejected.</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>

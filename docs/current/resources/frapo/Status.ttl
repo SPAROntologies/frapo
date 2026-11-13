@@ -18,7 +18,7 @@ frapo:Status a owl:Class ;
     frapo:accepted a frapo:Status .
     """ ;
     rdfs:comment "The status of something such as an application, an investigation or a project."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf pso:Status ;
     vs:term_status reg:statusStable .
 

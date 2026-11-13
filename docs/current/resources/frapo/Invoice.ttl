@@ -12,7 +12,7 @@ frapo:Invoice a owl:Class ;
         frapo:hasInvoiceDate "2026-07-10"^^xsd:date .
     """ ;
     rdfs:comment "An invoice for payment of goods or services."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

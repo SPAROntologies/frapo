@@ -12,7 +12,7 @@ frapo:ComputationalService a owl:Class ;
         foaf:name "Quipu Virtual Machine" .
     """ ;
     rdfs:comment "A service provided by a computer system."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Service ;
     vs:term_status reg:statusStable .
 

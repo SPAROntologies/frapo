@@ -13,7 +13,7 @@ frapo:ExpenditureToDate a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "Total money expended to date from an an account, or from a particular budget category."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Expenditure ;
     vs:term_status reg:statusStable .
 

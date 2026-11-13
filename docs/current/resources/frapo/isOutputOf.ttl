@@ -12,6 +12,6 @@ frapo:isOutputOf a owl:ObjectProperty ;
         frapo:isOutputOf :my-project .
     """ ;
     rdfs:comment "The relation between something that is created or produced and the activity that created or produced it."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     vs:term_status reg:statusStable .
 

@@ -12,7 +12,7 @@ frapo:Application a owl:Class ;
         frapo:hasApplicationDeadline "2026-10-31T23:59:59"^^xsd:dateTime .
     """ ;
     rdfs:comment "The activity of making an application, for example for a job, or for funding."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf owl:Thing ;
     vs:term_status reg:statusStable .
 

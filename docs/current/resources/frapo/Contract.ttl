@@ -13,7 +13,7 @@ frapo:Contract a owl:Class ;
         frapo:hasCurrency "EUR" .
     """ ;
     rdfs:comment "A legally binding agreement between parties."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:FinancialEntity ;
     vs:term_status reg:statusStable .
 

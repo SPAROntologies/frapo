@@ -13,7 +13,7 @@ frapo:Fellowship a owl:Class ;
         frapo:isFundedBy :my-funding-agency .
     """ ;
     rdfs:comment "The stipend paid to a fellow in a college or university."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Stipend ;
     vs:term_status reg:statusStable .
 

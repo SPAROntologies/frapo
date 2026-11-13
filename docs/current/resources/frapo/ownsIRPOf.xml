@@ -6,16 +6,16 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/cerif/frapo/ownsIRPOf">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo/"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/cerif/frapo"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">owns IPR of</rdfs:label>
+    <rdfs:comment xml:lang="en">The relation between an agent who owns IPR arising from or relating and an entity to that entity.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/owns"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
     <vann:example>
     :my-university a frapo:University ;
         frapo:ownsIRPOf :my-material-output .
     </vann:example>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/cerif/frapo/owns"/>
-    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-    <rdfs:comment xml:lang="en">The relation between an agent who owns IPR arising from or relating and an entity to that entity.</rdfs:comment>
+    <rdfs:label xml:lang="en">owns IPR of</rdfs:label>
   </rdf:Description>
 </rdf:RDF>

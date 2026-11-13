@@ -15,7 +15,7 @@ frapo:isFundedBy a owl:ObjectProperty ;
 The relation between something and the funding that funds it (i.e. that finances or pays for it), or to the funding agency providing that funding.
 This flexibility is given because of alternative usages of the English word "funds".  
 """@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:seeAlso frapo:hasFundingAgency,
         frapo:isAwardedBy ;
     rdfs:subPropertyOf frapo:isSupportedBy ;

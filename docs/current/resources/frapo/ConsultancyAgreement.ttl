@@ -12,7 +12,7 @@ frapo:ConsultancyAgreement a owl:Class ;
         frapo:hasStartDate "2026-05-01"^^xsd:date .
     """ ;
     rdfs:comment "A contract between an employer and a consultant, detailing the terms of the consultancy."@en ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subClassOf frapo:Contract ;
     vs:term_status reg:statusStable .
 

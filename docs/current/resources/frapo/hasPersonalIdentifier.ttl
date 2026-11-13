@@ -16,7 +16,7 @@ frapo:hasPersonalIdentifier a owl:DatatypeProperty ;
     """ ;
     rdfs:comment "A unique and unambiguous identifier for an individual person within a given context."@en ;
     rdfs:domain foaf:Person ;
-    rdfs:isDefinedBy frapo: ;
+    rdfs:isDefinedBy <http://purl.org/cerif/frapo> ;
     rdfs:subPropertyOf frapo:hasPersonalInformation,
         dcterms:identifier ;
     owl:equivalentProperty scoro:hasPersonalIdentifier ;
